@@ -7,7 +7,7 @@ constraint mem_pk primary key(mem_nick));
 
 create table Webtoon(
 web_title varchar2(20) not null,
-genre varchar2(10) not null,
+web_genre varchar2(10) not null,
 web_view number not null,
 web_writer varchar2(15) not null,
 web_platform varchar2(10) not null,
@@ -37,7 +37,7 @@ references Webtoon(web_title),
 constraint bm_gen_fk foreign key(bm_genre)
 references Genre(gen_genre));
 
-create table board(
+create table Board(
 board_num number not null,
 board_nick varchar2(10) not null,
 board_title varchar2(50) not null,
