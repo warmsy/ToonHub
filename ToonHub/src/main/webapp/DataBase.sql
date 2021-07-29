@@ -8,6 +8,7 @@ constraint mem_pk primary key(mem_nick));
 create table Webtoon(
 web_title varchar2(20) not null,
 genre varchar2(10) not null,
+web_view number not null,
 web_writer varchar2(15) not null,
 web_platform varchar2(10) not null,
 web_day varchar2(5),
