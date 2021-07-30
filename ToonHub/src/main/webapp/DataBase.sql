@@ -5,6 +5,11 @@ mem_pw varchar2(15) not null,
 mem_file varchar2(100),
 constraint mem_pk primary key(mem_nick));
 
+create table Genre(
+gen_genre varchar2(10) not null,
+constraint gen_pk primary key(gen_genre));
+
+
 create table Webtoon(
 web_title varchar2(20) not null,
 web_genre varchar2(10) not null,
@@ -17,13 +22,9 @@ web_file varchar2(100) not null,
 web_address varchar2(200) not null,
 web_state varchar2(5) not null,
 constraint web_pk primary key(web_title))
-
-create table Genre(
-gen_genre varchar2(10) not null,
-constraint gen_pk primary key(gen_genre));
-
-alter table Webtoon add constraint web_gen_fk foreign key(genre)
+alter table Webtoon add constraint web_gen_fk foreign key(web_genre)
 references Genre(gen_genre);
+
 
 create table Bookmark(
 bm_nick varchar2(10) not null,
@@ -94,3 +95,5 @@ start with 1
 nomaxvalue
 minvalue 1
 nocycle;
+
+
