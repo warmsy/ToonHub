@@ -5,6 +5,7 @@ public class ToonMemberDTO {
 	private String nick;
 	private String pw;
 	private String file;
+	
 	public ToonMemberDTO(String id, String nick, String pw, String file) {
 		super();
 		this.id = id;
@@ -12,6 +13,16 @@ public class ToonMemberDTO {
 		this.pw = pw;
 		this.file = file;
 	}
+	
+	
+	public ToonMemberDTO(String id, String pw) {
+		super();
+		this.id = id;
+		this.pw = pw;
+	}
+
+
+
 	public void setId(String id) {
 		this.id = id;
 	}
