@@ -14,7 +14,7 @@ public class RecommandDTO {
 		WebTitle = webTitle;
 		this.genre = genre;
 		RecCon = recCon;
-		RecDate = RecDate;
+		this.RecDate = RecDate;
 	}
 	public void setRecNum(String recNum) {
 		RecNum = recNum;
