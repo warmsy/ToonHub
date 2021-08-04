@@ -74,6 +74,7 @@
     padding: 0px 10px;
     border: 1px solid #F6F6F6;
     outline: none;
+    background-color: #F6F6F6;
   }
 
   .login_pw {
@@ -89,6 +90,7 @@
     padding: 0px 20px;
     border: 1px solid #F6F6F6;
     outline: none;
+    background-color: #F6F6F6;
   }
 
   .login_etc {
