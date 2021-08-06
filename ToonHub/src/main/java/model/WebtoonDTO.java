@@ -4,28 +4,47 @@ public class WebtoonDTO {
 	
 	private String WebTitle;
 	private String genre;
-	private String WebWriter;
 	private int View;
+	private String WebWriter;
 	private String Platform;
 	private String WebDay;
 	private String Story;
 	private String WebFile;
 	private String Address;
 	private String State;
-	public WebtoonDTO(String webTitle, String genre, String webWriter, int view, String platform, String webDay,
+	
+	public WebtoonDTO(String webTitle, String genre, int view, String webWriter, String platform, String webDay,
 			String story, String webFile, String address, String state) {
 		super();
-		WebTitle = webTitle;
+		this.WebTitle = webTitle;
 		this.genre = genre;
-		WebWriter = webWriter;
-		View = view;
-		Platform = platform;
-		WebDay = webDay;
-		Story = story;
-		WebFile = webFile;
-		Address = address;
-		State = state;
+		this.View = view;
+		this.WebWriter = webWriter;
+		this.Platform = platform;
+		this.WebDay = webDay;
+		this.Story = story;
+		this.WebFile = webFile;
+		this.Address = address;
+		this.State = state;
 	}
+
+
+	public WebtoonDTO(String webTitle, int view, String webWriter, String platform, String webFile, String state) {
+		super();
+		this.WebTitle = webTitle;
+		this.View = view;
+		this.WebWriter = webWriter;
+		this.Platform = platform;
+		this.WebFile = webFile;
+		this.State = state;
+	}
+
+
+
+
+
+
+
 	public String getWebTitle() {
 		return WebTitle;
 	}
@@ -38,17 +57,17 @@ public class WebtoonDTO {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-	public String getWebWriter() {
-		return WebWriter;
-	}
-	public void setWebWriter(String webWriter) {
-		WebWriter = webWriter;
-	}
 	public int getView() {
 		return View;
 	}
 	public void setView(int view) {
 		View = view;
+	}
+	public String getWebWriter() {
+		return WebWriter;
+	}
+	public void setWebWriter(String webWriter) {
+		WebWriter = webWriter;
 	}
 	public String getPlatform() {
 		return Platform;
@@ -86,7 +105,7 @@ public class WebtoonDTO {
 	public void setState(String state) {
 		State = state;
 	}
-	
+
 	
 	
 }
