@@ -1,0 +1,364 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Snippet - BBBootstrap</title>
+<link
+	href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css'
+	rel='stylesheet'>
+<link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css'
+	rel='stylesheet'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="description" content="Inspiration for drag and drop interactions for the modern UI" />
+		<meta name="keywords" content="drag and drop, interaction, inspiration, web design, ui" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/modal.css" />
+<script type='text/javascript'
+	src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src="js/modernizr.custom.js"></script>
+
+<style>
+body {
+	background: #eee;
+}
+
+/* 웹툰 들어가는 네모칸  */
+.brands {
+	width: 100%;
+	padding-top: 2px;
+	padding-bottom: 10px
+}
+
+.brands_slider_container {
+	height: 150px;
+	border: solid 1px #eeeeee;
+	/*     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1); */
+	padding-left: 3px;
+	padding-right: 3px;
+	background: #eeeeee;
+}
+
+/* 슬라이드 박스 내 내부 마진 */
+.brands_slider {
+	height: 100%;
+	margin-top: 3px
+}
+
+.brands_item {
+	height: 100%
+}
+
+/* 이미지 사이즈 */
+.brands_item img {
+	max-width: 100%
+}
+
+.brands_nav {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-10%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	padding: 5px;
+	/*     cursor: pointer */
+}
+
+.brands_nav i {
+	color: #e5e5e5;
+	-webkit-transition: all 0ms ease;
+	-moz-transition: all 0ms ease;
+	-ms-transition: all 0ms ease;
+	-o-transition: all 0ms ease;
+	transition: all 0ms ease
+}
+
+.brands_nav:hover i {
+	color: #676767
+}
+
+.brands_prev {
+	left: 10px
+}
+
+.brands_next {
+	right: 10px
+}
+
+.a_color {
+	color: #62b989 !important;
+}
+
+</style>
+</head>
+<body oncontextmenu='return false' class='snippet-body skin-3'>
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
+	
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+
+		<div class="container">
+			<!-- Top Navigation -->
+			<div class="codrops-top clearfix">
+<!-- 				<a class="codrops-icon codrops-icon-prev" href="#"><span>뒤로가기</span></a> -->
+			</div>
+			<div class="content">
+
+				<!-- 메인 머리  demo.css 에 있음-->
+				<header class="codrops-header">  
+					<!--디폴트로 toonhub 가 들어와있도록 하는방법 물어보기 ! -->
+                    <div class="codrops-menu">
+                        <strong><a href="#" class = "default">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="#">커뮤니티</a></strong> <!-- 맨위 상단-->
+                    </div>
+					
+					<!-- h1 태그 말고 다른걸로 바꿀것 !  -->
+					<br><br>
+					<nav class="codrops-demos">
+						<a href="#" class = "default"> 요일별 </a>
+						<a href="#"> 장르 </a>
+						<a href="#"> 플랫폼 </a>
+						<!-- <a class="current-demo" href="modal.html">Modal</a>  일단 세개 빼고 다 주석
+						<a href="icons.html">Icons</a>
+						<a href="bottoms-lide.html">Bottom Slide</a>
+						<a href="reveal.html">Reveal</a> -->
+					</nav>
+					<br>
+					<!-- 주간  -->
+					<nav class = "week">
+						<a href="#">월</a>
+						<a href="#">화</a>
+						<a href="#">수</a>
+						<a href="#">목</a>
+						<a href="#">금</a>
+						<a href="#">토</a>
+						<a href="#">일</a>
+					</nav>
+				</header>
+					
+				<div id="grid" class="grid clearfix_detail">
+                    <div class="detail_info">
+                        <img src="nemo.png">
+                        <div class="text_detail">
+                            <strong>제목</strong><span style font-size ="x-small">작가이름</span><br>
+                            <span>시놉시스</span>
+							<br>
+							<button class ="detail_gen">장르1</button>
+                            <button class ="detail_gen">장르2</button>
+                            <button class ="detail_gen">장르3</button>
+                            
+                        </div>
+                           
+
+							<div class = "detail_book">
+								<a class = "a_color"  id = "bookmark" href="">찜하기</a><br>
+								<a class = "a_color" href="">작가 커뮤니티</a>
+							</div>
+							<div class= "gotolink" style="position: relative;
+							top: -25px; left: 25px;"><a href="" style="color: white !important;">보러가기</a></div>
+                    </div>
+<br>
+				<div class = "detail_bottom">
+					<span style="font-size: large;">이웹툰 어때요?</span>
+					<form action="#" style="display: inline;">
+					<select class="star">
+						<option>★★★★★</option>
+						<option>★★★★☆</option>
+						<option>★★★☆☆</option>
+						<option>★★☆☆☆</option>
+						<option>★☆☆☆☆</option>
+					</select>
+					<br>
+					<table style="width: 100%">
+						<tr>
+							<td><input type="textarea" class= "input_review" style="border: #bbbbbb 1px solid;">
+							</td>
+							<td><input type="submit" value="등록" id = "submit_botton" >
+							</td>
+						</tr>
+					</table>
+					<table class="review_db">
+						<tr>
+							<td><img src="nemo.png" width="30px"height=30px style="display: inline-block;">
+							<span>Ms.hong</span><br>
+							<span>진짜 재밌어요!</span>
+							<span style="float:right;">2021.08.04</span>
+						</td>
+						</tr>
+					</table>
+					<br>
+					<table class="review_db">
+						<tr>
+							<td><img src="nemo.png" width="30px"height=30px style="display: inline;">
+							<span>Ms.hong</span><br>
+							<span>진짜 재밌어요!</span>
+							<span style="float:right;">2021.08.04</span>
+						</td>
+						</tr>
+					</table>
+					
+					</div>
+
+
+					</form>
+
+
+
+				</div>
+            
+                    
+
+					
+
+				</div>
+
+			</div><!-- /content -->
+		</div><!-- /container -->
+
+
+        <div class="fixed-menu">
+                <a href=""><img src = "img/home.png">
+                    <span class = "menu-text">   홈으로   </span>
+                </a>
+                <a href=""><img src = "img/bookmark.PNG">
+                    <span class = "menu-text">   북마크   </span>
+                </a>
+                <a href=""><img src = "img/my.PNG">
+                    <span class = "menu-text">   my   </span>
+                </a>
+				<a href="font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; ">이거 누르면 나오게 
+					
+				</a>
+            
+        </div>
+
+		<script src="js/sweetalert2.all.js"></script>
+		<script src="js/sweetalert2.all.min.js"></script>
+		<script src="js/sweetalert2.js"></script>
+		<script src="js/sweetalert2.min.js"></script>
+		<script src="js/jquery-3.6.0.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+		<script src="js/draggabilly.pkgd.min.js"></script>
+		<script src="js/dragdrop.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
+		<script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js'></script>
+        <script type='text/javascript'>
+
+
+
+// function deleteBoard(seq){
+// 		Swal.fire({
+// 		  title: '글을 삭제하시겠습니까???',
+// 		  text: "삭제하시면 다시 복구시킬 수 없습니다.",
+// 		  icon: 'warning',
+// 		  showCancelButton: true,
+// 		  confirmButtonColor: '#3085d6',
+// 		  cancelButtonColor: '#d33',
+// 		  confirmButtonText: '삭제',
+// 		  cancelButtonText: '취소'
+// 		}).then((result) => {
+// 		  if (result.value) {
+//               //"삭제" 버튼을 눌렀을 때 작업할 내용을 이곳에 넣어주면 된다. 
+// 		  }
+// 		})
+// 	}
+
+ 
+
+			// $().ready(function () {
+			// 			$("#bookmark").click(function () {
+			// 				Swal.fire('제','곧','내')
+			// 				});
+			// 			});
+
+			
+			var selected_day = $('.week a');
+			selected_day.click(function(){
+				$(this).css('color','#42C690');
+				selected_day.not($(this)).css('color','#b3b3b3');
+			});
+			
+			var selected_menu = $('.codrops-demos a');
+			selected_menu.click(function(){
+				$(this).css('color','#42C690');
+				selected_menu.not($(this)).css('color','#b3b3b3');
+			});
+
+			var selected_home = $('.codrops-menu a');
+			selected_home.click(function(){
+				$(this).css('color','#42C690');
+			    selected_home.not($(this)).css('color','#b3b3b3');
+			});
+
+            var fixed_menu = $('.fixed-menu a');
+			fixed_menu.click(function(){
+				$(this).css('color','#42C690');
+			    fixed_menu.not($(this)).css('color','#b3b3b3');
+
+			});
+
+
+       
+		</script>
+
+
+	<script type='text/javascript'
+		src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js'></script>
+	<script type='text/javascript'>$(document).ready(function(){
+
+if($('.brands_slider').length)
+{
+var brandsSlider = $('.brands_slider');
+
+brandsSlider.owlCarousel(
+{
+loop:true,
+autoplay:true,
+autoplayTimeout:0, 
+/* 자동으로 넘어가게 하는거 ! */
+nav:false,
+dots:false,
+
+autoWidth:false,
+/* 자동 이미지 사이즈 맞춤 */
+items:3, 
+/* default 로 보여지는 아이텡 갯수  */
+margin:2
+/* 아이템간 마진  */
+});
+
+if($('.brands_prev').length)
+{
+var prev = $('.brands_prev');
+prev.on('click', function()
+{
+brandsSlider.trigger('prev.owl.carousel');
+});
+}
+
+if($('.brands_next').length)
+{
+var next = $('.brands_next');
+next.on('click', function()
+{
+brandsSlider.trigger('next.owl.carousel');
+});
+}
+}
+
+});</script>
+</body>
+</html>
