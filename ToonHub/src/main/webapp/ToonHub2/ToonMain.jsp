@@ -74,8 +74,7 @@ body {
 					<a href="Search.html"><img src="/img/search.png"
 						style="width: 4%; height: 4%; float: right; margin-right: 6%;"></a>
 				</div>
-				<br>
-				<br>
+				<br> <br>
 			</header>
 
 			<div id="wrap">
@@ -103,15 +102,16 @@ body {
 
 
 							<nav class="best">
-								<strong>지금 ! 베스트</strong><br>
-								<br>
+								<strong>지금 ! 베스트</strong><br> <br>
 								<div class="toon_slider_box">
 									<div class="brands">
 										<div class="container">
 											<div class="brands_slider_container">
 												<div class="owl-carousel owl-theme brands_slider">
-												
-												<%for(int i=0; i<6; i++){ %>
+
+													<%
+													for (int i = 0; i < monlist.size(); i++) {
+													%>
 													<div class="owl-item">
 														<div
 															class="brands_item d-flex flex-column justify-content-center">
@@ -120,20 +120,19 @@ body {
 															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 														</div>
 														<div class="info">
-															<strong><%= monlist.get(i).getWebtitle() %></strong><br> 
-															<span><%=monlist.get(i).getWebwriter() %></span><br>
+															<strong><%=monlist.get(i).getWebtitle()%></strong><br>
+															<span><%=monlist.get(i).getWebwriter()%></span><br>
 														</div>
 													</div>
-													<%} %>
-													
-											
-								</div>
+													<%
+													}
+													%>
+												</div>
 							</nav>
 							<br>
 
 							<nav class="toon1">
-								<strong>봄툰</strong><span> | BoomToon</span><br>
-								<br>
+								<strong>봄툰</strong><span> | BoomToon</span><br> <br>
 								<div class="brands">
 									<div class="container">
 										<div class="brands_slider_container">
@@ -201,8 +200,7 @@ body {
 							<br>
 
 							<nav class="toon2">
-								<strong>탑툰</strong><span> | AToon</span><br>
-								<br>
+								<strong>탑툰</strong><span> | AToon</span><br> <br>
 								<div class="toon_slider_box">
 									<div class="brands">
 										<div class="container">
@@ -301,8 +299,7 @@ body {
 
 
 							<nav class="best">
-								<strong>지금 ! 베스트</strong><br>
-								<br>
+								<strong>지금 ! 베스트</strong><br> <br>
 								<div class="toon_slider_box">
 									<div class="brands">
 										<div class="container">
@@ -396,8 +393,7 @@ body {
 							<br>
 
 							<nav class="toon1">
-								<strong>봄툰</strong><span> | BoomToon</span><br>
-								<br>
+								<strong>봄툰</strong><span> | BoomToon</span><br> <br>
 								<div class="brands">
 									<div class="container">
 										<div class="brands_slider_container">
@@ -465,8 +461,7 @@ body {
 							<br>
 
 							<nav class="toon2">
-								<strong>탑툰</strong><span> | AToon</span><br>
-								<br>
+								<strong>탑툰</strong><span> | AToon</span><br> <br>
 								<div class="toon_slider_box">
 									<div class="brands">
 										<div class="container">
@@ -565,8 +560,7 @@ body {
 
 
 							<nav class="best">
-								<strong>지금 ! 베스트</strong><br>
-								<br>
+								<strong>지금 ! 베스트</strong><br> <br>
 								<div class="toon_slider_box">
 									<div class="brands">
 										<div class="container">
@@ -660,8 +654,7 @@ body {
 							<br>
 
 							<nav class="toon1">
-								<strong>봄툰</strong><span> | BoomToon</span><br>
-								<br>
+								<strong>봄툰</strong><span> | BoomToon</span><br> <br>
 								<div class="brands">
 									<div class="container">
 										<div class="brands_slider_container">
@@ -729,8 +722,7 @@ body {
 							<br>
 
 							<nav class="toon2">
-								<strong>탑툰</strong><span> | AToon</span><br>
-								<br>
+								<strong>탑툰</strong><span> | AToon</span><br> <br>
 								<div class="toon_slider_box">
 									<div class="brands">
 										<div class="container">
@@ -829,8 +821,7 @@ body {
 
 
 							<nav class="best">
-								<strong>지금 ! 베스트</strong><br>
-								<br>
+								<strong>지금 ! 베스트</strong><br> <br>
 								<div class="toon_slider_box">
 									<div class="brands">
 										<div class="container">
@@ -924,8 +915,7 @@ body {
 							<br>
 
 							<nav class="toon1">
-								<strong>봄툰</strong><span> | BoomToon</span><br>
-								<br>
+								<strong>봄툰</strong><span> | BoomToon</span><br> <br>
 								<div class="brands">
 									<div class="container">
 										<div class="brands_slider_container">
@@ -993,8 +983,7 @@ body {
 							<br>
 
 							<nav class="toon2">
-								<strong>탑툰</strong><span> | AToon</span><br>
-								<br>
+								<strong>탑툰</strong><span> | AToon</span><br> <br>
 								<div class="toon_slider_box">
 									<div class="brands">
 										<div class="container">
@@ -1093,8 +1082,7 @@ body {
 
 
 							<nav class="best">
-								<strong>지금 ! 베스트</strong><br>
-								<br>
+								<strong>지금 ! 베스트</strong><br> <br>
 								<div class="toon_slider_box">
 									<div class="brands">
 										<div class="container">
@@ -1188,8 +1176,7 @@ body {
 							<br>
 
 							<nav class="toon1">
-								<strong>봄툰</strong><span> | BoomToon</span><br>
-								<br>
+								<strong>봄툰</strong><span> | BoomToon</span><br> <br>
 								<div class="brands">
 									<div class="container">
 										<div class="brands_slider_container">
@@ -1257,8 +1244,7 @@ body {
 							<br>
 
 							<nav class="toon2">
-								<strong>탑툰</strong><span> | AToon</span><br>
-								<br>
+								<strong>탑툰</strong><span> | AToon</span><br> <br>
 								<div class="toon_slider_box">
 									<div class="brands">
 										<div class="container">
@@ -1357,8 +1343,7 @@ body {
 
 
 							<nav class="best">
-								<strong>지금 ! 베스트</strong><br>
-								<br>
+								<strong>지금 ! 베스트</strong><br> <br>
 								<div class="toon_slider_box">
 									<div class="brands">
 										<div class="container">
@@ -1452,8 +1437,7 @@ body {
 							<br>
 
 							<nav class="toon1">
-								<strong>봄툰</strong><span> | BoomToon</span><br>
-								<br>
+								<strong>봄툰</strong><span> | BoomToon</span><br> <br>
 								<div class="brands">
 									<div class="container">
 										<div class="brands_slider_container">
@@ -1521,8 +1505,7 @@ body {
 							<br>
 
 							<nav class="toon2">
-								<strong>탑툰</strong><span> | AToon</span><br>
-								<br>
+								<strong>탑툰</strong><span> | AToon</span><br> <br>
 								<div class="toon_slider_box">
 									<div class="brands">
 										<div class="container">
@@ -1621,8 +1604,7 @@ body {
 
 
 							<nav class="best">
-								<strong>지금 ! 베스트</strong><br>
-								<br>
+								<strong>지금 ! 베스트</strong><br> <br>
 								<div class="toon_slider_box">
 									<div class="brands">
 										<div class="container">
@@ -1716,8 +1698,7 @@ body {
 							<br>
 
 							<nav class="toon1">
-								<strong>봄툰</strong><span> | BoomToon</span><br>
-								<br>
+								<strong>봄툰</strong><span> | BoomToon</span><br> <br>
 								<div class="brands">
 									<div class="container">
 										<div class="brands_slider_container">
@@ -1785,8 +1766,7 @@ body {
 							<br>
 
 							<nav class="toon2">
-								<strong>탑툰</strong><span> | AToon</span><br>
-								<br>
+								<strong>탑툰</strong><span> | AToon</span><br> <br>
 								<div class="toon_slider_box">
 									<div class="brands">
 										<div class="container">
@@ -1874,15 +1854,8 @@ body {
 					</div>
 				</section>
 			</div>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
+			<br> <br> <br> <br> <br> <br> <br>
+			<br> <br>
 			<footer class="foot">
 				<table>
 					<td><a href="ToonMain.html"> <img src="img/home.png">
