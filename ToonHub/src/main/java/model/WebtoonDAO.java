@@ -14,7 +14,12 @@ public class WebtoonDAO {
 	WebtoonDTO dto = null;
 	ArrayList<WebtoonDTO> monlist = null;
 	ArrayList<WebtoonDTO> tuelist = null;
-	
+	ArrayList<WebtoonDTO> wedlist = null;
+	ArrayList<WebtoonDTO> thulist = null;
+	ArrayList<WebtoonDTO> frilist = null;
+	ArrayList<WebtoonDTO> satlist = null;
+	ArrayList<WebtoonDTO> sunlist = null;
+
 	
 	public void conn() {
 		try {
@@ -74,6 +79,10 @@ public class WebtoonDAO {
 		}finally {close();}
 		return monlist;
 	}
+	
+	
+	
+	
 	public ArrayList<WebtoonDTO> tuelist() {
 		conn();
 		
@@ -105,13 +114,160 @@ public class WebtoonDAO {
 		return tuelist;
 	}
 	
+	public ArrayList<WebtoonDTO> wedlist() {
+		conn();
+		
+		String sql = "select *  from webtoon where web_day =\'수\' order by web_view";
+		wedlist = new ArrayList<WebtoonDTO>();
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				String webtitle = rs.getString(1);
+				String genre = rs.getString(2);
+				int view = rs.getInt(3);
+				String webwriter = rs.getString(4);
+				String platform = rs.getString(5);
+				String webday = rs.getString(6);
+				String story = rs.getString(7);
+				String webfile = rs.getString(8);
+				String address= rs.getString(9);
+				String state = rs.getString(10);
+				
+				dto = new WebtoonDTO(webtitle, genre, view, webwriter, platform, webday, story, webfile, address, state);
+				wedlist.add(dto);
+			};
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {close();}
+		return wedlist;
+	}
 	
+	public ArrayList<WebtoonDTO> thulist() {
+		conn();
+		
+		String sql = "select *  from webtoon where web_day =\'목\' order by web_view";
+		thulist = new ArrayList<WebtoonDTO>();
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				String webtitle = rs.getString(1);
+				String genre = rs.getString(2);
+				int view = rs.getInt(3);
+				String webwriter = rs.getString(4);
+				String platform = rs.getString(5);
+				String webday = rs.getString(6);
+				String story = rs.getString(7);
+				String webfile = rs.getString(8);
+				String address= rs.getString(9);
+				String state = rs.getString(10);
+				
+				dto = new WebtoonDTO(webtitle, genre, view, webwriter, platform, webday, story, webfile, address, state);
+				thulist.add(dto);
+			};
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {close();}
+		return thulist;
+	}
 	
+	public ArrayList<WebtoonDTO> frilist() {
+		conn();
+		
+		String sql = "select *  from webtoon where web_day =\'금\' order by web_view";
+		frilist = new ArrayList<WebtoonDTO>();
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				String webtitle = rs.getString(1);
+				String genre = rs.getString(2);
+				int view = rs.getInt(3);
+				String webwriter = rs.getString(4);
+				String platform = rs.getString(5);
+				String webday = rs.getString(6);
+				String story = rs.getString(7);
+				String webfile = rs.getString(8);
+				String address= rs.getString(9);
+				String state = rs.getString(10);
+				
+				dto = new WebtoonDTO(webtitle, genre, view, webwriter, platform, webday, story, webfile, address, state);
+				frilist.add(dto);
+			};
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {close();}
+		return frilist;
+	}
 	
+	public ArrayList<WebtoonDTO> satlist() {
+		conn();
+		
+		String sql = "select *  from webtoon where web_day =\'토\' order by web_view";
+		satlist = new ArrayList<WebtoonDTO>();
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				String webtitle = rs.getString(1);
+				String genre = rs.getString(2);
+				int view = rs.getInt(3);
+				String webwriter = rs.getString(4);
+				String platform = rs.getString(5);
+				String webday = rs.getString(6);
+				String story = rs.getString(7);
+				String webfile = rs.getString(8);
+				String address= rs.getString(9);
+				String state = rs.getString(10);
+				
+				dto = new WebtoonDTO(webtitle, genre, view, webwriter, platform, webday, story, webfile, address, state);
+				satlist.add(dto);
+			};
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {close();}
+		return satlist;
+	}
 	
-	
-	
-	
+	public ArrayList<WebtoonDTO> sunlist() {
+		conn();
+		
+		String sql = "select *  from webtoon where web_day =\'일\' order by web_view";
+		sunlist = new ArrayList<WebtoonDTO>();
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				String webtitle = rs.getString(1);
+				String genre = rs.getString(2);
+				int view = rs.getInt(3);
+				String webwriter = rs.getString(4);
+				String platform = rs.getString(5);
+				String webday = rs.getString(6);
+				String story = rs.getString(7);
+				String webfile = rs.getString(8);
+				String address= rs.getString(9);
+				String state = rs.getString(10);
+				
+				dto = new WebtoonDTO(webtitle, genre, view, webwriter, platform, webday, story, webfile, address, state);
+				sunlist.add(dto);
+			};
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {close();}
+		return sunlist;
+	}
 	
 	
 	

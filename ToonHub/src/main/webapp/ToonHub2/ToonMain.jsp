@@ -59,6 +59,12 @@ body {
 	<%
 	WebtoonDAO dao = new WebtoonDAO();
 	ArrayList<WebtoonDTO> monlist = dao.monday();
+	ArrayList<WebtoonDTO> tuelist = dao.tuelist();
+	ArrayList<WebtoonDTO> wedlist = dao.wedlist();
+	ArrayList<WebtoonDTO> thulist = dao.thulist();
+	ArrayList<WebtoonDTO> frilist = dao.frilist();
+	ArrayList<WebtoonDTO> satlist = dao.satlist();
+	ArrayList<WebtoonDTO> sunlist = dao.sunlist();
 	%>
 
 	<div class="container">
@@ -93,6 +99,9 @@ body {
 						<li class="row" id="day6"><a href="#!"><span>토</span></a></li>
 						<li class="row" id="day0"><a href="#!"><span>일</span></a></li>
 					</ul>
+
+
+
 					<div class="tabBox on">
 						<div id="grid" class="grid clearfix">
 							<div class="checkbox">
@@ -128,6 +137,642 @@ body {
 													}
 													%>
 												</div>
+							</nav>
+							<br>
+
+							<nav class="toon1">
+								<strong>봄툰</strong><span> | BoomToon</span><br> <br>
+								<div class="brands">
+									<div class="container">
+										<div class="brands_slider_container">
+											<div class="owl-carousel owl-theme brands_slider">
+
+												<%
+												for (int i = 0; i < 10; i++) {
+												%>
+												<%
+												if (monlist.get(i).getPlatform().equals("봄툰")) {
+												%>
+												<div class="owl-item">
+													<div
+														class="brands_item d-flex flex-column justify-content-center">
+														<a href="https://www.naver.com"><img src="nemo.png"
+															width="120px" height="120px"></a>
+														<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+													</div>
+													<div class="info">
+														<strong><%=monlist.get(i).getWebtitle()%></strong><br>
+														<span><%=monlist.get(i).getWebwriter()%></span><br>
+													</div>
+												</div>
+												<%
+												}
+												}
+												%>
+											</div>
+											<!-- Brands Slider Navigation -->
+											<!-- <div class="brands_nav brands_prev"><i></i></div>
+                                                            <div class="brands_nav brands_next"><i></i></div> -->
+										</div>
+										<!-- </div>
+                                                </div> -->
+									</div>
+								</div>
+
+
+							</nav>
+							<br>
+
+							<nav class="toon2">
+								<strong>탑툰</strong><span> | AToon</span><br> <br>
+								<div class="toon_slider_box">
+									<div class="brands">
+										<div class="container">
+											<div class="brands_slider_container">
+												<div class="owl-carousel owl-theme brands_slider">
+
+													<%
+													for (int i = 0; i < 10; i++) {
+													%>
+													<%
+													if (monlist.get(i).getPlatform().equals("탑툰")) {
+													%>
+													<div class="owl-item">
+														<div
+															class="brands_item d-flex flex-column justify-content-center">
+															<a href="https://www.naver.com"><img src="nemo.png"
+																width="120px" height="120px"></a>
+															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+														</div>
+														<div class="info">
+															<strong><%=monlist.get(i).getWebtitle()%></strong><br>
+															<span><%=monlist.get(i).getWebwriter()%></span><br>
+														</div>
+													</div>
+													<%
+													}
+													}
+													%>
+
+												</div>
+												<!-- Brands Slider Navigation -->
+												<!-- <div class="brands_nav brands_prev"><i></i></div>
+                                                        <div class="brands_nav brands_next"><i></i></div> -->
+											</div>
+											<!-- </div>
+                                            </div> -->
+										</div>
+									</div>
+								</div>
+							</nav>
+							<br>
+
+						</div>
+					</div>
+
+
+					<!-- tuesday -->
+					<div class="tabBox">
+						<div id="grid" class="grid clearfix">
+							<div class="checkbox">
+								<input type="checkbox" value="연재중" name="미정" checked>연재중
+								<input type="checkbox" value="완결" name="미정2">완결
+							</div>
+
+
+							<nav class="best">
+								<strong>지금 ! 베스트</strong><br> <br>
+								<div class="toon_slider_box">
+									<div class="brands">
+										<div class="container">
+											<div class="brands_slider_container">
+												<div class="owl-carousel owl-theme brands_slider">
+
+													<%
+													for (int i = 0; i < 10; i++) {
+													%>
+													<div class="owl-item">
+														<div
+															class="brands_item d-flex flex-column justify-content-center">
+															<a href="https://www.naver.com"><img src="nemo.png"
+																width="120px" height="120px"></a>
+															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+														</div>
+														<div class="info">
+															<strong><%=tuelist.get(i).getWebtitle()%></strong><br>
+															<span><%=tuelist.get(i).getWebwriter()%></span><br>
+														</div>
+													</div>
+													<%
+													}
+													%>
+												</div>
+							</nav>
+							<br>
+
+							<nav class="toon1">
+								<strong>봄툰</strong><span> | BoomToon</span><br> <br>
+								<div class="brands">
+									<div class="container">
+										<div class="brands_slider_container">
+											<div class="owl-carousel owl-theme brands_slider">
+
+												<%
+												for (int i = 0; i < 10; i++) {
+												%>
+												<%
+												if (monlist.get(i).getPlatform().equals("봄툰")) {
+												%>
+												<div class="owl-item">
+													<div
+														class="brands_item d-flex flex-column justify-content-center">
+														<a href="https://www.naver.com"><img src="nemo.png"
+															width="120px" height="120px"></a>
+														<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+													</div>
+													<div class="info">
+														<strong><%=tuelist.get(i).getWebtitle()%></strong><br>
+														<span><%=tuelist.get(i).getWebwriter()%></span><br>
+													</div>
+												</div>
+												<%
+												}
+												}
+												%>
+											</div>
+											<!-- Brands Slider Navigation -->
+											<!-- <div class="brands_nav brands_prev"><i></i></div>
+                                                            <div class="brands_nav brands_next"><i></i></div> -->
+										</div>
+										<!-- </div>
+                                                </div> -->
+									</div>
+								</div>
+
+
+							</nav>
+							<br>
+
+							<nav class="toon2">
+								<strong>탑툰</strong><span> | AToon</span><br> <br>
+								<div class="toon_slider_box">
+									<div class="brands">
+										<div class="container">
+											<div class="brands_slider_container">
+												<div class="owl-carousel owl-theme brands_slider">
+
+													<%
+													for (int i = 0; i < 10; i++) {
+													%>
+													<%
+													if (monlist.get(i).getPlatform().equals("탑툰")) {
+													%>
+													<div class="owl-item">
+														<div
+															class="brands_item d-flex flex-column justify-content-center">
+															<a href="https://www.naver.com"><img src="nemo.png"
+																width="120px" height="120px"></a>
+															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+														</div>
+														<div class="info">
+															<strong><%=tuelist.get(i).getWebtitle()%></strong><br>
+															<span><%=tuelist.get(i).getWebwriter()%></span><br>
+														</div>
+													</div>
+													<%
+													}
+													}
+													%>
+												</div>
+												<!-- Brands Slider Navigation -->
+												<!-- <div class="brands_nav brands_prev"><i></i></div>
+                                                        <div class="brands_nav brands_next"><i></i></div> -->
+											</div>
+											<!-- </div>
+                                            </div> -->
+										</div>
+									</div>
+								</div>
+							</nav>
+							<br>
+
+						</div>
+					</div>
+					<!-- wedsday -->
+					<div class="tabBox">
+						<div id="grid" class="grid clearfix">
+							<div class="checkbox">
+								<input type="checkbox" value="연재중" name="미정" checked>연재중
+								<input type="checkbox" value="완결" name="미정2">완결
+							</div>
+
+
+							<nav class="best">
+								<strong>지금 ! 베스트</strong><br> <br>
+								<div class="toon_slider_box">
+									<div class="brands">
+										<div class="container">
+											<div class="brands_slider_container">
+												<div class="owl-carousel owl-theme brands_slider">
+
+													<%
+													for (int i = 0; i < 10; i++) {
+													%>
+													<div class="owl-item">
+														<div
+															class="brands_item d-flex flex-column justify-content-center">
+															<a href="https://www.naver.com"><img src="nemo.png"
+																width="120px" height="120px"></a>
+															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+														</div>
+														<div class="info">
+															<strong><%=wedlist.get(i).getWebtitle()%></strong><br>
+															<span><%=wedlist.get(i).getWebwriter()%></span><br>
+														</div>
+													</div>
+													<%
+													}
+													%>
+												</div>
+							</nav>
+							<br>
+
+							<nav class="toon1">
+								<strong>봄툰</strong><span> | BoomToon</span><br> <br>
+								<div class="brands">
+									<div class="container">
+										<div class="brands_slider_container">
+											<div class="owl-carousel owl-theme brands_slider">
+
+												<%
+												for (int i = 0; i < 10; i++) {
+												%>
+												<%
+												if (wedlist.get(i).getPlatform().equals("봄툰")) {
+												%>
+												<div class="owl-item">
+													<div
+														class="brands_item d-flex flex-column justify-content-center">
+														<a href="https://www.naver.com"><img src="nemo.png"
+															width="120px" height="120px"></a>
+														<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+													</div>
+													<div class="info">
+														<strong><%=wedlist.get(i).getWebtitle()%></strong><br>
+														<span><%=wedlist.get(i).getWebwriter()%></span><br>
+													</div>
+												</div>
+												<%
+												}
+												}
+												%>
+											</div>
+											<!-- Brands Slider Navigation -->
+											<!-- <div class="brands_nav brands_prev"><i></i></div>
+                                                            <div class="brands_nav brands_next"><i></i></div> -->
+										</div>
+										<!-- </div>
+                                                </div> -->
+									</div>
+								</div>
+
+
+							</nav>
+							<br>
+
+							<nav class="toon2">
+								<strong>탑툰</strong><span> | AToon</span><br> <br>
+								<div class="toon_slider_box">
+									<div class="brands">
+										<div class="container">
+											<div class="brands_slider_container">
+												<div class="owl-carousel owl-theme brands_slider">
+													<%
+													for (int i = 0; i < 10; i++) {
+													%>
+													<%
+													if (wedlist.get(i).getPlatform().equals("탑툰")) {
+													%>
+													<div class="owl-item">
+														<div
+															class="brands_item d-flex flex-column justify-content-center">
+															<a href="https://www.naver.com"><img src="nemo.png"
+																width="120px" height="120px"></a>
+															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+														</div>
+														<div class="info">
+															<strong><%=wedlist.get(i).getWebtitle()%></strong><br>
+															<span><%=wedlist.get(i).getWebwriter()%></span><br>
+														</div>
+													</div>
+													<%
+													}
+													}
+													%>
+												</div>
+												<!-- Brands Slider Navigation -->
+												<!-- <div class="brands_nav brands_prev"><i></i></div>
+                                                        <div class="brands_nav brands_next"><i></i></div> -->
+											</div>
+											<!-- </div>
+                                            </div> -->
+										</div>
+									</div>
+								</div>
+							</nav>
+							<br>
+
+						</div>
+					</div>
+
+					<!-- thursday -->
+					<div class="tabBox">
+						<div id="grid" class="grid clearfix">
+							<div class="checkbox">
+								<input type="checkbox" value="연재중" name="미정" checked>연재중
+								<input type="checkbox" value="완결" name="미정2">완결
+							</div>
+							<nav class="best">
+								<strong>지금 ! 베스트</strong><br> <br>
+								<div class="toon_slider_box">
+									<div class="brands">
+										<div class="container">
+											<div class="brands_slider_container">
+												<div class="owl-carousel owl-theme brands_slider">
+
+
+													<%
+													for (int i = 0; i < 10; i++) {
+													%>
+													<div class="owl-item">
+														<div
+															class="brands_item d-flex flex-column justify-content-center">
+															<a href="https://www.naver.com"><img src="nemo.png"
+																width="120px" height="120px"></a>
+															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+														</div>
+														<div class="info">
+															<strong><%=thulist.get(i).getWebtitle()%></strong><br>
+															<span><%=thulist.get(i).getWebwriter()%></span><br>
+														</div>
+													</div>
+													<%
+													}
+													%>
+												</div>
+							</nav>
+							<br>
+
+							<nav class="toon1">
+								<strong>봄툰</strong><span> | BoomToon</span><br> <br>
+								<div class="brands">
+									<div class="container">
+										<div class="brands_slider_container">
+											<div class="owl-carousel owl-theme brands_slider">
+
+												<%
+												for (int i = 0; i < 10; i++) {
+												%>
+												<%
+												if (thulist.get(i).getPlatform().equals("봄툰")) {
+												%>
+												<div class="owl-item">
+													<div
+														class="brands_item d-flex flex-column justify-content-center">
+														<a href="https://www.naver.com"><img src="nemo.png"
+															width="120px" height="120px"></a>
+														<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+													</div>
+													<div class="info">
+														<strong><%=thulist.get(i).getWebtitle()%></strong><br>
+														<span><%=thulist.get(i).getWebwriter()%></span><br>
+													</div>
+												</div>
+												<%
+												}
+												}
+												%>
+											</div>
+											<!-- Brands Slider Navigation -->
+											<!-- <div class="brands_nav brands_prev"><i></i></div>
+                                                            <div class="brands_nav brands_next"><i></i></div> -->
+										</div>
+										<!-- </div>
+                                                </div> -->
+									</div>
+								</div>
+
+
+							</nav>
+							<br>
+
+							<nav class="toon2">
+								<strong>탑툰</strong><span> | AToon</span><br> <br>
+								<div class="toon_slider_box">
+									<div class="brands">
+										<div class="container">
+											<div class="brands_slider_container">
+												<div class="owl-carousel owl-theme brands_slider">
+													<%
+													for (int i = 0; i < 10; i++) {
+													%>
+													<%
+													if (thulist.get(i).getPlatform().equals("탑툰")) {
+													%>
+													<div class="owl-item">
+														<div
+															class="brands_item d-flex flex-column justify-content-center">
+															<a href="https://www.naver.com"><img src="nemo.png"
+																width="120px" height="120px"></a>
+															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+														</div>
+														<div class="info">
+															<strong><%=thulist.get(i).getWebtitle()%></strong><br>
+															<span><%=thulist.get(i).getWebwriter()%></span><br>
+														</div>
+													</div>
+													<%
+													}
+													}
+													%>
+												</div>
+												<!-- Brands Slider Navigation -->
+												<!-- <div class="brands_nav brands_prev"><i></i></div>
+                                                        <div class="brands_nav brands_next"><i></i></div> -->
+											</div>
+											<!-- </div>
+                                            </div> -->
+										</div>
+									</div>
+								</div>
+							</nav>
+							<br>
+
+						</div>
+					</div>
+
+					<!-- fri -->
+					<div class="tabBox">
+						<div id="grid" class="grid clearfix">
+							<div class="checkbox">
+								<input type="checkbox" value="연재중" name="미정" checked>연재중
+								<input type="checkbox" value="완결" name="미정2">완결
+							</div>
+							<nav class="best">
+								<strong>지금 ! 베스트</strong><br> <br>
+								<div class="toon_slider_box">
+									<div class="brands">
+										<div class="container">
+											<div class="brands_slider_container">
+												<div class="owl-carousel owl-theme brands_slider">
+
+
+													<%
+													for (int i = 0; i < 10; i++) {
+													%>
+													<div class="owl-item">
+														<div
+															class="brands_item d-flex flex-column justify-content-center">
+															<a href="https://www.naver.com"><img src="nemo.png"
+																width="120px" height="120px"></a>
+															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+														</div>
+														<div class="info">
+															<strong><%=frilist.get(i).getWebtitle()%></strong><br>
+															<span><%=frilist.get(i).getWebwriter()%></span><br>
+														</div>
+													</div>
+													<%
+													}
+													%>
+												</div>
+							</nav>
+							<br>
+
+							<nav class="toon1">
+								<strong>봄툰</strong><span> | BoomToon</span><br> <br>
+								<div class="brands">
+									<div class="container">
+										<div class="brands_slider_container">
+											<div class="owl-carousel owl-theme brands_slider">
+
+												<%
+												for (int i = 0; i < 10; i++) {
+												%>
+												<%
+												if (frilist.get(i).getPlatform().equals("봄툰")) {
+												%>
+												<div class="owl-item">
+													<div
+														class="brands_item d-flex flex-column justify-content-center">
+														<a href="https://www.naver.com"><img src="nemo.png"
+															width="120px" height="120px"></a>
+														<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+													</div>
+													<div class="info">
+														<strong><%=frilist.get(i).getWebtitle()%></strong><br>
+														<span><%=frilist.get(i).getWebwriter()%></span><br>
+													</div>
+												</div>
+												<%
+												}
+												}
+												%>
+											</div>
+											<!-- Brands Slider Navigation -->
+											<!-- <div class="brands_nav brands_prev"><i></i></div>
+                                                            <div class="brands_nav brands_next"><i></i></div> -->
+										</div>
+										<!-- </div>
+                                                </div> -->
+									</div>
+								</div>
+
+
+							</nav>
+							<br>
+
+							<nav class="toon2">
+								<strong>탑툰</strong><span> | AToon</span><br> <br>
+								<div class="toon_slider_box">
+									<div class="brands">
+										<div class="container">
+											<div class="brands_slider_container">
+												<div class="owl-carousel owl-theme brands_slider">
+													<%
+													for (int i = 0; i < 10; i++) {
+													%>
+													<%
+													if (frilist.get(i).getPlatform().equals("탑툰")) {
+													%>
+													<div class="owl-item">
+														<div
+															class="brands_item d-flex flex-column justify-content-center">
+															<a href="https://www.naver.com"><img src="nemo.png"
+																width="120px" height="120px"></a>
+															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+														</div>
+														<div class="info">
+															<strong><%=frilist.get(i).getWebtitle()%></strong><br>
+															<span><%=frilist.get(i).getWebwriter()%></span><br>
+														</div>
+													</div>
+													<%
+													}
+													}
+													%>
+												</div>
+												<!-- Brands Slider Navigation -->
+												<!-- <div class="brands_nav brands_prev"><i></i></div>
+                                                        <div class="brands_nav brands_next"><i></i></div> -->
+											</div>
+											<!-- </div>
+                                            </div> -->
+										</div>
+									</div>
+								</div>
+							</nav>
+							<br>
+
+						</div>
+					</div>
+					
+					<!-- sat -->
+					<div class="tabBox">
+						<div id="grid" class="grid clearfix">
+							<div class="checkbox">
+								<input type="checkbox" value="연재중" name="미정" checked>연재중
+								<input type="checkbox" value="완결" name="미정2">완결
+							</div>
+
+
+							<nav class="best">
+								<strong>지금 ! 베스트</strong><br> <br>
+								<div class="toon_slider_box">
+									<div class="brands">
+										<div class="container">
+											<div class="brands_slider_container">
+												<div class="owl-carousel owl-theme brands_slider">
+												
+															<%
+													for (int i = 0; i < 10; i++) {
+													%>
+													<div class="owl-item">
+														<div
+															class="brands_item d-flex flex-column justify-content-center">
+															<a href="https://www.naver.com"><img src="nemo.png"
+																width="120px" height="120px"></a>
+															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+														</div>
+														<div class="info">
+															<strong><%=satlist.get(i).getWebtitle()%></strong><br>
+															<span><%=satlist.get(i).getWebwriter()%></span><br>
+														</div>
+													</div>
+													<%
+													}
+													%>
+												</div>
 							</nav> 
 							<br> 
 
@@ -137,54 +782,26 @@ body {
 									<div class="container">
 										<div class="brands_slider_container">
 											<div class="owl-carousel owl-theme brands_slider">
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
+										
+													<%
+													for (int i = 0; i < 10; i++) {
+													%>
+														<% if(satlist.get(i).getPlatform().equals("봄툰")){ %>
+													<div class="owl-item">
+														<div
+															class="brands_item d-flex flex-column justify-content-center">
+															<a href="https://www.naver.com"><img src="nemo.png"
+																width="120px" height="120px"></a>
+															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+														</div>
+														<div class="info">
+															<strong><%=satlist.get(i).getWebtitle()%></strong><br>
+															<span><%=satlist.get(i).getWebwriter()%></span><br>
+														</div>
 													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
+													<%
+													}}
+													%>
 											</div>
 											<!-- Brands Slider Navigation -->
 											<!-- <div class="brands_nav brands_prev"><i></i></div>
@@ -206,75 +823,25 @@ body {
 										<div class="container">
 											<div class="brands_slider_container">
 												<div class="owl-carousel owl-theme brands_slider">
+													<%
+													for (int i = 0; i < 10; i++) {
+													%>
+														<% if(satlist.get(i).getPlatform().equals("탑툰")){ %>
 													<div class="owl-item">
 														<div
 															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
+															<a href="https://www.naver.com"><img src="nemo.png"
+																width="120px" height="120px"></a>
+															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 														</div>
 														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
+															<strong><%=satlist.get(i).getWebtitle()%></strong><br>
+															<span><%=satlist.get(i).getWebwriter()%></span><br>
 														</div>
 													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
+													<%
+													}}
+													%>
 												</div>
 												<!-- Brands Slider Navigation -->
 												<!-- <div class="brands_nav brands_prev"><i></i></div>
@@ -292,15 +859,13 @@ body {
 					</div>
 					
 					
-					
+					<!-- sun -->
 					<div class="tabBox">
 						<div id="grid" class="grid clearfix">
 							<div class="checkbox">
 								<input type="checkbox" value="연재중" name="미정" checked>연재중
 								<input type="checkbox" value="완결" name="미정2">완결
 							</div>
-
-
 							<nav class="best">
 								<strong>지금 ! 베스트</strong><br> <br>
 								<div class="toon_slider_box">
@@ -308,6 +873,10 @@ body {
 										<div class="container">
 											<div class="brands_slider_container">
 												<div class="owl-carousel owl-theme brands_slider">
+												
+														<%
+													for (int i = 0; i < 10; i++) {
+													%>
 													<div class="owl-item">
 														<div
 															class="brands_item d-flex flex-column justify-content-center">
@@ -316,84 +885,16 @@ body {
 															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 														</div>
 														<div class="info">
-															<strong>제목111</strong><br> <span>작가 이름</span><br>
+															<strong><%=sunlist.get(i).getWebtitle()%></strong><br>
+															<span><%=sunlist.get(i).getWebwriter()%></span><br>
 														</div>
 													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
+													<%
+													}
+													%>
 												</div>
-												<!-- Brands Slider Navigation -->
-												<!-- <div class="brands_nav brands_prev"><i></i></div>
-                                                        <div class="brands_nav brands_next"><i></i></div> -->
-											</div>
-											<!-- </div>
-                                            </div> -->
-										</div>
-									</div>
-								</div>
-							</nav>
-							<br>
+							</nav> 
+							<br> 
 
 							<nav class="toon1">
 								<strong>봄툰</strong><span> | BoomToon</span><br> <br>
@@ -401,54 +902,26 @@ body {
 									<div class="container">
 										<div class="brands_slider_container">
 											<div class="owl-carousel owl-theme brands_slider">
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
+										
+													<%
+													for (int i = 0; i < 10; i++) {
+													%>
+														<% if(sunlist.get(i).getPlatform().equals("봄툰")){ %>
+													<div class="owl-item">
+														<div
+															class="brands_item d-flex flex-column justify-content-center">
+															<a href="https://www.naver.com"><img src="nemo.png"
+																width="120px" height="120px"></a>
+															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+														</div>
+														<div class="info">
+															<strong><%=sunlist.get(i).getWebtitle()%></strong><br>
+															<span><%=sunlist.get(i).getWebwriter()%></span><br>
+														</div>
 													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
+													<%
+													}}
+													%>
 											</div>
 											<!-- Brands Slider Navigation -->
 											<!-- <div class="brands_nav brands_prev"><i></i></div>
@@ -470,105 +943,10 @@ body {
 										<div class="container">
 											<div class="brands_slider_container">
 												<div class="owl-carousel owl-theme brands_slider">
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-												</div>
-												<!-- Brands Slider Navigation -->
-												<!-- <div class="brands_nav brands_prev"><i></i></div>
-                                                        <div class="brands_nav brands_next"><i></i></div> -->
-											</div>
-											<!-- </div>
-                                            </div> -->
-										</div>
-									</div>
-								</div>
-							</nav>
-							<br>
-
-						</div>
-					</div>
-					<div class="tabBox">
-						<div id="grid" class="grid clearfix">
-							<div class="checkbox">
-								<input type="checkbox" value="연재중" name="미정" checked>연재중
-								<input type="checkbox" value="완결" name="미정2">완결
-							</div>
-
-
-							<nav class="best">
-								<strong>지금 ! 베스트</strong><br> <br>
-								<div class="toon_slider_box">
-									<div class="brands">
-										<div class="container">
-											<div class="brands_slider_container">
-												<div class="owl-carousel owl-theme brands_slider">
+													<%
+													for (int i = 0; i < 10; i++) {
+													%>
+														<% if(sunlist.get(i).getPlatform().equals("탑툰")){ %>
 													<div class="owl-item">
 														<div
 															class="brands_item d-flex flex-column justify-content-center">
@@ -577,1273 +955,15 @@ body {
 															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 														</div>
 														<div class="info">
-															<strong>제목111</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-												</div>
-												<!-- Brands Slider Navigation -->
-												<!-- <div class="brands_nav brands_prev"><i></i></div>
-                                                        <div class="brands_nav brands_next"><i></i></div> -->
-											</div>
-											<!-- </div>
-                                            </div> -->
-										</div>
-									</div>
-								</div>
-							</nav>
-							<br>
-
-							<nav class="toon1">
-								<strong>봄툰</strong><span> | BoomToon</span><br> <br>
-								<div class="brands">
-									<div class="container">
-										<div class="brands_slider_container">
-											<div class="owl-carousel owl-theme brands_slider">
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-											</div>
-											<!-- Brands Slider Navigation -->
-											<!-- <div class="brands_nav brands_prev"><i></i></div>
-                                                            <div class="brands_nav brands_next"><i></i></div> -->
-										</div>
-										<!-- </div>
-                                                </div> -->
-									</div>
-								</div>
-
-
-							</nav>
-							<br>
-
-							<nav class="toon2">
-								<strong>탑툰</strong><span> | AToon</span><br> <br>
-								<div class="toon_slider_box">
-									<div class="brands">
-										<div class="container">
-											<div class="brands_slider_container">
-												<div class="owl-carousel owl-theme brands_slider">
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-												</div>
-												<!-- Brands Slider Navigation -->
-												<!-- <div class="brands_nav brands_prev"><i></i></div>
-                                                        <div class="brands_nav brands_next"><i></i></div> -->
-											</div>
-											<!-- </div>
-                                            </div> -->
-										</div>
-									</div>
-								</div>
-							</nav>
-							<br>
-
-						</div>
-					</div>
-					<div class="tabBox">
-						<div id="grid" class="grid clearfix">
-							<div class="checkbox">
-								<input type="checkbox" value="연재중" name="미정" checked>연재중
-								<input type="checkbox" value="완결" name="미정2">완결
-							</div>
-
-
-							<nav class="best">
-								<strong>지금 ! 베스트</strong><br> <br>
-								<div class="toon_slider_box">
-									<div class="brands">
-										<div class="container">
-											<div class="brands_slider_container">
-												<div class="owl-carousel owl-theme brands_slider">
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com"><img src="nemo.png"
-																width="120px" height="120px"></a>
-															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
-														</div>
-														<div class="info">
-															<strong>제목111</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-												</div>
-												<!-- Brands Slider Navigation -->
-												<!-- <div class="brands_nav brands_prev"><i></i></div>
-                                                        <div class="brands_nav brands_next"><i></i></div> -->
-											</div>
-											<!-- </div>
-                                            </div> -->
-										</div>
-									</div>
-								</div>
-							</nav>
-							<br>
-
-							<nav class="toon1">
-								<strong>봄툰</strong><span> | BoomToon</span><br> <br>
-								<div class="brands">
-									<div class="container">
-										<div class="brands_slider_container">
-											<div class="owl-carousel owl-theme brands_slider">
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-											</div>
-											<!-- Brands Slider Navigation -->
-											<!-- <div class="brands_nav brands_prev"><i></i></div>
-                                                            <div class="brands_nav brands_next"><i></i></div> -->
-										</div>
-										<!-- </div>
-                                                </div> -->
-									</div>
-								</div>
-
-
-							</nav>
-							<br>
-
-							<nav class="toon2">
-								<strong>탑툰</strong><span> | AToon</span><br> <br>
-								<div class="toon_slider_box">
-									<div class="brands">
-										<div class="container">
-											<div class="brands_slider_container">
-												<div class="owl-carousel owl-theme brands_slider">
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-												</div>
-												<!-- Brands Slider Navigation -->
-												<!-- <div class="brands_nav brands_prev"><i></i></div>
-                                                        <div class="brands_nav brands_next"><i></i></div> -->
-											</div>
-											<!-- </div>
-                                            </div> -->
-										</div>
-									</div>
-								</div>
-							</nav>
-							<br>
-
-						</div>
-					</div>
-					<div class="tabBox">
-						<div id="grid" class="grid clearfix">
-							<div class="checkbox">
-								<input type="checkbox" value="연재중" name="미정" checked>연재중
-								<input type="checkbox" value="완결" name="미정2">완결
-							</div>
-
-
-							<nav class="best">
-								<strong>지금 ! 베스트</strong><br> <br>
-								<div class="toon_slider_box">
-									<div class="brands">
-										<div class="container">
-											<div class="brands_slider_container">
-												<div class="owl-carousel owl-theme brands_slider">
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com"><img src="nemo.png"
-																width="120px" height="120px"></a>
-															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
-														</div>
-														<div class="info">
-															<strong>제목111</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-												</div>
-												<!-- Brands Slider Navigation -->
-												<!-- <div class="brands_nav brands_prev"><i></i></div>
-                                                        <div class="brands_nav brands_next"><i></i></div> -->
-											</div>
-											<!-- </div>
-                                            </div> -->
-										</div>
-									</div>
-								</div>
-							</nav>
-							<br>
-
-							<nav class="toon1">
-								<strong>봄툰</strong><span> | BoomToon</span><br> <br>
-								<div class="brands">
-									<div class="container">
-										<div class="brands_slider_container">
-											<div class="owl-carousel owl-theme brands_slider">
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-											</div>
-											<!-- Brands Slider Navigation -->
-											<!-- <div class="brands_nav brands_prev"><i></i></div>
-                                                            <div class="brands_nav brands_next"><i></i></div> -->
-										</div>
-										<!-- </div>
-                                                </div> -->
-									</div>
-								</div>
-
-
-							</nav>
-							<br>
-
-							<nav class="toon2">
-								<strong>탑툰</strong><span> | AToon</span><br> <br>
-								<div class="toon_slider_box">
-									<div class="brands">
-										<div class="container">
-											<div class="brands_slider_container">
-												<div class="owl-carousel owl-theme brands_slider">
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-												</div>
-												<!-- Brands Slider Navigation -->
-												<!-- <div class="brands_nav brands_prev"><i></i></div>
-                                                        <div class="brands_nav brands_next"><i></i></div> -->
-											</div>
-											<!-- </div>
-                                            </div> -->
-										</div>
-									</div>
-								</div>
-							</nav>
-							<br>
-
-						</div>
-					</div>
-					<div class="tabBox">
-						<div id="grid" class="grid clearfix">
-							<div class="checkbox">
-								<input type="checkbox" value="연재중" name="미정" checked>연재중
-								<input type="checkbox" value="완결" name="미정2">완결
-							</div>
-
-
-							<nav class="best">
-								<strong>지금 ! 베스트</strong><br> <br>
-								<div class="toon_slider_box">
-									<div class="brands">
-										<div class="container">
-											<div class="brands_slider_container">
-												<div class="owl-carousel owl-theme brands_slider">
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com"><img src="nemo.png"
-																width="120px" height="120px"></a>
-															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
-														</div>
-														<div class="info">
-															<strong>제목111</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-												</div>
-												<!-- Brands Slider Navigation -->
-												<!-- <div class="brands_nav brands_prev"><i></i></div>
-                                                        <div class="brands_nav brands_next"><i></i></div> -->
-											</div>
-											<!-- </div>
-                                            </div> -->
-										</div>
-									</div>
-								</div>
-							</nav>
-							<br>
-
-							<nav class="toon1">
-								<strong>봄툰</strong><span> | BoomToon</span><br> <br>
-								<div class="brands">
-									<div class="container">
-										<div class="brands_slider_container">
-											<div class="owl-carousel owl-theme brands_slider">
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-											</div>
-											<!-- Brands Slider Navigation -->
-											<!-- <div class="brands_nav brands_prev"><i></i></div>
-                                                            <div class="brands_nav brands_next"><i></i></div> -->
-										</div>
-										<!-- </div>
-                                                </div> -->
-									</div>
-								</div>
-
-
-							</nav>
-							<br>
-
-							<nav class="toon2">
-								<strong>탑툰</strong><span> | AToon</span><br> <br>
-								<div class="toon_slider_box">
-									<div class="brands">
-										<div class="container">
-											<div class="brands_slider_container">
-												<div class="owl-carousel owl-theme brands_slider">
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-												</div>
-												<!-- Brands Slider Navigation -->
-												<!-- <div class="brands_nav brands_prev"><i></i></div>
-                                                        <div class="brands_nav brands_next"><i></i></div> -->
-											</div>
-											<!-- </div>
-                                            </div> -->
-										</div>
-									</div>
-								</div>
-							</nav>
-							<br>
-
-						</div>
-					</div>
-					<div class="tabBox">
-						<div id="grid" class="grid clearfix">
-							<div class="checkbox">
-								<input type="checkbox" value="연재중" name="미정" checked>연재중
-								<input type="checkbox" value="완결" name="미정2">완결
-							</div>
-
-
-							<nav class="best">
-								<strong>지금 ! 베스트</strong><br> <br>
-								<div class="toon_slider_box">
-									<div class="brands">
-										<div class="container">
-											<div class="brands_slider_container">
-												<div class="owl-carousel owl-theme brands_slider">
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com"><img src="nemo.png"
-																width="120px" height="120px"></a>
-															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
-														</div>
-														<div class="info">
-															<strong>제목111</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-												</div>
-												<!-- Brands Slider Navigation -->
-												<!-- <div class="brands_nav brands_prev"><i></i></div>
-                                                        <div class="brands_nav brands_next"><i></i></div> -->
-											</div>
-											<!-- </div>
-                                            </div> -->
-										</div>
-									</div>
-								</div>
-							</nav>
-							<br>
-
-							<nav class="toon1">
-								<strong>봄툰</strong><span> | BoomToon</span><br> <br>
-								<div class="brands">
-									<div class="container">
-										<div class="brands_slider_container">
-											<div class="owl-carousel owl-theme brands_slider">
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-												<div class="owl-item">
-													<div
-														class="brands_item d-flex flex-column justify-content-center">
-														<img src="nemo.png" width="120px" height="120px"">
-													</div>
-												</div>
-											</div>
-											<!-- Brands Slider Navigation -->
-											<!-- <div class="brands_nav brands_prev"><i></i></div>
-                                                            <div class="brands_nav brands_next"><i></i></div> -->
-										</div>
-										<!-- </div>
-                                                </div> -->
-									</div>
-								</div>
-
-
-							</nav>
-							<br>
-
-							<nav class="toon2">
-								<strong>탑툰</strong><span> | AToon</span><br> <br>
-								<div class="toon_slider_box">
-									<div class="brands">
-										<div class="container">
-											<div class="brands_slider_container">
-												<div class="owl-carousel owl-theme brands_slider">
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<img src="nemo.png" width="120px" height="120px"">
-														</div>
-														<div class="info">
-															<strong>제목</strong><br> <span>작가 이름</span><br>
-														</div>
-													</div>
+															<strong><%=sunlist.get(i).getWebtitle()%></strong><br>
+															<span><%=sunlist.get(i).getWebwriter()%></span><br>
+														</div>
+													</div>
+													<%
+													}}
+													%>
+													
+													
 												</div>
 											</div>
 											<!-- </div>
