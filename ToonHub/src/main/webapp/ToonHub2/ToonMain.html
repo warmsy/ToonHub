@@ -3,7 +3,7 @@
 <head>
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<title>Snippet - BBBootstrap</title>
+<title>ToonHub MainPage</title>
 <link
 	href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css'
 	rel='stylesheet'>
@@ -28,7 +28,9 @@
 body {
 	background: #eee;
 }
-
+.on row{
+    color:#42C690;
+}
 </style>
 </head>
 <body oncontextmenu='return false' class='snippet-body skin-3'>
@@ -51,25 +53,26 @@ body {
 					<!--디폴트로 toonhub 가 들어와있도록 하는방법 물어보기 ! -->
                     <div class="codrops-menu">
                         <strong><a href="#" style = "color: #42C690">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="Community.html">커뮤니티</a></strong> <!-- 맨위 상단-->
+                        <a href="Search.html"><img src="/img/search.png" style="width:4%; height:4%; float: right; margin-right: 6%;"></a>
                     </div>
                     <br><br>
 				</header>
 					
 				<div id="wrap">
                     <ul class="codrops-demos">
-						<a href="#" style="color:#42C690"> 요일별 </a>
+						<a href="ToonMain.html" style="color:#42C690"> 요일별 </a>
 						<a href="#"> 장르 </a>
-						<a href="#"> 플랫폼 </a>
+						<a href="platform.html"> 플랫폼 </a>
                     </ul>
                     <section class="tabArea">
                         <ul class="week">
-                            <li class="on row"> <a href="#!"><span>월</span></a> </li>
-                            <li class = "row"> <a href="#!"><span>화</span></a> </li>
-                            <li class = "row"> <a href="#!"><span>수</span></a> </li>
-                            <li class = "row"> <a href="#!"><span>목</span></a> </li>
-                            <li class = "row"> <a href="#!"><span>금</span></a> </li>
-                            <li class = "row"> <a href="#!"><span>토</span></a> </li>
-                            <li class = "row"> <a href="#!"><span>일</span></a> </li>
+                            <li class = "row" id = "day1"> <a href="#!"><span>월</span></a> </li>
+                            <li class = "row" id = "day2"> <a href="#!"><span>화</span></a> </li>
+                            <li class = "row" id = "day3"> <a href="#!"><span>수</span></a> </li>
+                            <li class = "row" id = "day4"> <a href="#!"><span>목</span></a> </li>
+                            <li class = "row" id = "day5"> <a href="#!"><span>금</span></a> </li>
+                            <li class = "row" id = "day6"> <a href="#!"><span>토</span></a> </li>
+                            <li class = "row" id = "day0"> <a href="#!"><span>일</span></a> </li>
                         </ul>
                         <div class="tabBox on">
                             <div id="grid" class="grid clearfix">
@@ -1801,32 +1804,30 @@ body {
                                         </div>
                                     </div>
                                 </nav><br>
-            
                             </div>
                         </div>
                     </section>
                 </div>
-                <div class="foot">
+                <br><br><br><br><br><br><br><br><br>
+                <footer class = "foot">
                     <table>
-                        <tl>
                             <td>
                 <a href = "ToonMain.html">
                     <img src = "img/home.png">
                     <span>Home</span></a>
                     </td>
                     <td>
-                <a href = "#">
+                <a href = "bookmarkpage.html">
                     <img src = "img/bookmark.png">
                     <span>북마크</span></a>
                     </td>
                     <td>
-                <a href = "#" >
+                <a href = "Login.html" >
                     <img src = "img/my.png">
                     <span>My페이지</span></a>
                     </td>
-                    </tl>
                     </table>
-                </div>
+                </footer>
                 <script src = "js/jquery-3.6.0.min.js"></script>
                 <script>
                     $(document).ready(function () {
@@ -1907,9 +1908,17 @@ body {
     brandsSlider.trigger('next.owl.carousel');
     });
     }
-    }
+    }});</script>
+    <script>
+        today = new Date()
+        var week = new Array('일', '월', '화', '수', '목', '금', '토');
+        var day = week[today.getDate()];
+        for(let i = 0; i < week.length; i++){
+            if(day == week[i]){
+                document.getElementById('day'+i).className="on row";
+            }
+        }
 
-
-});</script>
+    </script>
 </body>
 </html>

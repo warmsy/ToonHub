@@ -11,9 +11,8 @@ public class WebtoonDAO {
 	PreparedStatement psmt = null;
 	Connection conn = null;
 	ResultSet rs = null;
-	WebtoonDTO toondto = null;
-	ArrayList<WebtoonDTO> Montoon = null;
-
+	ArrayList<WebtoonDTO> monlist = null;
+	WebtoonDTO dto = null;
 	
 	public void conn() {
 		try {
@@ -43,37 +42,37 @@ public class WebtoonDAO {
 		}
 	}
 	
-	
-	public ArrayList<WebtoonDTO> MonToon() {
+	public ArrayList<WebtoonDTO> monday() {
 		conn();
-
-		String sql = "select * from Webtoon where web_day =\'월\' order by web_view";
-		Montoon = new ArrayList<WebtoonDTO> ();	
+		
+		String sql = "select *  from webtoon where web_day =\'월\' order by web_view";
+		monlist = new ArrayList<WebtoonDTO>();
+		
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
-	
-			while(rs.next()) {
-				String webTitle= rs.getString(1);
-				String Genre= rs.getString(2);
+			
+			while (rs.next()) {
+				String webtitle = rs.getString(1);
+				String genre = rs.getString(2);
 				int view = rs.getInt(3);
-				String webWriter = rs.getString(4);
+				String webwriter = rs.getString(4);
 				String platform = rs.getString(5);
-				String day = rs.getString(6);
+				String webday = rs.getString(6);
 				String story = rs.getString(7);
-				String webFile = rs.getString(8);
-				String address = rs.getString(9);
+				String webfile = rs.getString(8);
+				String address= rs.getString(9);
 				String state = rs.getString(10);
-				// 파일 추가하기
-			 new WebtoonDTO(webTitle, Genre, view, webWriter, platform, day, story, webFile, address, state);		
-			 Montoon.add(toondto);
-			}
-		
+				
+				dto = new WebtoonDTO(webtitle, genre, view, webwriter, platform, webday, story, webfile, address, state);
+				monlist.add(dto);
+			};
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {close();}
-		return Montoon;
+		return monlist;
 	}
+	
 	
 	
 	

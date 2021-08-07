@@ -2,54 +2,35 @@ package model;
 
 public class WebtoonDTO {
 	
-	private String WebTitle;
+	private String webtitle;
 	private String genre;
-	private int View;
-	private String WebWriter;
-	private String Platform;
-	private String WebDay;
-	private String Story;
-	private String WebFile;
-	private String Address;
-	private String State;
-	
-	public WebtoonDTO(String webTitle, String genre, int view, String webWriter, String platform, String webDay,
-			String story, String webFile, String address, String state) {
+	private int view;
+	private String webwriter;
+	private String platform;
+	private String webday;
+	private String story;
+	private String webfile;
+	private String address;
+	private String state;
+	public WebtoonDTO(String webtitle, String genre, int view, String webwriter, String platform, String webday,
+			String story, String webfile, String address, String state) {
 		super();
-		this.WebTitle = webTitle;
+		this.webtitle = webtitle;
 		this.genre = genre;
-		this.View = view;
-		this.WebWriter = webWriter;
-		this.Platform = platform;
-		this.WebDay = webDay;
-		this.Story = story;
-		this.WebFile = webFile;
-		this.Address = address;
-		this.State = state;
+		this.view = view;
+		this.webwriter = webwriter;
+		this.platform = platform;
+		this.webday = webday;
+		this.story = story;
+		this.webfile = webfile;
+		this.address = address;
+		this.state = state;
 	}
-
-
-	public WebtoonDTO(String webTitle, int view, String webWriter, String platform, String webFile, String state) {
-		super();
-		this.WebTitle = webTitle;
-		this.View = view;
-		this.WebWriter = webWriter;
-		this.Platform = platform;
-		this.WebFile = webFile;
-		this.State = state;
+	public String getWebtitle() {
+		return webtitle;
 	}
-
-
-
-
-
-
-
-	public String getWebTitle() {
-		return WebTitle;
-	}
-	public void setWebTitle(String webTitle) {
-		WebTitle = webTitle;
+	public void setWebtitle(String webtitle) {
+		this.webtitle = webtitle;
 	}
 	public String getGenre() {
 		return genre;
@@ -58,54 +39,57 @@ public class WebtoonDTO {
 		this.genre = genre;
 	}
 	public int getView() {
-		return View;
+		return view;
 	}
 	public void setView(int view) {
-		View = view;
+		this.view = view;
 	}
-	public String getWebWriter() {
-		return WebWriter;
+	public String getWebwriter() {
+		return webwriter;
 	}
-	public void setWebWriter(String webWriter) {
-		WebWriter = webWriter;
+	public void setWebwriter(String webwriter) {
+		this.webwriter = webwriter;
 	}
 	public String getPlatform() {
-		return Platform;
+		return platform;
 	}
 	public void setPlatform(String platform) {
-		Platform = platform;
+		this.platform = platform;
 	}
-	public String getWebDay() {
-		return WebDay;
+	public String getWebday() {
+		return webday;
 	}
-	public void setWebDay(String webDay) {
-		WebDay = webDay;
+	public void setWebday(String webday) {
+		this.webday = webday;
 	}
 	public String getStory() {
-		return Story;
+		return story;
 	}
 	public void setStory(String story) {
-		Story = story;
+		this.story = story;
 	}
-	public String getWebFile() {
-		return WebFile;
+	public String getWebfile() {
+		return webfile;
 	}
-	public void setWebFile(String webFile) {
-		WebFile = webFile;
+	public void setWebfile(String webfile) {
+		this.webfile = webfile;
 	}
 	public String getAddress() {
-		return Address;
+		return address;
 	}
 	public void setAddress(String address) {
-		Address = address;
+		this.address = address;
 	}
 	public String getState() {
-		return State;
+		return state;
 	}
 	public void setState(String state) {
-		State = state;
+		this.state = state;
 	}
-
+	
+	
+	
+	
 	
 	
 }

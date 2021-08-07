@@ -44,8 +44,33 @@ body {
     display: inline;
     float:right;
 }
-
-
+.items{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    float:left;
+    margin-left: 6%;
+}
+.item_list{
+    width: 100px;
+    height: 100px;
+    background-color: #42C690;
+    float: left;
+    margin:10px 0;
+}
+.item_list img{
+    width:100px;
+    height:100px;
+}
+.info{
+    margin-top:10px;
+}
+hr{
+    width:84%;
+    margin-left: 0;
+    margin-top:2px;
+    margin-bottom:2px;
+}
 </style>
 </head>
 <body oncontextmenu='return false' class='snippet-body skin-3'>
@@ -73,37 +98,112 @@ body {
 				</header>
 					
 				<div id="wrap">
-                    <ul class="codrops-demos">
-						<a href="#" style="color:#42C690"> 요일별 </a>
+                    <ul class="codrops-head">
+						<a href="ToonMain.html" style="color:#42C690"> 요일별 </a>
 						<a href="#"> 장르 </a>
-						<a href="#"> 플랫폼 </a>
+						<a href="platform.html"> 플랫폼 </a>
                     </ul>
                 </div>
 
-                <div class ="platform">
-                    <table class="toonname">
-                    <ul><strong style="font-size: 20px;">봄툰</strong> <span>|</span><span>Boomtoon</span>
-                    <div class = "viewall">
-                        <a href="">전체보기</a>
-                    </div>
-                    </ul>
-                    </table>
-
-                    <table class="toonname">
-                    <ul><strong style="font-size: 20px;">탑툰</strong> <span>|</span><span>toptoon</span>
-                    <div class = "viewall">
-                        <a href="">전체보기</a>
-                    </div>
-                    </ul>
-                    </table>
-
-
-                
+                <div class ="bookmark_all" style="color: #616161;">
+                    <div class = "cont_head">
+                        <div class = "cont_header">
+                        <strong>추천해요</strong></div>
+                        <div class = "cont_shortcut" style="margin-right: 10%;">
+                        <a href = "Recommand.html" >더보기 ></a>
+                        </div>
+                        </div>
+                        <div class="items" >
+                            <div >
+                                <a href="detail.html">
+                                    <div class = "item_list">
+                                        <img src="nemo.png">
+                                    </div>
+                                    <div class = "info " style = "color: #616161!important";>
+                                        <strong>제목</strong><br>
+                                        <span>작가 이름</span><br>
+                                    </div>
+                                </a>
+                            </div>
+                            <hr>                            
+                            <div>
+                                <a href="detail.html">
+                                    <div class = "item_list">
+                                        <img src="nemo.png">
+                                    </div>
+                                    <div class = "info " style = "color: #616161!important";>
+                                        <strong>제목</strong><br>
+                                        <span>작가 이름</span><br>
+                                    </div>
+                                </a>                                
+                            </div>
+                            <hr>                            
+                            <div>
+                                <a href="detail.html">
+                                    <div class = "item_list">
+                                        <img src="nemo.png">
+                                    </div>
+                                    <div class = "info " style = "color: #616161!important";>
+                                        <strong>제목</strong><br>
+                                        <span>작가 이름</span><br>
+                                    </div>
+                                </a>   
+                            </div>
+                            <hr>                            
+                            <div>
+                                <a href="detail.html">
+                                    <div class = "item_list">
+                                        <img src="nemo.png">
+                                    </div>
+                                    <div class = "info " style = "color: #616161!important";>
+                                        <strong>제목</strong><br>
+                                        <span>작가 이름</span><br>
+                                    </div>
+                                </a>   
+                            </div>                            
+                            <hr>                            
+                            <div>
+                                <a href="detail.html">
+                                    <div class = "item_list">
+                                        <img src="nemo.png">
+                                    </div>
+                                    <div class = "info " style = "color: #616161!important";>
+                                        <strong>제목</strong><br>
+                                        <span>작가 이름</span><br>
+                                    </div>
+                                </a>   
+                            </div>                           
+                            <hr>                            
+                            <div>
+                                <a href="detail.html">
+                                    <div class = "item_list">
+                                        <img src="nemo.png">
+                                    </div>
+                                    <div class = "info " style = "color: #616161!important";>
+                                        <strong>제목</strong><br>
+                                        <span>작가 이름</span><br>
+                                    </div>
+                                </a>   
+                            </div>                           
+                            <hr>                            
+                            <div>
+                                <a href="detail.html">
+                                    <div class = "item_list">
+                                        <img src="nemo.png">
+                                    </div>
+                                    <div class = "info " style = "color: #616161!important";>
+                                        <strong>제목</strong><br>
+                                        <span>작가 이름</span><br>
+                                    </div>
+                                </a>   
+                            </div>
+                            <hr>
+                            </div>
                 </div>
 
 
                 </div>
-                <div class="foot" style="z-index: 1;">
+                <div class="foot">
                     <table>
                         <tl>
                             <td>
@@ -112,12 +212,12 @@ body {
                     <span>Home</span></a>
                     </td>
                     <td>
-                <a href = "#">
+                <a href = "bookmarkpage.html">
                     <img src = "img/bookmark.png">
                     <span>북마크</span></a>
                     </td>
                     <td>
-                <a href = "#" >
+                <a href = "Login.html" >
                     <img src = "img/my.png">
                     <span>My페이지</span></a>
                     </td>

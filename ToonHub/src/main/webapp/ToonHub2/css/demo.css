@@ -18,7 +18,9 @@
 .clearfix {
 	background-color: #eeeeee;
 	width:100%;
-	padding:0px;
+	padding-bottom:5%;
+	margin: 0 30px;
+	overflow: hidden;
 }
 body {
 	background: #2f3238;
@@ -62,6 +64,9 @@ a:hover, a:focus {
 .skin-3 .toon1 {  color: #636363 } /* <-- 여기 바꾸기 !  */
 .skin-3 .toon2 {  color: #636363 } /* <-- 여기 바꾸기 !  */
 .skin-3 .toon3 { color: #636363 } /* <-- 여기 바꾸기 !  */
+
+.skin-3 .detail_info{ color: #4e4e4e } /* <-- 여기 바꾸기 !  */
+
 
 .skin-4 { background: #434d55; color: #eee; }
 .skin-4 a { color: #2fa0ec; }
@@ -377,6 +382,7 @@ h1.b:after {
     left:0;
     text-align: center;
     box-shadow: 0 0 3px rgba(0,0,0, 0.2);
+	z-index: 1;
 }
 .foot a{
 	justify-content: center;
@@ -403,7 +409,7 @@ h1.b:after {
 }
 .cont_header{
 	position : absolute;
-	margin-left : 8%;
+	margin-left : 6%;
 	color : #b3b3b3;
 }
 .cont_shortcut{
@@ -411,6 +417,7 @@ h1.b:after {
 	margin-right: 10%;
 	text-align: right;
 	font-size: 12px;
+	margin-right:6%;
 }
 
 
@@ -424,9 +431,9 @@ ul{
     text-align: center;
 }
 #wrap {
+	position:relative;
     padding: 0 1em 0;
-    width : 100%;
-}
+    width : 100%;}
 .row {
     list-style: none;
     display:inline;
@@ -537,3 +544,125 @@ ul{
 	right: 10px;
 }
 
+
+/* 커뮤니티 글 작성 페이지  */
+input::placeholder{
+	color: #b3b3b3;;
+}
+textarea::placeholder{
+	color: #b3b3b3;;
+}
+.write_title{
+	margin-left: 6%;
+}
+.write_title input{
+	border: none;
+	width:75%;
+	height:30px;
+	outline: none;
+}
+.write_title select{
+	width:17%;
+	height:30px;
+	text-align: center;
+	color: #acacac;
+	font-size: 15px;
+	text-align-last: center;
+	border-radius: 3px;
+	outline: none;
+}
+.write_cont{
+	margin-left:6%;
+}
+.write_cont textarea{
+	border:none;
+	width:94%;
+	height:500px;
+	outline: none;
+	resize: none;
+}
+.cont_shortcut button{
+	height:25px;
+	width: 60px;
+	border: none;
+	border-radius: 3px;
+	background-color: #e0e0e0;
+	margin-right: 0px;
+	font-size : 12px;
+	transition:0.5s;
+ }
+ .cont_shortcut button:focus{
+	 transition:0.5s;
+	 font-size:15px;
+	 width:80px;
+	 height:25px;
+	 border-radius: 5px;
+	 color:white;
+	 background-color:#42C690;
+	 outline: none;
+ }
+
+
+/* 커뮤니티 메인페이지 */
+.cont_list ul{
+	padding-left:0px;
+	list-style: none;
+	margin-left: 6%;
+}
+.comm_search input{
+	background-color: #f6f4f5;
+	border: none;
+	width:50%;
+	height:30px;
+	background-image: url("/img/search.png");
+	background-position: right;
+	background-repeat: no-repeat;
+	background-size:  20px 20px;
+	margin-right:0%;
+}
+.comm_search ::placeholder{
+	text-align: center;
+}
+
+
+
+/* 웹툰 상세페이지 */
+.detail_info{
+	background-color: #eeeeee;
+	width: 100%;
+	height: 200px;
+}
+
+.detail_info img{
+	float: left;
+	padding-left: 10px;
+	padding-top: 10px;
+	width: 100px;
+	height: 100px;
+	display: block;
+	margin-right: 10px;
+}
+.text_detail{
+	height: 85px;
+	width: 350px;
+	margin-left: 10px;
+	margin-top: 10px;
+	padding-top: 10px;
+}
+.detail_gen{
+	border-radius: 2px;
+	border: #aaaa9f solid 1px;
+	font-size: small;
+	color: #636363;
+}
+
+.detail_book{
+	padding-left: 10px;
+	width: 100px;
+	height: 40px;
+	font-size: small;
+	color: #05ff75;
+	text-align: center;
+	display: block;
+
+}

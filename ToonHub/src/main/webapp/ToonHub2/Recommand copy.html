@@ -26,7 +26,37 @@
 body {
 	background: #eee;
 }
-
+img{
+	width:100px;
+	height:100px;
+}
+.img_place{
+	margin-left:6%;
+	float:left;
+}
+.cont_place p{
+	margin-bottom: 3px;
+	padding-left:18%;
+	font-size: 20px;
+	color:#b3b3b3;
+	width:80%;
+	position:relative;
+}
+.genre{
+	background-color: #eee;
+	width:100px;
+	height:30px;
+	text-align: center;
+	vertical-align: middle;
+	margin-left:18%;
+	margin-top: 10px;
+	font-size: 15px;
+	line-height: 30px;
+	color:#b3b3b3;
+}
+.cont_list a{
+	text-decoration: none;
+}
 </style>
 </head>
 <body oncontextmenu='return false' class='snippet-body skin-3'>
@@ -43,7 +73,7 @@ body {
 					<!-- h1 태그 말고 다른걸로 바꿀것 !  -->
 					<br><br>
 					<nav class="codrops-head" style = "letter-spacing: 5px;">
-						<a href="#"> 오늘의 작가 </a>
+						<a href="today_writter.html"> 오늘의 작가 </a>
 						<a href="Community.html" style="color: #42C690 "> 커뮤니티 </a>
 						<a href="#"> 명예의전당 </a>
 						<!-- <a class="current-demo" href="modal.html">Modal</a>  일단 세개 빼고 다 주석
@@ -59,61 +89,76 @@ body {
 					<strong>추천해요</strong></div>
 					<div class = "cont_shortcut">
 						<div style="text-align: right; width:100%;">
-							<input type = "text" style = "background-color: #b3b3b3; border:none; height:30px; width:40%;" placeholder="찾으려는 내용을 입력하세요">
+							<div class="comm_search">
+							<input type = "text"  placeholder="찾으려는 내용을 입력하세요"></div>
 						</div>
 						</div>
 						</div>
-						<p><a href = "#" style = "font-size: 12px; margin-left: 8%;">글쓰기</a></p>
-				<ul style = "padding-left: 0px; list-style: none; margin-left: 8%;">
-					<li>
-						<a href="#">
-							가나다라마바사
-						</a>
-						<dl>
-							<dt>아자카타파하</dt>
-							<dd>
-								abcdefg
-							</dd>
-						</dl>
-					</li>
-					<hr>
-					<li>
-						<a href="#">
-							가나다라마바사
-						</a>
-						<dl>
-							<dt>아자카타파하</dt>
-							<dd>
-								abcdefg
-							</dd>
-						</dl>
-					</li>
-					<hr>
-					<li>
-						<a href="#">
-							가나다라마바사
-						</a>
-						<dl>
-							<dt>아자카타파하</dt>
-							<dd>
-								abcdefg
-							</dd>
-						</dl>
-					</li>
-					<hr>
-					<li>
-						<a href="#">
-							가나다라마바사
-						</a>
-						<dl>
-							<dt>아자카타파하</dt>
-							<dd>
-								abcdefg
-							</dd>
-						</dl>
-					</li>
-					<hr>
-				</ul>
+						<p><a href = "Recommand_Write.html" style = "font-size: 12px; margin-left: 6%;">글쓰기</a></p>
+				<div class = "cont_list">
+				<div>
+					<a href="#">
+					<div class="img_place">
+						<img src="nemo.png">
+					</div>
+					<div class="cont_place">
+						<p><strong>123</strong></p>
+						<div style="float: right; margin-right:8%;">ddddd</div>
+						<p style="font-size: 15px;">123</p>
+					</div>
+					<div class="genre">
+						<span>#공포/스릴러</span>
+					</div>
+					</a>
+					<hr style="width:88%;">
+				</div>
+				<div>
+					<a href="#">
+					<div class="img_place">
+						<img src="nemo.png">
+					</div>
+					<div class="cont_place">
+						<p><strong>123</strong></p>
+						<div style="float: right; margin-right:8%;">ddddd</div>
+						<p style="font-size: 15px;">123</p>
+					</div>
+					<div class="genre">
+						<span>#공포/스릴러</span>
+					</div>
+					</a>
+					<hr style="width:88%;">
+				</div>				<div>
+					<a href="#">
+					<div class="img_place">
+						<img src="nemo.png">
+					</div>
+					<div class="cont_place">
+						<p><strong>123</strong></p>
+						<div style="float: right; margin-right:8%;">ddddd</div>
+						<p style="font-size: 15px;">123</p>
+					</div>
+					<div class="genre">
+						<span>#공포/스릴러</span>
+					</div>
+					</a>
+					<hr style="width:88%;">
+				</div>				<div>
+					<a href="#">
+					<div class="img_place">
+						<img src="nemo.png">
+					</div>
+					<div class="cont_place">
+						<p><strong>123</strong></p>
+						<div style="float: right; margin-right:8%;">ddddd</div>
+						<p style="font-size: 15px;">123</p>
+					</div>
+					<div class="genre">
+						<span>#공포/스릴러</span>
+					</div>
+					</a>
+					<hr style="width:88%;">
+				</div>
+				</div>
 			</div><!-- /content -->
 		</div><!-- /container -->
 		<div class="foot">
@@ -125,12 +170,12 @@ body {
 			<span>Home</span></a>
 			</td>
 			<td>
-		<a href = "#">
+		<a href = "bookmarkpage.html">
 			<img src = "img/bookmark.png">
 			<span>북마크</span></a>
 			</td>
 			<td>
-		<a href = "#" >
+		<a href = "Login.html" >
 			<img src = "img/my.png">
 			<span>My페이지</span></a>
 			</td>
