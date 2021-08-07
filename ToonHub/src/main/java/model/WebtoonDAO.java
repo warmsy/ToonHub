@@ -54,7 +54,7 @@ public class WebtoonDAO {
 	public ArrayList<WebtoonDTO> monday() {
 		conn();
 		
-		String sql = "select *  from webtoon where web_day =\'월\' order by web_view";
+		String sql = "select *  from webtoon where web_day = \'월\' and web_state = \'연재\' order by web_view";
 		monlist = new ArrayList<WebtoonDTO>();
 		
 		try {
@@ -88,7 +88,7 @@ public class WebtoonDAO {
 	public ArrayList<WebtoonDTO> tuelist() {
 		conn();
 		
-		String sql = "select *  from webtoon where web_day =\'화\' order by web_view";
+		String sql = "select *  from webtoon where web_day like \'%화\' and web_state = \'연재\' order by web_view";
 		tuelist = new ArrayList<WebtoonDTO>();
 		
 		try {
@@ -119,7 +119,7 @@ public class WebtoonDAO {
 	public ArrayList<WebtoonDTO> wedlist() {
 		conn();
 		
-		String sql = "select *  from webtoon where web_day =\'수\' order by web_view";
+		String sql = "select *  from webtoon where web_day like \'%수\' and web_state = \'연재\' order by web_view";
 		wedlist = new ArrayList<WebtoonDTO>();
 		
 		try {
@@ -150,7 +150,7 @@ public class WebtoonDAO {
 	public ArrayList<WebtoonDTO> thulist() {
 		conn();
 		
-		String sql = "select *  from webtoon where web_day =\'목\' order by web_view";
+		String sql = "select *  from webtoon where web_day like \'%목\' and web_state = \'연재\' order by web_view";
 		thulist = new ArrayList<WebtoonDTO>();
 		
 		try {
@@ -181,7 +181,7 @@ public class WebtoonDAO {
 	public ArrayList<WebtoonDTO> frilist() {
 		conn();
 		
-		String sql = "select *  from webtoon where web_day =\'금\' order by web_view";
+		String sql = "select *  from webtoon where web_day like \'%금\' and web_state = \'연재\' order by web_view";
 		frilist = new ArrayList<WebtoonDTO>();
 		
 		try {
@@ -212,7 +212,7 @@ public class WebtoonDAO {
 	public ArrayList<WebtoonDTO> satlist() {
 		conn();
 		
-		String sql = "select *  from webtoon where web_day =\'토\' order by web_view";
+		String sql = "select *  from webtoon where web_day like \'%토\' and web_state = \'연재\' order by web_view";
 		satlist = new ArrayList<WebtoonDTO>();
 		
 		try {
@@ -243,7 +243,38 @@ public class WebtoonDAO {
 	public ArrayList<WebtoonDTO> sunlist() {
 		conn();
 		
-		String sql = "select *  from webtoon where web_day =\'일\' order by web_view";
+		String sql = "select *  from webtoon where web_day like \'%일\' and web_state = \'연재\' order by web_view";
+		sunlist = new ArrayList<WebtoonDTO>();
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				String webtitle = rs.getString(1);
+				String genre = rs.getString(2);
+				int view = rs.getInt(3);
+				String webwriter = rs.getString(4);
+				String platform = rs.getString(5);
+				String webday = rs.getString(6);
+				String story = rs.getString(7);
+				String webfile = rs.getString(8);
+				String address= rs.getString(9);
+				String state = rs.getString(10);
+				
+				dto = new WebtoonDTO(webtitle, genre, view, webwriter, platform, webday, story, webfile, address, state);
+				sunlist.add(dto);
+			};
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {close();}
+		return sunlist;
+	}
+	
+	public ArrayList<WebtoonDTO> endlist() {
+		conn();
+		
+		String sql = "select *  from webtoon where web_state = \'완결\' order by web_view";
 		sunlist = new ArrayList<WebtoonDTO>();
 		
 		try {

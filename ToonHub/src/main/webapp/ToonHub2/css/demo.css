@@ -46,26 +46,26 @@ a:hover, a:focus {
 .skin-2 a { color: #edaa62; }
 .skin-2 a:hover, .skin-2 a:focus { color: #fff; }
 
-/* 메인페이지 배경 색 바꾸기  */
+/* 硫붿씤�럹�씠吏� 諛곌꼍 �깋 諛붽씀湲�  */
 .skin-3 { background: #ffffff; color: #42C690 }
 .skin-3 a { color: #b3b3b3; }
 /*.skin-3 a:hover, .skin-3 a:focus { color: #528176; }
 /*.skin-3 a:visited, .skin-3 a:focus { color: #42C690; } 
-/* 현재  한번 클릭시 색이 되돌아 오지 않음  > js 사용 해야 하는듯  */
+/* �쁽�옱  �븳踰� �겢由��떆 �깋�씠 �릺�룎�븘 �삤吏� �븡�쓬  > js �궗�슜 �빐�빞 �븯�뒗�벏  */
 
 .select a:focus{ color: #42C690; } 
 
 
 
-/* 지금 베스트 컬러  */
+/* 吏�湲� 踰좎뒪�듃 而щ윭  */
 
 
-.skin-3 .best {  color: #636363 } /* <-- 여기 바꾸기 !  */
-.skin-3 .toon1 {  color: #636363 } /* <-- 여기 바꾸기 !  */
-.skin-3 .toon2 {  color: #636363 } /* <-- 여기 바꾸기 !  */
-.skin-3 .toon3 { color: #636363 } /* <-- 여기 바꾸기 !  */
+.skin-3 .best {  color: #636363 } /* <-- �뿬湲� 諛붽씀湲� !  */
+.skin-3 .toon1 {  color: #636363 } /* <-- �뿬湲� 諛붽씀湲� !  */
+.skin-3 .toon2 {  color: #636363 } /* <-- �뿬湲� 諛붽씀湲� !  */
+.skin-3 .toon3 { color: #636363 } /* <-- �뿬湲� 諛붽씀湲� !  */
 
-.skin-3 .detail_info{ color: #4e4e4e } /* <-- 여기 바꾸기 !  */
+.skin-3 .detail_info{ color: #4e4e4e } /* <-- �뿬湲� 諛붽씀湲� !  */
 
 
 .skin-4 { background: #434d55; color: #eee; }
@@ -176,7 +176,7 @@ a:hover, a:focus {
 }
 
 /* Codrops demo links */
-/* 요일별 , 장르 , 플랫폼 자리  */
+/* �슂�씪蹂� , �옣瑜� , �뵆�옯�뤌 �옄由�  */
 .codrops-demos a {
 	width: 30%;
 	text-align: center;
@@ -221,7 +221,7 @@ a:hover, a:focus {
 
 
 /*
-아래 박스 추가하기   
+�븘�옒 諛뺤뒪 異붽��븯湲�   
 h1.b:after {
 	content: "";
 	display: block;
@@ -295,9 +295,9 @@ h1.b:after {
 	}
 }
 
-/* 슬라이드 css ========================================================== */
+/* �뒳�씪�씠�뱶 css ========================================================== */
 
-/* 웹툰 들어가는 네모칸  */
+/* �쎒�댆 �뱾�뼱媛��뒗 �꽕紐⑥뭏  */
 .grid__item {
     width: 5%;
     padding-top: 90px;
@@ -317,7 +317,7 @@ h1.b:after {
 
 /*  */
 
-/* 슬라이드 박스 내 내부 마진 */
+/* �뒳�씪�씠�뱶 諛뺤뒪 �궡 �궡遺� 留덉쭊 */
 .brands_slider {
     height: 100%;
     margin-top: 50px
@@ -327,7 +327,7 @@ h1.b:after {
     height: 100%
 }
 
-/* 이미지 사이즈 */
+/* �씠誘몄� �궗�씠利� */
 .brands_item img {
     max-width: 100%
 }
@@ -365,7 +365,7 @@ h1.b:after {
     right: 40px
 }
 
-/* 하단 메뉴  */
+/* �븯�떒 硫붾돱  */
 .foot table{
     width:100%;
 }
@@ -402,7 +402,7 @@ h1.b:after {
     object-fit: contain;
 }
 
-/* 커뮤니티 제목 및 더보기 */
+/* 而ㅻ�ㅻ땲�떚 �젣紐� 諛� �뜑蹂닿린 */
 .cont_head{
 	position : relative;
 	height : 30px;
@@ -421,7 +421,7 @@ h1.b:after {
 }
 
 
-/* 탭 메뉴 */
+/* �꺆 硫붾돱 */
 ul{
     -webkit-padding-start: 5%;
 }
@@ -460,12 +460,12 @@ ul{
     font-weight: 500;
     }
 
-        /* // 탭박스 영역 기본 옵션은 디스플레이 숨김 */
+        /* // �꺆諛뺤뒪 �쁺�뿭 湲곕낯 �샃�뀡�� �뵒�뒪�뵆�젅�씠 �닲源� */
 .tabArea .tabBox {
 	display: none;
 }
 
-        /* // 탭버튼이 눌러졌을시 관련된 탭박스 활성화 */
+        /* // �꺆踰꾪듉�씠 �닃�윭議뚯쓣�떆 愿��젴�맂 �꺆諛뺤뒪 �솢�꽦�솕 */
 .tabArea .tabBox.on {
     display: block;
     }
@@ -479,8 +479,8 @@ ul{
     margin-bottom: 20px;
 }
 
-/* 슬라이드 박스 */
-/* 웹툰 들어가는 네모칸  */
+/* �뒳�씪�씠�뱶 諛뺤뒪 */
+/* �쎒�댆 �뱾�뼱媛��뒗 �꽕紐⑥뭏  */
 .brands {
 	width: 100%;
 	padding-top: 2px;
@@ -496,7 +496,7 @@ ul{
 	background: #eeeeee;
 }
 
-/* 슬라이드 박스 내 내부 마진 */
+/* �뒳�씪�씠�뱶 諛뺤뒪 �궡 �궡遺� 留덉쭊 */
 .brands_slider {
 	height: 100%;
 	margin-top: 3px
@@ -506,7 +506,7 @@ ul{
 	height: 100%
 }
 
-/* 이미지 사이즈 */
+/* �씠誘몄� �궗�씠利� */
 .brands_item img {
 	max-width: 100%
 }
@@ -545,7 +545,7 @@ ul{
 }
 
 
-/* 커뮤니티 글 작성 페이지  */
+/* Community Write  */
 input::placeholder{
 	color: #b3b3b3;;
 }
@@ -603,7 +603,7 @@ textarea::placeholder{
  }
 
 
-/* 커뮤니티 메인페이지 */
+/* Community_view */
 .cont_list ul{
 	padding-left:0px;
 	list-style: none;
@@ -626,7 +626,7 @@ textarea::placeholder{
 
 
 
-/* 웹툰 상세페이지 */
+/* �쎒�댆 �긽�꽭�럹�씠吏� */
 .detail_info{
 	background-color: #eeeeee;
 	width: 100%;
