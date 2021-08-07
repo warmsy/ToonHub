@@ -128,7 +128,7 @@ body {
 													}
 													%>
 												</div>
-							</nav>
+							</nav> 
 							<br>
 
 							<nav class="toon1">
