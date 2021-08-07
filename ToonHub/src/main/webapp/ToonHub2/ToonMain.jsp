@@ -108,8 +108,6 @@ body {
 								<input type="checkbox" value="연재중" name="미정" checked>연재중
 								<input type="checkbox" value="완결" name="미정2">완결
 							</div>
-
-
 							<nav class="best">
 								<strong>지금 ! 베스트</strong><br> <br>
 								<div class="toon_slider_box">
@@ -124,7 +122,8 @@ body {
 													<div class="owl-item">
 														<div
 															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com"><img src="nemo.png"
+															<a href="https://www.naver.com">
+															<img src="./toon_image/<%=monlist.get(i).getWebfile()%>"
 																width="120px" height="120px"></a>
 															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 														</div>
@@ -200,7 +199,7 @@ body {
 													<div class="owl-item">
 														<div
 															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com"><img src="nemo.png"
+															<a href="https://www.naver.com"><img src="."
 																width="120px" height="120px"></a>
 															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 														</div>
@@ -232,6 +231,7 @@ body {
 
 
 					<!-- tuesday -->
+					
 					<div class="tabBox">
 						<div id="grid" class="grid clearfix">
 							<div class="checkbox">
@@ -376,7 +376,7 @@ body {
 												<div class="owl-carousel owl-theme brands_slider">
 
 													<%
-													for (int i = 0; i < 10; i++) {
+													for (int i = 0; i <wedlist.size(); i++) {
 													%>
 													<div class="owl-item">
 														<div
@@ -448,7 +448,7 @@ body {
 											<div class="brands_slider_container">
 												<div class="owl-carousel owl-theme brands_slider">
 													<%
-													for (int i = 0; i < 10; i++) {
+													for (int i = 0; i <wedlist.size(); i++) {
 													%>
 													<%
 													if (wedlist.get(i).getPlatform().equals("탑툰")) {
