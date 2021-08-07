@@ -29,12 +29,12 @@ public class ToonJoinService extends HttpServlet {
 			System.out.println("join successed");
 			// 임시로 일단 메인으로 보내두기
 			// 회원가입 성공알림창 만들거 아님 일단 보류해두자
-			response.sendRedirect("Toonmain.jsp");
+			response.sendRedirect("ToonMain.jsp");
 		}
 		
 		else {
 			System.out.println("회원가입 실패");
-			response.sendRedirect("Toonmain.jsp");
+			response.sendRedirect("ToonMain.jsp");
 		}
 		
 		

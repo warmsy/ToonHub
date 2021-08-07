@@ -1,0 +1,53 @@
+.grid {
+	margin: 0 auto;
+	max-width: 50em;
+	padding: 0 1em;
+}
+
+/* 네모칼 색상 변경시 만지기  */
+.grid__item {
+	display: inline-block;
+	margin: 0.2em 0.1em;
+	padding-top: 2.25em;
+	width: 5.5em;
+	height: 5.5em;
+	font-size: 2em;
+	border-radius: 4px;
+	background: #e4e4e4;
+	color: rgb(70, 49, 49);
+	text-align: center;
+}
+
+.grid__item:hover {
+	cursor: move;
+	cursor: -webkit-grab;
+	cursor: grab;
+}
+
+.grid__item:active {
+	cursor: -webkit-grabbing;
+	cursor: grabbing;
+}
+
+.helper {
+	position: absolute !important;
+	margin: 0;
+}
+
+@media screen and (max-width: 50em) {
+	.grid__item {
+		font-size: 1.5em;
+	}
+	.drop-area {
+		font-size: 0.6em;
+	}
+}
+
+@media screen and (max-width: 25.5em) {
+	.grid {
+		padding: 0 2em;
+	}
+	.grid__item {
+		font-size: 1em;
+	}
+}

@@ -123,3 +123,9 @@ web_file varchar2(100) not null,
 web_address varchar2(200) not null,
 web_state varchar2(15) not null,
 constraint web_example_pk primary key(web_title));
+
+
+
+select * from Webtoon
+select * from GENRE
+select * from WEBTOON_EXAMPLE

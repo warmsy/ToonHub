@@ -36,7 +36,7 @@ public class ToonLoginService extends HttpServlet {
 		}else {
 			System.out.println("login failed");
 		}
-		response.sendRedirect("main.jsp");
+		response.sendRedirect("ToonMain.jsp");
 		//실패하든 성공하든 메인페이지로 보냅니다
 	}
 
