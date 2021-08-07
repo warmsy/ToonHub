@@ -11,7 +11,9 @@ public class WebtoonDAO {
 	PreparedStatement psmt = null;
 	Connection conn = null;
 	ResultSet rs = null;
+	
 	WebtoonDTO dto = null;
+	
 	ArrayList<WebtoonDTO> monlist = null;
 	ArrayList<WebtoonDTO> tuelist = null;
 	ArrayList<WebtoonDTO> wedlist = null;
@@ -268,7 +270,26 @@ public class WebtoonDAO {
 		}finally {close();}
 		return sunlist;
 	}
+
+	// 요일 메소드 끝
 	
+	// 디테일 선택 메소드
+	
+	public void selectDetail(String num) {
+		conn();
+		
+		String sql = "select * from webtoon where web_day= \'월\' order by web_view";
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, sql);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
 	
 	
 	

@@ -1,4 +1,10 @@
-<!doctype html>
+<%@page import="java.net.URLEncoder"%>
+<%@page import="model.WebtoonDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.WebtoonDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html class="no-js">
 <head>
 <meta charset='utf-8'>
@@ -148,6 +154,20 @@ body {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
 
+<%
+WebtoonDAO dao = new WebtoonDAO();
+ArrayList<WebtoonDTO> monlist = dao.monday();
+ArrayList<WebtoonDTO> tuelist = dao.tuelist();
+ArrayList<WebtoonDTO> wedlist = dao.wedlist();
+ArrayList<WebtoonDTO> thulist = dao.thulist();
+ArrayList<WebtoonDTO> frilist = dao.frilist();
+ArrayList<WebtoonDTO> satlist = dao.satlist();
+ArrayList<WebtoonDTO> sunlist = dao.sunlist();
+	String img ;
+	%>
+
+
+
 		<div class="container">
 			<!-- Top Navigation -->
 			<div class="codrops-top clearfix">
@@ -165,9 +185,9 @@ body {
 					<!-- h1 태그 말고 다른걸로 바꿀것 !  -->
 					<br><br>
 					<nav class="codrops-demos">
-						<a href="ToonMain.html" style="color:#42C690;"> 요일별 </a>
+						<a href="ToonMain.jsp" style="color:#42C690;"> 요일별 </a>
 						<a href="#"> 장르 </a>
-						<a href="platform.html"> 플랫폼 </a>
+						<a href="platform.jsp"> 플랫폼 </a>
 						<!-- <a class="current-demo" href="modal.html">Modal</a>  일단 세개 빼고 다 주석
 						<a href="icons.html">Icons</a>
 						<a href="bottoms-lide.html">Bottom Slide</a>
@@ -222,7 +242,7 @@ body {
                         
                         <div class="text_detail" style="padding: 15px;">
 							<div>
-								<strong>제목</strong><span style = font-size:small;>작가이름</span><br>
+								<strong></strong><span style = font-size:small;>작가이름</span><br>
 								<span>시놉시스</span>
 								
 							</div>
@@ -304,13 +324,13 @@ body {
 
 
         <div class="fixed-menu">
-                <a href="ToonMain.html"><img src = "img/home.png">
+                <a href="ToonMain.jsp"><img src = "img/home.png">
                     <span class = "menu-text">   홈으로   </span>
                 </a>
-                <a href="bookmarkpage.html"><img src = "img/bookmark.PNG">
+                <a href="bookmarkpage.jsp"><img src = "img/bookmark.PNG">
                     <span class = "menu-text">   북마크   </span>
                 </a>
-                <a href="Login.html"><img src = "img/my.PNG">
+                <a href="Login.jsp"><img src = "img/my.PNG">
                     <span class = "menu-text">   my   </span>
                 </a>
 				<a href="font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; ">이거 누르면 나오게 
@@ -351,7 +371,7 @@ body {
         action_popup.confirm("찜하기 목록으로 이동할까요?", function (res) {
             if (res) {
 				/* 찜목록으로 바꾸기 */
-                location.href='bookmarkpage.html'
+                location.href='bookmarkpage.jsp'
             }
         })
     });

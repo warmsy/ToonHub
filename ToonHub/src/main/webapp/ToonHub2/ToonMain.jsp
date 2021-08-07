@@ -66,6 +66,8 @@ body {
 	ArrayList<WebtoonDTO> frilist = dao.frilist();
 	ArrayList<WebtoonDTO> satlist = dao.satlist();
 	ArrayList<WebtoonDTO> sunlist = dao.sunlist();
+	
+	String img ;
 	%>
 
 	<div class="container">
@@ -76,9 +78,9 @@ body {
 				<!--디폴트로 toonhub 가 들어와있도록 하는방법 물어보기 ! -->
 				<div class="codrops-menu">
 					<strong><a href="#" style="color: #42C690">Toonhub</a></strong> <strong>|</strong>
-					<strong><a href="Community.html">커뮤니티</a></strong>
+					<strong><a href="Community.jsp">커뮤니티</a></strong>
 					<!-- 맨위 상단-->
-					<a href="Search.html"><img src="/img/search.png"
+					<a href="Search.jsp"><img src="/img/search.png"
 						style="width: 4%; height: 4%; float: right; margin-right: 6%;"></a>
 				</div>
 				<br> <br>
@@ -86,14 +88,14 @@ body {
 
 			<div id="wrap">
 				<ul class="codrops-demos">
-					<a href="ToonMain.html" style="color: #42C690"> 요일별 </a>
+					<a href="ToonMain.jsp" style="color: #42C690"> 요일별 </a>
 					<a href="#"> 장르 </a>
-					<a href="platform.html"> 플랫폼 </a>
+					<a href="platform.jsp"> 플랫폼 </a>
 				</ul>
 				<section class="tabArea">
 					<ul class="week">
-						<li class="row" id="day1"><a href="#!"><span>월</span></a></li>
-						<li class="row" id="day2"><a href="#!"><span>화</span></a></li>
+						<li class="row on" id="day1"><a href="#!"><span>월</span></a></li>
+						<li class="row on" id="day2"><a href="#!"><span>화</span></a></li>
 						<li class="row" id="day3"><a href="#!"><span>수</span></a></li>
 						<li class="row" id="day4"><a href="#!"><span>목</span></a></li>
 						<li class="row" id="day5"><a href="#!"><span>금</span></a></li>
@@ -121,13 +123,14 @@ body {
 													for (int i = 0; i < 10; i++) {
 														
 													%>
+													<%img = URLEncoder.encode(monlist.get(i).getWebfile(),"euc-kr"); %>
 													<div class="owl-item">
 														<div
 															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com">
-															<img src="./toon_image/<%=URLEncoder.encode(monlist.get(i).getWebfile(),"euc-kr")%>"
+															<a href="detail.jsp">
+															<img src="./toon_image/<%=img%>"
 																width="120px" height="120px"></a>
-															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+															<!-- 네모를 누르면 해당엇..? 상세페이지로가야되는데 이동 할 수 있도록 하기  -->
 														</div>
 														<div class="info">
 															<strong><%=monlist.get(i).getWebtitle()%></strong><br>
@@ -983,11 +986,11 @@ body {
 			<br> <br>
 			<footer class="foot">
 				<table>
-					<td><a href="ToonMain.html"> <img src="img/home.png">
+					<td><a href="ToonMain.jsp"> <img src="img/home.png">
 							<span>Home</span></a></td>
-					<td><a href="bookmarkpage.html"> <img
+					<td><a href="bookmarkpage.jsp"> <img
 							src="img/bookmark.png"> <span>북마크</span></a></td>
-					<td><a href="Login.html"> <img src="img/my.png"> <span>My페이지</span></a>
+					<td><a href="Login.jsp"> <img src="img/my.png"> <span>My페이지</span></a>
 					</td>
 				</table>
 			</footer>
