@@ -11,8 +11,10 @@ public class WebtoonDAO {
 	PreparedStatement psmt = null;
 	Connection conn = null;
 	ResultSet rs = null;
-	ArrayList<WebtoonDTO> monlist = null;
 	WebtoonDTO dto = null;
+	ArrayList<WebtoonDTO> monlist = null;
+	ArrayList<WebtoonDTO> tuelist = null;
+	
 	
 	public void conn() {
 		try {
@@ -72,7 +74,36 @@ public class WebtoonDAO {
 		}finally {close();}
 		return monlist;
 	}
-	
+	public ArrayList<WebtoonDTO> tuelist() {
+		conn();
+		
+		String sql = "select *  from webtoon where web_day =\'ȭ\' order by web_view";
+		tuelist = new ArrayList<WebtoonDTO>();
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				String webtitle = rs.getString(1);
+				String genre = rs.getString(2);
+				int view = rs.getInt(3);
+				String webwriter = rs.getString(4);
+				String platform = rs.getString(5);
+				String webday = rs.getString(6);
+				String story = rs.getString(7);
+				String webfile = rs.getString(8);
+				String address= rs.getString(9);
+				String state = rs.getString(10);
+				
+				dto = new WebtoonDTO(webtitle, genre, view, webwriter, platform, webday, story, webfile, address, state);
+				tuelist.add(dto);
+			};
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {close();}
+		return tuelist;
+	}
 	
 	
 	

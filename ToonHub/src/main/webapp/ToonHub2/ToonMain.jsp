@@ -110,7 +110,7 @@ body {
 												<div class="owl-carousel owl-theme brands_slider">
 
 													<%
-													for (int i = 0; i < monlist.size(); i++) {
+													for (int i = 0; i < 10; i++) {
 													%>
 													<div class="owl-item">
 														<div
@@ -129,7 +129,7 @@ body {
 													%>
 												</div>
 							</nav> 
-							<br>
+							<br> 
 
 							<nav class="toon1">
 								<strong>봄툰</strong><span> | BoomToon</span><br> <br>
@@ -290,6 +290,9 @@ body {
 
 						</div>
 					</div>
+					
+					
+					
 					<div class="tabBox">
 						<div id="grid" class="grid clearfix">
 							<div class="checkbox">
