@@ -1,3 +1,4 @@
+<%@page import="java.net.URLEncoder"%>
 <%@page import="model.WebtoonDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.WebtoonDAO"%>
@@ -118,12 +119,13 @@ body {
 
 													<%
 													for (int i = 0; i < 10; i++) {
+														
 													%>
 													<div class="owl-item">
 														<div
 															class="brands_item d-flex flex-column justify-content-center">
 															<a href="https://www.naver.com">
-															<img src="./toon_image/<%=monlist.get(i).getWebfile()%>"
+															<img src="./toon_image/<%=URLEncoder.encode(monlist.get(i).getWebfile(),"euc-kr")%>"
 																width="120px" height="120px"></a>
 															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 														</div>
