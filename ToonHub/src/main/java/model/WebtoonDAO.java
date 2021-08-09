@@ -21,6 +21,7 @@ public class WebtoonDAO {
 	ArrayList<WebtoonDTO> frilist = null;
 	ArrayList<WebtoonDTO> satlist = null;
 	ArrayList<WebtoonDTO> sunlist = null;
+	ArrayList<WebtoonDTO> detail = null;
 
 	
 	public void conn() {
@@ -306,29 +307,37 @@ public class WebtoonDAO {
 	
 	// 디테일 선택 메소드
 	
-	public void selectDetail(String num) {
+	public ArrayList<WebtoonDTO> selectDetail(String title) {
 		conn();
-		
-		String sql = "select * from webtoon where web_day= \'월\' order by web_view";
-		
+		detail = new ArrayList<WebtoonDTO>();
+		String sql = "select * from webtoon where web_title = ?";
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, sql);
-			
+			psmt.setString(1, title);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				String webtitle = rs.getString(1);
+				String genre = rs.getString(2);
+				int view = rs.getInt(3);
+				String webwriter = rs.getString(4);
+				String platform = rs.getString(5);
+				String webday = rs.getString(6);
+				String story = rs.getString(7);
+				String webfile = rs.getString(8);
+				String address= rs.getString(9);
+				String state = rs.getString(10);
+				
+				dto = new WebtoonDTO(webtitle, genre, view, webwriter, platform, webday, story, webfile, address, state);
+				detail.add(dto);
+			}
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			close();
 		}
-		
-		
+		return detail;
+	
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }

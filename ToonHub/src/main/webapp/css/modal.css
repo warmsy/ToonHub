@@ -1,7 +1,8 @@
 .grid {
 	margin: 0 auto;
-	max-width: 50em;
+	width: 90%;
 	padding: 0 1em;
+	padding-bottom: 5%;
 }
 
 /* 네모칼 색상 변경시 만지기  */

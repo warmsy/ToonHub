@@ -13,14 +13,18 @@ public class ToonMemberDTO {
 		this.pw = pw;
 		this.file = file;
 	}
-	
-	
+
+	public ToonMemberDTO(String id, String nick, String pw) {
+		super();
+		this.id = id;
+		this.nick = nick;
+		this.pw = pw;
+	}
 	public ToonMemberDTO(String id, String pw) {
 		super();
 		this.id = id;
 		this.pw = pw;
 	}
-
 
 
 	public void setId(String id) {

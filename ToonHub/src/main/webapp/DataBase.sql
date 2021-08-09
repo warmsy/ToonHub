@@ -129,3 +129,4 @@ constraint web_example_pk primary key(web_title));
 select * from Webtoon
 select * from GENRE
 select * from WEBTOON_EXAMPLE
+select * from toonmember

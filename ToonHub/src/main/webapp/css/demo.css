@@ -17,6 +17,10 @@
 
 .clearfix {
 	background-color: #eeeeee;
+	width:100%;
+	padding-bottom:5%;
+	margin: 0 30px;
+	overflow: hidden;
 }
 body {
 	background: #2f3238;
@@ -42,24 +46,27 @@ a:hover, a:focus {
 .skin-2 a { color: #edaa62; }
 .skin-2 a:hover, .skin-2 a:focus { color: #fff; }
 
-/* 메인페이지 배경 색 바꾸기  */
+/* 筌롫뗄�뵥占쎈읂占쎌뵠筌욑옙 獄쏄퀗瑗� 占쎄퉳 獄쏅떽��疫뀐옙  */
 .skin-3 { background: #ffffff; color: #42C690 }
 .skin-3 a { color: #b3b3b3; }
 /*.skin-3 a:hover, .skin-3 a:focus { color: #528176; }
 /*.skin-3 a:visited, .skin-3 a:focus { color: #42C690; } 
-/* 현재  한번 클릭시 색이 되돌아 오지 않음  > js 사용 해야 하는듯  */
+/* 占쎌겱占쎌삺  占쎈립甕곤옙 占쎄깻�뵳占쏙옙�뻻 占쎄퉳占쎌뵠 占쎈┷占쎈즼占쎈툡 占쎌궎筌욑옙 占쎈륫占쎌벉  > js 占쎄텢占쎌뒠 占쎈퉸占쎈튊 占쎈릭占쎈뮉占쎈쾹  */
 
 .select a:focus{ color: #42C690; } 
 
 
 
-/* 지금 베스트 컬러  */
+/* 筌욑옙疫뀐옙 甕곗쥙�뮞占쎈뱜 �뚎됱쑎  */
 
 
-.skin-3 .best {  color: #636363 } /* <-- 여기 바꾸기 !  */
-.skin-3 .toon1 {  color: #636363 } /* <-- 여기 바꾸기 !  */
-.skin-3 .toon2 {  color: #636363 } /* <-- 여기 바꾸기 !  */
-.skin-3 .toon3 { color: #636363 } /* <-- 여기 바꾸기 !  */
+.skin-3 .best {  color: #636363 } /* <-- 占쎈연疫뀐옙 獄쏅떽��疫뀐옙 !  */
+.skin-3 .toon1 {  color: #636363 } /* <-- 占쎈연疫뀐옙 獄쏅떽��疫뀐옙 !  */
+.skin-3 .toon2 {  color: #636363 } /* <-- 占쎈연疫뀐옙 獄쏅떽��疫뀐옙 !  */
+.skin-3 .toon3 { color: #636363 } /* <-- 占쎈연疫뀐옙 獄쏅떽��疫뀐옙 !  */
+
+.skin-3 .detail_info{ color: #4e4e4e } /* <-- 占쎈연疫뀐옙 獄쏅떽��疫뀐옙 !  */
+
 
 .skin-4 { background: #434d55; color: #eee; }
 .skin-4 a { color: #2fa0ec; }
@@ -82,6 +89,7 @@ a:hover, a:focus {
 .checkbox{
 	padding-top: 15px;
 	float: right;
+	color:#636363;
 }
 .best{
 	padding-top: 15px;
@@ -101,7 +109,8 @@ a:hover, a:focus {
 
 /* Header */
 .codrops-header {
-	padding: 0 1em 3em;
+	margin-top: 10%;
+	padding: 0 1em 0;
 	letter-spacing: -1px;
 }
 
@@ -167,8 +176,20 @@ a:hover, a:focus {
 }
 
 /* Codrops demo links */
-/* 요일별 , 장르 , 플랫폼 자리  */
+/* 占쎌뒄占쎌뵬癰귨옙 , 占쎌삢�몴占� , 占쎈탣占쎌삸占쎈쨲 占쎌쁽�뵳占�  */
 .codrops-demos a {
+	width: 30%;
+	text-align: center;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	padding: 0.3em 0;
+	font-size: 20px;
+	display: inline-block;
+	border-bottom: 3px solid rgba(82, 78, 78, 0.2);
+	border-color: initial;
+}
+.codrops-demos li {
 	width: 30%;
 	text-align: center;
 	font-weight: 600;
@@ -180,10 +201,27 @@ a:hover, a:focus {
 	border-bottom: 3px solid rgba(82, 78, 78, 0.2);
 	border-color: initial;
 }
+.codrops-demos{
+	margin-bottom:10px;
+	padding-left:0px;
+	text-align: center;
+}
+.codrops-head a {
+	width: 30%;
+	text-align: center;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 0.3em 0;
+	font-size: 15px;
+	display: inline-block;
+	border-bottom: 3px solid rgba(82, 78, 78, 0.2);
+	border-color: initial;
+}
 
 
 /*
-아래 박스 추가하기   
+占쎈툡占쎌삋 獄쏅벡�뮞 �빊遺쏙옙占쎈릭疫뀐옙   
 h1.b:after {
 	content: "";
 	display: block;
@@ -202,7 +240,6 @@ h1.b:after {
 	font-size: 20px;
 
 }
-
 .codrops-demos a.current-demo {
 	border-bottom-color: transparent;
 }
@@ -258,9 +295,9 @@ h1.b:after {
 	}
 }
 
-/* 슬라이드 css ========================================================== */
+/* 占쎈뮩占쎌뵬占쎌뵠占쎈굡 css ========================================================== */
 
-/* 웹툰 들어가는 네모칸  */
+/* 占쎌럲占쎈뙀 占쎈굶占쎈선揶쏉옙占쎈뮉 占쎄퐬筌뤴뫁萸�  */
 .grid__item {
     width: 5%;
     padding-top: 90px;
@@ -280,7 +317,7 @@ h1.b:after {
 
 /*  */
 
-/* 슬라이드 박스 내 내부 마진 */
+/* 占쎈뮩占쎌뵬占쎌뵠占쎈굡 獄쏅벡�뮞 占쎄땀 占쎄땀�겫占� 筌띾뜆彛� */
 .brands_slider {
     height: 100%;
     margin-top: 50px
@@ -290,7 +327,7 @@ h1.b:after {
     height: 100%
 }
 
-/* 이미지 사이즈 */
+/* 占쎌뵠沃섎챷占� 占쎄텢占쎌뵠筌앾옙 */
 .brands_item img {
     max-width: 100%
 }
@@ -326,4 +363,302 @@ h1.b:after {
 
 .brands_next {
     right: 40px
+}
+
+/* 占쎈릭占쎈뼊 筌롫뗀�뤀  */
+.foot table{
+    width:100%;
+}
+.foot td{
+    padding-top:10px;
+    width : 33%
+}
+.foot{
+    background-color: #ffffff;
+    height:5%;
+    width:100%;
+    position: fixed;
+    bottom:0;
+    left:0;
+    text-align: center;
+    box-shadow: 0 0 3px rgba(0,0,0, 0.2);
+	z-index: 1;
+}
+.foot a{
+	justify-content: center;
+	list-style:none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-grow: 1px;
+	min-width: 50px;
+	overflow: hidden;
+	white-space: pre;
+}
+.foot img{
+    display: inline;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+/* �뚣끇占썬끇�빍占쎈뼒 占쎌젫筌륅옙 獄쏉옙 占쎈쐭癰귣떯由� */
+.cont_head{
+	position : relative;
+	height : 30px;
+}
+.cont_header{
+	position : absolute;
+	margin-left : 6%;
+	color : #b3b3b3;
+}
+.cont_shortcut{
+	position : relative;
+	margin-right: 10%;
+	text-align: right;
+	font-size: 12px;
+	margin-right:6%;
+}
+
+
+/* 占쎄틙 筌롫뗀�뤀 */
+ul{
+    -webkit-padding-start: 5%;
+}
+.week{
+    padding-left: 0;
+    padding-top : 5px;
+    text-align: center;
+}
+#wrap {
+	position:relative;
+    padding: 0 1em 0;
+    width : 100%;}
+.row {
+    list-style: none;
+    display:inline;
+    padding: 4%;
+}
+
+.tabArea {
+    background-color: #fff;
+    width: 100%;
+    height: 600px;
+    margin: 0 auto;
+    border: none;
+    padding: 0 20px 0;
+}
+
+.tabArea .tab {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tabArea .tab li a {
+    font-size: 15px;
+    color: #333;
+    font-weight: 500;
+    }
+
+        /* // 占쎄틙獄쏅벡�뮞 占쎌겫占쎈열 疫꿸퀡�궚 占쎌긿占쎈�∽옙占� 占쎈탵占쎈뮞占쎈탣占쎌쟿占쎌뵠 占쎈떜繹먲옙 */
+.tabArea .tabBox {
+	display: none;
+}
+
+        /* // 占쎄틙甕곌쑵�뱣占쎌뵠 占쎈땭占쎌쑎鈺곕슣�뱽占쎈뻻 �꽴占쏙옙�졃占쎈쭆 占쎄틙獄쏅벡�뮞 占쎌넞占쎄쉐占쎌넅 */
+.tabArea .tabBox.on {
+    display: block;
+    }
+
+.tabArea .tabBox p {
+    font-size: 14px;
+    color: #555;
+    }
+
+.tabArea .tabBox h3 {
+    margin-bottom: 20px;
+}
+
+/* 占쎈뮩占쎌뵬占쎌뵠占쎈굡 獄쏅벡�뮞 */
+/* 占쎌럲占쎈뙀 占쎈굶占쎈선揶쏉옙占쎈뮉 占쎄퐬筌뤴뫁萸�  */
+.brands {
+	width: 100%;
+	padding-top: 2px;
+	padding-bottom: 10px
+}
+
+.brands_slider_container {
+	height: 150px;
+	border: solid 1px #eeeeee;
+	/*     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1); */
+	padding-left: 3px;
+	padding-right: 3px;
+	background: #eeeeee;
+}
+
+/* 占쎈뮩占쎌뵬占쎌뵠占쎈굡 獄쏅벡�뮞 占쎄땀 占쎄땀�겫占� 筌띾뜆彛� */
+.brands_slider {
+	height: 100%;
+	margin-top: 3px
+}
+
+.brands_item {
+	height: 100%
+}
+
+/* 占쎌뵠沃섎챷占� 占쎄텢占쎌뵠筌앾옙 */
+.brands_item img {
+	max-width: 100%
+}
+
+.brands_nav {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-10%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	padding: 5px;
+	/*     cursor: pointer */
+}
+
+.brands_nav i {
+	color: #e5e5e5;
+	-webkit-transition: all 0ms ease;
+	-moz-transition: all 0ms ease;
+	-ms-transition: all 0ms ease;
+	-o-transition: all 0ms ease;
+	transition: all 0ms ease
+}
+
+.brands_nav:hover i {
+	color: #676767
+}
+
+.brands_prev {
+	left: 10px
+}
+
+.brands_next {
+	right: 10px;
+}
+
+
+/* Community Write  */
+input::placeholder{
+	color: #b3b3b3;;
+}
+textarea::placeholder{
+	color: #b3b3b3;;
+}
+.write_title{
+	margin-left: 6%;
+}
+.write_title input{
+	border: none;
+	width:75%;
+	height:30px;
+	outline: none;
+}
+.write_title select{
+	width:17%;
+	height:30px;
+	text-align: center;
+	color: #acacac;
+	font-size: 15px;
+	text-align-last: center;
+	border-radius: 3px;
+	outline: none;
+}
+.write_cont{
+	margin-left:6%;
+}
+.write_cont textarea{
+	border:none;
+	width:94%;
+	height:500px;
+	outline: none;
+	resize: none;
+}
+.cont_shortcut button{
+	height:25px;
+	width: 60px;
+	border: none;
+	border-radius: 3px;
+	background-color: #e0e0e0;
+	margin-right: 0px;
+	font-size : 12px;
+	transition:0.5s;
+ }
+ .cont_shortcut button:focus{
+	 transition:0.5s;
+	 font-size:15px;
+	 width:80px;
+	 height:25px;
+	 border-radius: 5px;
+	 color:white;
+	 background-color:#42C690;
+	 outline: none;
+ }
+
+
+/* Community_view */
+.cont_list ul{
+	padding-left:0px;
+	list-style: none;
+	margin-left: 6%;
+}
+.comm_search input{
+	background-color: #eeeeee;
+	border: none;
+	width:50%;
+	height:30px;
+	margin-right:0%;
+}
+.comm_search ::placeholder{
+	text-align: center;
+}
+
+
+
+/* 占쎌럲占쎈뙀 占쎄맒占쎄쉭占쎈읂占쎌뵠筌욑옙 */
+.detail_info{
+	background-color: #eeeeee;
+	width: 100%;
+	height: 200px;
+}
+
+.detail_info img{
+	float: left;
+	padding-left: 10px;
+	padding-top: 10px;
+	width: 100px;
+	height: 100px;
+	display: block;
+	margin-right: 10px;
+}
+.text_detail{
+	height: 85px;
+	width: 350px;
+	margin-left: 10px;
+	margin-top: 10px;
+	padding-top: 10px;
+}
+.detail_gen{
+	border-radius: 2px;
+	border: #aaaa9f solid 1px;
+	font-size: small;
+	color: #636363;
+}
+
+.detail_book{
+	padding-left: 10px;
+	width: 100px;
+	height: 40px;
+	font-size: small;
+	color: #05ff75;
+	text-align: center;
+	display: block;
+
 }

@@ -48,10 +48,11 @@ public class ToonMemberDAO {
 		conn();
 		
 		try {
-			String sql = "insert into ToonMenber values(?,?)";
+			String sql = "insert into ToonMember values(?,?,?,null)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setNString(1, dto.getId());
-			psmt.setNString(2, dto.getPw());
+			psmt.setNString(2, dto.getNick());
+			psmt.setNString(3, dto.getPw());
 			cnt = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -65,7 +66,7 @@ public class ToonMemberDAO {
 	public ToonMemberDTO login(ToonMemberDTO dto) {
 		conn();
 		try {
-			String sql = "select * from ToonMember where id=? and pw =?";
+			String sql = "select * from ToonMember where mem_id=? and mem_pw =?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getId());
 			psmt.setString(2, dto.getPw());

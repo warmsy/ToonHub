@@ -19,7 +19,7 @@ public class ToonLoginService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
+		String pw = request.getParameter("password");
 		
 		ToonMemberDTO dto =  new ToonMemberDTO(id, pw); 
 		ToonMemberDAO dao = new ToonMemberDAO();

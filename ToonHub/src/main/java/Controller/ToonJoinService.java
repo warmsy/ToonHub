@@ -16,10 +16,12 @@ public class ToonJoinService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		request.setCharacterEncoding("EUC-KR");
 		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
+		String nick = request.getParameter("nick");
+		String pw = request.getParameter("password");
 		
-		ToonMemberDTO dto = new ToonMemberDTO(id, pw);
+		ToonMemberDTO dto = new ToonMemberDTO(id, nick, pw);
 		
 		ToonMemberDAO dao = new ToonMemberDAO(); 
 		
