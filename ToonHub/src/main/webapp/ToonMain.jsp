@@ -69,8 +69,8 @@ body {
 	ArrayList<WebtoonDTO> sunlist = dao.sunlist();
 	ArrayList<WebtoonDTO> endlist = dao.endlist();
 	ToonMemberDTO info = (ToonMemberDTO) session.getAttribute("info");
-	
-	String img ;
+
+	String img;
 	%>
 
 	<div class="container">
@@ -121,29 +121,45 @@ body {
 
 													<%
 													for (int i = 0; i < 10; i++) {
-														
 													%>
-													<%img = monlist.get(i).getWebfile(); %>
-													<%img = img.replace("?", ""); %>
+													<%
+													img = monlist.get(i).getWebfile();
+													%>
+													<%
+													img = img.replace("?", "");
+													%>
 													<div class="owl-item">
 														<div
 															class="brands_item d-flex flex-column justify-content-center">
-															<a href="Detail_Day.jsp?title=<%=monlist.get(i).getWebtitle()%>">
-															<% if(monlist.get(i).getPlatform().equals("탑툰")){ %>
+
+															<a
+																href="Detail_Day.jsp?title=<%=monlist.get(i).getWebtitle()%>">
+
+																<%
+																if (monlist.get(i).getPlatform().equals("탑툰")) {
+																%> <img
+																src="./toon_image/<%=img%>"
+																style="width: 30%; height: auto;'">
+															</a>
+															<%
+															} else {
+															%>
 															<img src="./toon_image/<%=img%>"
-																style="width:30%; height:auto;'"></a>
-															<%} else{%>
-															<img src="./toon_image/<%=img%>"
-																style="width:50%; height:auto;'"></a>
-																<%} %>
+																style="width: 50%; height: auto;'"></a>
+															<%
+															}
+															%>
 															<!-- 네모를 누르면 해당엇..? 상세페이지로가야되는데 이동 할 수 있도록 하기  -->
 														</div>
+
 														<div class="info">
 															<strong><%=monlist.get(i).getWebtitle()%></strong><br>
 															<span><%=monlist.get(i).getWebwriter()%></span><br>
 														</div>
 													</div>
-													<%}%>
+													<%
+													}
+													%>
 												</div>
 							</nav>
 							<br>
@@ -166,9 +182,11 @@ body {
 												<div class="owl-item">
 													<div
 														class="brands_item d-flex flex-column justify-content-center">
-														<a href="detail.jsp">
-														<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
+														<a href="Detail_Day.jsp?title=<%=monlist.get(i).getWebtitle()%>">
+
+															<img src="./toon_image/<%=img%>" width="100px"
+															height="100px">
+														</a>
 														<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 													</div>
 													<div class="info">
@@ -213,10 +231,8 @@ body {
 													<div class="owl-item">
 														<div
 															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com">
-															<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
-															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+															<a href="Detail_Day.jsp?title=<%=monlist.get(i).getWebtitle()%>"> 
+															<img src="./toon_image/<%=img%>" width="100px" height="100px"></a>
 														</div>
 														<div class="info">
 															<strong><%=monlist.get(i).getWebtitle()%></strong><br>
@@ -229,13 +245,8 @@ body {
 													%>
 
 												</div>
-												<!-- Brands Slider Navigation -->
-												<!-- <div class="brands_nav brands_prev"><i></i></div>
-                                                        <div class="brands_nav brands_next"><i></i></div> -->
-											</div>
-											<!-- </div>
-                                            </div> -->
-										</div>
+												</div>
+												</div>
 									</div>
 								</div>
 							</nav>
@@ -246,7 +257,7 @@ body {
 
 
 					<!-- tuesday -->
-					
+
 					<div class="tabBox">
 						<div id="grid" class="grid clearfix">
 							<nav class="best">
@@ -261,15 +272,14 @@ body {
 													for (int i = 0; i < 10; i++) {
 													%>
 													<%
-													img = monlist.get(i).getWebfile();
+													img = tuelist.get(i).getWebfile();
 													img = img.replace("?", "");
 													%>
 													<div class="owl-item">
 														<div
 															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com">
-															<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
+															<a href="Detail_Day.jsp?title=<%=tuelist.get(i).getWebtitle()%>">  <img
+																src="./toon_image/<%=img%>" width="100px" height="100px"></a>
 															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 														</div>
 														<div class="info">
@@ -295,16 +305,15 @@ body {
 												for (int i = 0; i < 10; i++) {
 												%>
 												<%
-												if (monlist.get(i).getPlatform().equals("봄툰")) {
-													img = monlist.get(i).getWebfile();
+												if (tuelist.get(i).getPlatform().equals("봄툰")) {
+													img = tuelist.get(i).getWebfile();
 													img = img.replace("?", "");
 												%>
 												<div class="owl-item">
 													<div
 														class="brands_item d-flex flex-column justify-content-center">
-														<a href="https://www.naver.com">
-														<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
+														<a href="Detail_Day.jsp?title=<%=tuelist.get(i).getWebtitle()%>">  <img
+															src="./toon_image/<%=img%>" width="100px" height="100px"></a>
 														<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 													</div>
 													<div class="info">
@@ -342,16 +351,15 @@ body {
 													for (int i = 0; i < 10; i++) {
 													%>
 													<%
-													if (monlist.get(i).getPlatform().equals("탑툰")) {
-														img = monlist.get(i).getWebfile();
+													if (tuelist.get(i).getPlatform().equals("탑툰")) {
+														img = tuelist.get(i).getWebfile();
 														img = img.replace("?", "");
 													%>
 													<div class="owl-item">
 														<div
 															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com">
-															<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
+															<a href="Detail_Day.jsp?title=<%=tuelist.get(i).getWebtitle()%>"> <img
+																src="./toon_image/<%=img%>" width="100px" height="100px"></a>
 															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 														</div>
 														<div class="info">
@@ -378,6 +386,8 @@ body {
 
 						</div>
 					</div>
+
+
 					<!-- wedsday -->
 					<div class="tabBox">
 						<div id="grid" class="grid clearfix">
@@ -390,18 +400,17 @@ body {
 												<div class="owl-carousel owl-theme brands_slider">
 
 													<%
-													for (int i = 0; i <wedlist.size(); i++) {
+													for (int i = 0; i < wedlist.size(); i++) {
 													%>
 													<%
-													img = monlist.get(i).getWebfile();
+													img = wedlist.get(i).getWebfile();
 													img = img.replace("?", "");
 													%>
 													<div class="owl-item">
 														<div
 															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com">
-															<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
+															<a href="Detail_Day.jsp?title=<%=wedlist.get(i).getWebtitle()%>"> <img
+																src="./toon_image/<%=img%>" width="100px" height="100px"></a>
 															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 														</div>
 														<div class="info">
@@ -434,9 +443,8 @@ body {
 												<div class="owl-item">
 													<div
 														class="brands_item d-flex flex-column justify-content-center">
-														<a href="https://www.naver.com">
-														<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
+														<a href="Detail_Day.jsp?title=<%=wedlist.get(i).getWebtitle()%>"> <img
+															src="./toon_image/<%=img%>" width="100px" height="100px"></a>
 														<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 													</div>
 													<div class="info">
@@ -470,7 +478,7 @@ body {
 											<div class="brands_slider_container">
 												<div class="owl-carousel owl-theme brands_slider">
 													<%
-													for (int i = 0; i <wedlist.size(); i++) {
+													for (int i = 0; i < wedlist.size(); i++) {
 													%>
 													<%
 													if (wedlist.get(i).getPlatform().equals("탑툰")) {
@@ -480,10 +488,9 @@ body {
 													<div class="owl-item">
 														<div
 															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com">
-															<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
-															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+															<a href="Detail_Day.jsp?title=<%=wedlist.get(i).getWebtitle()%>"> <img
+																src="./toon_image/<%=img%>" width="100px" height="100px"></a>
+															<!-- 네모를 누르면 detail로 이동 할 수 있도록 하기  -->
 														</div>
 														<div class="info">
 															<strong><%=wedlist.get(i).getWebtitle()%></strong><br>
@@ -524,15 +531,14 @@ body {
 													for (int i = 0; i < 10; i++) {
 													%>
 													<%
-													img = monlist.get(i).getWebfile();
+													img = thulist.get(i).getWebfile();
 													img = img.replace("?", "");
 													%>
 													<div class="owl-item">
 														<div
 															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com">
-															<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
+															<a href="Detail_Day.jsp?title=<%=thulist.get(i).getWebtitle()%>"> <img
+																src="./toon_image/<%=img%>" width="100px" height="100px"></a>
 															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 														</div>
 														<div class="info">
@@ -559,15 +565,14 @@ body {
 												%>
 												<%
 												if (thulist.get(i).getPlatform().equals("봄툰")) {
-													img = monlist.get(i).getWebfile();
+													img = thulist.get(i).getWebfile();
 													img = img.replace("?", "");
 												%>
 												<div class="owl-item">
 													<div
 														class="brands_item d-flex flex-column justify-content-center">
-														<a href="https://www.naver.com">
-														<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
+														<a href="Detail_Day.jsp?title=<%=thulist.get(i).getWebtitle()%>"> <img
+															src="./toon_image/<%=img%>" width="100px" height="100px"></a>
 														<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 													</div>
 													<div class="info">
@@ -605,15 +610,14 @@ body {
 													%>
 													<%
 													if (thulist.get(i).getPlatform().equals("탑툰")) {
-														img = monlist.get(i).getWebfile();
+														img = thulist.get(i).getWebfile();
 														img = img.replace("?", "");
 													%>
 													<div class="owl-item">
 														<div
 															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com">
-															<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
+															<a href="Detail_Day.jsp?title=<%=thulist.get(i).getWebtitle()%>"> <img
+																src="./toon_image/<%=img%>" width="100px" height="100px"></a>
 															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 														</div>
 														<div class="info">
@@ -654,14 +658,15 @@ body {
 													<%
 													for (int i = 0; i < 10; i++) {
 													%>
-													<%img = monlist.get(i).getWebfile();
-													img = img.replace("?", ""); %>
+													<%
+													img = frilist.get(i).getWebfile();
+													img = img.replace("?", "");
+													%>
 													<div class="owl-item">
 														<div
 															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com">
-															<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
+															<a href="Detail_Day.jsp?title=<%=frilist.get(i).getWebtitle()%>"> <img
+																src="./toon_image/<%=img%>" width="100px" height="100px"></a>
 															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 														</div>
 														<div class="info">
@@ -687,15 +692,14 @@ body {
 												%>
 												<%
 												if (frilist.get(i).getPlatform().equals("봄툰")) {
-													img = monlist.get(i).getWebfile();
+													img = frilist.get(i).getWebfile();
 													img = img.replace("?", "");
 												%>
 												<div class="owl-item">
 													<div
 														class="brands_item d-flex flex-column justify-content-center">
-														<a href="https://www.naver.com">
-														<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
+														<a href="Detail_Day.jsp?title=<%=frilist.get(i).getWebtitle()%>"> <img
+															src="./toon_image/<%=img%>" width="100px" height="100px"></a>
 														<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 													</div>
 													<div class="info">
@@ -733,15 +737,14 @@ body {
 													%>
 													<%
 													if (frilist.get(i).getPlatform().equals("탑툰")) {
-														img = monlist.get(i).getWebfile();
+														img = frilist.get(i).getWebfile();
 														img = img.replace("?", "");
 													%>
 													<div class="owl-item">
 														<div
 															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com">
-															<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
+															<a href="Detail_Day.jsp?title=<%=frilist.get(i).getWebtitle()%>"> <img
+																src="./toon_image/<%=img%>" width="100px" height="100px"></a>
 															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 														</div>
 														<div class="info">
@@ -768,7 +771,7 @@ body {
 
 						</div>
 					</div>
-					
+
 					<!-- sat -->
 					<div class="tabBox">
 						<div id="grid" class="grid clearfix">
@@ -779,20 +782,19 @@ body {
 										<div class="container">
 											<div class="brands_slider_container">
 												<div class="owl-carousel owl-theme brands_slider">
-												
+
 													<%
 													for (int i = 0; i < 10; i++) {
 													%>
 													<%
-													img = monlist.get(i).getWebfile();
+													img = satlist.get(i).getWebfile();
 													img = img.replace("?", "");
 													%>
 													<div class="owl-item">
 														<div
 															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com">
-															<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
+															<a href="Detail_Day.jsp?title=<%=satlist.get(i).getWebtitle()%>"> <img
+																src="./toon_image/<%=img%>" width="100px" height="100px"></a>
 															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 														</div>
 														<div class="info">
@@ -803,212 +805,6 @@ body {
 													<%
 													}
 													%>
-												</div>
-							</nav> 
-							<br> 
-
-							<nav class="toon1">
-								<strong>봄툰</strong><span> | BomToon</span><br> <br>
-								<div class="brands">
-									<div class="container">
-										<div class="brands_slider_container">
-											<div class="owl-carousel owl-theme brands_slider">
-										
-													<%
-													for (int i = 0; i < 10; i++) {
-													%>
-														<% if(satlist.get(i).getPlatform().equals("봄툰")){
-															img = monlist.get(i).getWebfile();
-															img = img.replace("?", "");
-															%>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com">
-															<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
-															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
-														</div>
-														<div class="info">
-															<strong><%=satlist.get(i).getWebtitle()%></strong><br>
-															<span><%=satlist.get(i).getWebwriter()%></span><br>
-														</div>
-													</div>
-													<%
-													}}
-													%>
-											</div>
-											<!-- Brands Slider Navigation -->
-											<!-- <div class="brands_nav brands_prev"><i></i></div>
-                                                            <div class="brands_nav brands_next"><i></i></div> -->
-										</div>
-										<!-- </div>
-                                                </div> -->
-									</div>
-								</div>
-
-
-							</nav>
-							<br>
-
-							<nav class="toon2">
-								<strong>탑툰</strong><span> | TopToon</span><br> <br>
-								<div class="toon_slider_box">
-									<div class="brands">
-										<div class="container">
-											<div class="brands_slider_container">
-												<div class="owl-carousel owl-theme brands_slider">
-													<%
-													for (int i = 0; i < 10; i++) {
-													%>
-														<% if(satlist.get(i).getPlatform().equals("탑툰")){
-															img = monlist.get(i).getWebfile();
-															img = img.replace("?", "");
-															%>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com">
-															<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
-															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
-														</div>
-														<div class="info">
-															<strong><%=satlist.get(i).getWebtitle()%></strong><br>
-															<span><%=satlist.get(i).getWebwriter()%></span><br>
-														</div>
-													</div>
-													<%
-													}}
-													%>
-												</div>
-												<!-- Brands Slider Navigation -->
-												<!-- <div class="brands_nav brands_prev"><i></i></div>
-                                                        <div class="brands_nav brands_next"><i></i></div> -->
-											</div>
-											<!-- </div>
-                                            </div> -->
-										</div>
-									</div>
-								</div>
-							</nav>
-							<br>
-
-						</div>
-					</div>
-					
-					
-					<!-- sun -->
-					<div class="tabBox">
-						<div id="grid" class="grid clearfix">
-							<nav class="best">
-								<strong>지금 ! 베스트</strong><br> <br>
-								<div class="toon_slider_box">
-									<div class="brands">
-										<div class="container">
-											<div class="brands_slider_container">
-												<div class="owl-carousel owl-theme brands_slider">
-												
-														<%
-													for (int i = 0; i < 10; i++) {
-													%>
-													<%
-													img = monlist.get(i).getWebfile();
-													img = img.replace("?", "");
-													%>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com">
-															<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
-															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
-														</div>
-														<div class="info">
-															<strong><%=sunlist.get(i).getWebtitle()%></strong><br>
-															<span><%=sunlist.get(i).getWebwriter()%></span><br>
-														</div>
-													</div>
-													<%
-													}
-													%>
-												</div>
-							</nav> 
-							<br>
-							<nav class="toon1">
-								<strong>탑툰</strong><span> | TopToon</span><br> <br>
-								<div class="toon_slider_box">
-									<div class="brands">
-										<div class="container">
-											<div class="brands_slider_container">
-												<div class="owl-carousel owl-theme brands_slider">
-													<%
-													for (int i = 0; i < 10; i++) {
-													%>
-														<% if(sunlist.get(i).getPlatform().equals("탑툰")){
-															img = monlist.get(i).getWebfile();
-															img = img.replace("?", "");
-															%>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com">
-															<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
-															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
-														</div>
-														<div class="info">
-															<strong><%=sunlist.get(i).getWebtitle()%></strong><br>
-															<span><%=sunlist.get(i).getWebwriter()%></span><br>
-														</div>
-													</div>
-													<%
-													}}
-													%>
-													
-													
-												</div>
-											</div>
-											<!-- </div>
-                                            </div> -->
-										</div>
-									</div>
-								</div>
-							</nav>
-							<br>
-						</div>
-					</div>
-					
-					<div class="tabBox">
-						<div id="grid" class="grid clearfix">
-							<nav class="best">
-								<strong>지금 ! 베스트</strong><br> <br>
-								<div class="toon_slider_box">
-									<div class="brands">
-										<div class="container">
-											<div class="brands_slider_container">
-												<div class="owl-carousel owl-theme brands_slider">
-
-													<%
-													for (int i = 0; i < 10; i++) {
-														
-													%>
-													<%img = endlist.get(i).getWebfile(); %>
-													<%img = img.replace("?", ""); %>
-													<div class="owl-item">
-														<div
-															class="brands_item d-flex flex-column justify-content-center">
-															<a href="detail.jsp">
-															<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
-															<!-- 네모를 누르면 해당엇..? 상세페이지로가야되는데 이동 할 수 있도록 하기  -->
-														</div>
-														<div class="info">
-															<strong><%=endlist.get(i).getWebtitle()%></strong><br>
-															<span><%=endlist.get(i).getWebwriter()%></span><br>
-														</div>
-													</div>
-													<%}%>
 												</div>
 							</nav>
 							<br>
@@ -1024,21 +820,20 @@ body {
 												for (int i = 0; i < 10; i++) {
 												%>
 												<%
-												if (monlist.get(i).getPlatform().equals("봄툰")) {
-													img = endlist.get(i).getWebfile();
+												if (satlist.get(i).getPlatform().equals("봄툰")) {
+													img = satlist.get(i).getWebfile();
 													img = img.replace("?", "");
 												%>
 												<div class="owl-item">
 													<div
 														class="brands_item d-flex flex-column justify-content-center">
-														<a href="detail.jsp">
-														<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
+														<a href="Detail_Day.jsp?title=<%=satlist.get(i).getWebtitle()%>"> <img
+															src="./toon_image/<%=img%>" width="100px" height="100px"></a>
 														<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 													</div>
 													<div class="info">
-														<strong><%=endlist.get(i).getWebtitle()%></strong><br>
-														<span><%=endlist.get(i).getWebwriter()%></span><br>
+														<strong><%=satlist.get(i).getWebtitle()%></strong><br>
+														<span><%=satlist.get(i).getWebwriter()%></span><br>
 													</div>
 												</div>
 												<%
@@ -1066,21 +861,238 @@ body {
 										<div class="container">
 											<div class="brands_slider_container">
 												<div class="owl-carousel owl-theme brands_slider">
+													<%
+													for (int i = 0; i < 10; i++) {
+													%>
+													<%
+													if (satlist.get(i).getPlatform().equals("탑툰")) {
+														img = satlist.get(i).getWebfile();
+														img = img.replace("?", "");
+													%>
+													<div class="owl-item">
+														<div
+															class="brands_item d-flex flex-column justify-content-center">
+															<a href="Detail_Day.jsp?title=<%=satlist.get(i).getWebtitle()%>"> <img
+																src="./toon_image/<%=img%>" width="100px" height="100px"></a>
+															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+														</div>
+														<div class="info">
+															<strong><%=satlist.get(i).getWebtitle()%></strong><br>
+															<span><%=satlist.get(i).getWebwriter()%></span><br>
+														</div>
+													</div>
+													<%
+													}
+													}
+													%>
+												</div>
+												<!-- Brands Slider Navigation -->
+												<!-- <div class="brands_nav brands_prev"><i></i></div>
+                                                        <div class="brands_nav brands_next"><i></i></div> -->
+											</div>
+											<!-- </div>
+                                            </div> -->
+										</div>
+									</div>
+								</div>
+							</nav>
+							<br>
+
+						</div>
+					</div>
+
+
+					<!-- sun -->
+					<div class="tabBox">
+						<div id="grid" class="grid clearfix">
+							<nav class="best">
+								<strong>지금 ! 베스트</strong><br> <br>
+								<div class="toon_slider_box">
+									<div class="brands">
+										<div class="container">
+											<div class="brands_slider_container">
+												<div class="owl-carousel owl-theme brands_slider">
 
 													<%
 													for (int i = 0; i < 10; i++) {
 													%>
 													<%
-													if (monlist.get(i).getPlatform().equals("탑툰")) {
+													img = sunlist.get(i).getWebfile();
+													img = img.replace("?", "");
+													%>
+													<div class="owl-item">
+														<div
+															class="brands_item d-flex flex-column justify-content-center">
+															<a href="Detail_Day.jsp?title=<%=sunlist.get(i).getWebtitle()%>"> 
+															<img src="./toon_image/<%=img%>" width="100px" height="100px"></a>
+															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+														</div>
+														<div class="info">
+															<strong><%=sunlist.get(i).getWebtitle()%></strong><br>
+															<span><%=sunlist.get(i).getWebwriter()%></span><br>
+														</div>
+													</div>
+													<%
+													}
+													%>
+												</div>
+							</nav>
+							<br>
+							<nav class="toon1">
+								<strong>탑툰</strong><span> | TopToon</span><br> <br>
+								<div class="toon_slider_box">
+									<div class="brands">
+										<div class="container">
+											<div class="brands_slider_container">
+												<div class="owl-carousel owl-theme brands_slider">
+													<%
+													for (int i = 0; i < 10; i++) {
+													%>
+													<%
+													if (sunlist.get(i).getPlatform().equals("탑툰")) {
+														img = sunlist.get(i).getWebfile();
+														img = img.replace("?", "");
+													%>
+													<div class="owl-item">
+														<div
+															class="brands_item d-flex flex-column justify-content-center">
+															<a href="Detail_Day.jsp?title=<%=sunlist.get(i).getWebtitle()%>"> 
+															<img src="./toon_image/<%=img%>" width="100px" height="100px"></a>
+															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+														</div>
+														<div class="info">
+															<strong><%=sunlist.get(i).getWebtitle()%></strong><br>
+															<span><%=sunlist.get(i).getWebwriter()%></span><br>
+														</div>
+													</div>
+													<%
+													}
+													}
+													%>
+
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</nav>
+							
+							
+							
+							
+							<br>
+						</div>
+					</div>
+
+					<div class="tabBox">
+						<div id="grid" class="grid clearfix">
+							<nav class="best">
+								<strong>지금 ! 베스트</strong><br> <br>
+								<div class="toon_slider_box">
+									<div class="brands">
+										<div class="container">
+											<div class="brands_slider_container">
+												<div class="owl-carousel owl-theme brands_slider">
+
+													<%
+													for (int i = 0; i < 10; i++) {
+													%>
+													<%
+													img = endlist.get(i).getWebfile();
+													%>
+													<%
+													img = img.replace("?", "");
+													%>
+													<div class="owl-item">
+														<div
+															class="brands_item d-flex flex-column justify-content-center">
+															<a href="detail.jsp"> 
+															<img src="./toon_image/<%=img%>" width="100px" height="100px"></a>
+															<!-- 네모를 누르면 해당엇..? 상세페이지로가야되는데 이동 할 수 있도록 하기  -->
+														</div>
+														<div class="info">
+															<strong><%=endlist.get(i).getWebtitle()%></strong><br>
+															<span><%=endlist.get(i).getWebwriter()%></span><br>
+														</div>
+													</div>
+													<%
+													}
+													%>
+												</div>
+							</nav>
+							<br>
+
+							<nav class="toon1">
+								<strong>봄툰</strong><span> | BomToon</span><br> <br>
+								<div class="brands">
+									<div class="container">
+										<div class="brands_slider_container">
+											<div class="owl-carousel owl-theme brands_slider">
+
+
+												<%
+												for (int i = 0; i < 10; i++) {
+												%>
+												<%
+												if (endlist.get(i).getPlatform().equals("봄툰")) {
+													img = endlist.get(i).getWebfile();
+													img = img.replace("?", "");
+												%>
+												<div class="owl-item">
+													<div class="brands_item d-flex flex-column justify-content-center">
+														<a href="Detail_Day.jsp?title=<%=endlist.get(i).getWebtitle()%>"> <img src="./toon_image/<%=img%>"
+															width="100px" height="100px"></a>
+														<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
+													</div>
+													<div class="info">
+														<strong><%=endlist.get(i).getWebtitle()%></strong><br>
+														<span><%=endlist.get(i).getWebwriter()%></span><br>
+													</div>
+												</div>
+												<%
+												}
+												}
+												%>
+												
+												
+												
+												
+											</div>
+											<!-- Brands Slider Navigation -->
+											<!-- <div class="brands_nav brands_prev"><i></i></div>
+                                                            <div class="brands_nav brands_next"><i></i></div> -->
+										</div>
+										<!-- </div>
+                                                </div> -->
+									</div>
+								</div>
+
+
+							</nav>
+							<br>
+
+							<nav class="toon2">
+								<strong>탑툰</strong><span> | TopToon</span><br> <br>
+								<div class="toon_slider_box">
+									<div class="brands">
+										<div class="container">
+											<div class="brands_slider_container">
+												<div class="owl-carousel owl-theme brands_slider">
+
+													<%
+													for (int i = 0; i < 10; i++) {
+													%>
+													<%
+													if (endlist.get(i).getPlatform().equals("탑툰")) {
 														img = endlist.get(i).getWebfile();
 														img = img.replace("?", "");
 													%>
 													<div class="owl-item">
 														<div
 															class="brands_item d-flex flex-column justify-content-center">
-															<a href="https://www.naver.com">
-															<img src="./toon_image/<%=img%>"
-																width="100px" height="100px"></a>
+															<a href="Detail_Day.jsp?title=<%=endlist.get(i).getWebtitle()%>"> <img
+																src="./toon_image/<%=img%>" width="100px" height="100px"></a>
 															<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 														</div>
 														<div class="info">
@@ -1108,7 +1120,7 @@ body {
 
 						</div>
 					</div>
-					
+
 				</section>
 			</div>
 			<br> <br> <br> <br> <br> <br> <br>
@@ -1117,22 +1129,26 @@ body {
 				<table>
 					<td><a href="ToonMain.jsp"> <img src="img/home.png">
 							<span>Home</span></a></td>
-					<td id = "bookmark">
-							<%if (info != null){ %>
-							<a href="bookmarkpage.jsp"> <img
-							src="img/bookmark.png"> <span>북마크</span></a>
-							<%} else{ %>
-							<a href="ToonMain.jsp" onclick = "constraints()"> <img src="img/bookmark.png">
-							<span>북마크</span></a>
-							<%} %>
-							</td>
-					<td><a href="Login.jsp"> <img src="img/my.png">
-					<%if (info != null) {%>
-					<span>My페이지</span></a>
-					<%} else{ %>
-					<span>로그인</span>
-					<%} %>
+					<td id="bookmark">
+						<%
+						if (info != null) {
+						%> <a href="bookmarkpage.jsp"> <img
+							src="img/bookmark.png"> <span>북마크</span></a> <%
+ } else {
+ %> <a
+						href="ToonMain.jsp" onclick="constraints()"> <img
+							src="img/bookmark.png"> <span>북마크</span></a> <%
+ }
+ %>
 					</td>
+					<td><a href="Login.jsp"> <img src="img/my.png"> <%
+ if (info != null) {
+ %>
+							<span>My페이지</span></a> <%
+ } else {
+ %> <span>로그인</span> <%
+ }
+ %></td>
 				</table>
 			</footer>
 			<script src="js/jquery-3.6.0.min.js"></script>
@@ -1214,9 +1230,9 @@ body {
 				});
 			</script>
 			<script>
-			function constraints(){
-				alert("로그인이 필요한 서비스입니다");
-			}
+				function constraints() {
+					alert("로그인이 필요한 서비스입니다");
+				}
 			</script>
 </body>
 </html>

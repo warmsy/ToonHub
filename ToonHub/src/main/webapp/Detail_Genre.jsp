@@ -1,9 +1,9 @@
+<%@page import="model.WebtoonDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.WebtoonDAO"%>
-<%@page import="model.WebtoonDTO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html class="no-js">
 <head>
 <meta charset='utf-8'>
@@ -37,24 +37,19 @@ body {
     color:#42C690;
 }
 img{
-	width:100%;
-	height:auto;
+	width:100px;
+	height:100px;
 }
 .img_place{
-	width:20%;
-	margin-top:15px;
 	margin-left:6%;
 	float:left;
 }
 .info_place{
     padding-left: 3%;
 }
-.info_place span{
-	margin-left:10px;
-}
 .info_place p{
 	margin-bottom: 3px;
-	padding-left:25%;
+	padding-left:18%;
 	font-size: 20px;
 	color:#b3b3b3;
 	width:80%;
@@ -62,6 +57,7 @@ img{
 }
 .toon_info{
     padding-top: 5%;
+    margin-top: 5%;
 }
 .genre{
 	background-color: rgb(224, 222, 222);
@@ -69,14 +65,14 @@ img{
 	height:30px;
 	text-align: center;
 	vertical-align: middle;
-	margin-left:26%;
+	margin-left:20%;
 	margin-top: 15px;
 	font-size: 15px;
 	line-height: 30px;
 	color:#b3b3b3;
 }
 .detail_buttons{
-    margin-left: 10%;
+    margin-left: 6%;
     margin-top:10px;
     width:13%;
     float:left;
@@ -149,10 +145,13 @@ img{
 </style>
 </head>
 <body oncontextmenu='return false' class='snippet-body skin-3'>
-<%String title = request.getParameter("title");
+
+<% String title = request.getParameter("title");
 WebtoonDAO dao = new WebtoonDAO();
 ArrayList<WebtoonDTO> dto = dao.selectDetail(title);
-String img = null;%>
+String img=null;
+%>
+
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 	<link rel="stylesheet"
@@ -169,9 +168,9 @@ String img = null;%>
 			<div class="content">
 
                 <header class="codrops-header">  
-					<!--µğÆúÆ®·Î toonhub °¡ µé¾î¿ÍÀÖµµ·Ï ÇÏ´Â¹æ¹ı ¹°¾îº¸±â ! -->
+					<!--ë””í´íŠ¸ë¡œ toonhub ê°€ ë“¤ì–´ì™€ìˆë„ë¡ í•˜ëŠ”ë°©ë²• ë¬¼ì–´ë³´ê¸° ! -->
                     <div class="codrops-menu">
-                        <strong><a href="ToonMain.jsp" style = "color: #42C690">Toonhub</a></strong><strong>|</strong> <strong ><a href="Community.jsp">Ä¿¹Â´ÏÆ¼</a></strong> <!-- ¸ÇÀ§ »ó´Ü-->
+                        <strong><a href="#" style = "color: #42C690">Toonhub</a></strong><strong>|</strong> <strong ><a href="Community.jsp">ì»¤ë®¤ë‹ˆí‹°</a></strong> <!-- ë§¨ìœ„ ìƒë‹¨-->
                         <a href="Search.jsp"><img src="/img/search.png" style="width:4%; height:4%; float: right; margin-right: 6%;"></a>
                     </div>
                     <br><br>
@@ -179,58 +178,46 @@ String img = null;%>
 					
 				<div id="wrap">
                     <ul class="codrops-demos">
-						<a href="ToonMain.jsp" style="color:#42C690"> ¿äÀÏº° </a>
-						<a href="ToonGenre.jsp"> Àå¸£ </a>
-						<a href="platform.jsp"> ÇÃ·§Æû </a>
+						<a href="ToonMain.jsp" style="color:#42C690"> ìš”ì¼ë³„ </a>
+						<a href="#"> ì¥ë¥´ </a>
+						<a href="platform.jsp"> í”Œë«í¼ </a>
                     </ul>
-                    <div class="tabArea" style="height:50px;">
-                        <ul class="week">
-                            <li class = "row" id = "day1"> <a href="#!"><span>¿ù</span></a> </li>
-                            <li class = "row" id = "day2"> <a href="#!"><span>È­</span></a> </li>
-                            <li class = "row" id = "day3"> <a href="#!"><span>¼ö</span></a> </li>
-                            <li class = "row" id = "day4"> <a href="#!"><span>¸ñ</span></a> </li>
-                            <li class = "row" id = "day5"> <a href="#!"><span>±İ</span></a> </li>
-                            <li class = "row" id = "day6"> <a href="#!"><span>Åä</span></a> </li>
-                            <li class = "row" id = "day0"> <a href="#!"><span>ÀÏ</span></a> </li>
-                            <li class = "row" id = "day0"> <a href="#!"><span>¿Ï°á</span></a> </li>
-                        </ul>
-                    </div>
                     <div class="toon_info">
                         <div>
-                            <div class="img_place">
+                             <div class="img_place">
                             <%img = dto.get(0).getWebfile(); %>
 							<%img = img.replace("?", "");%>
                                 <img src="./toon_image/<%=img%>">
                             </div>
                             <div class="info_place">
-                                <p><strong><%=dto.get(0).getWebtitle() %></strong>
-                                <span style="font-size: 15px;"><%=dto.get(0).getWebwriter() %></span></p>                               
-                                 <p style="font-size: 15px;"><%=dto.get(0).getStory() %></p>
+                                <p><strong><%= dto.get(0).getWebtitle()%></strong>
+                                <span style="font-size: 15px;"><%=dto.get(0).getWebwriter() %></span></p> 
+                                 <p style="font-size: 15px;"><%=dto.get(0).getStory() %></p>                               <p style="font-size: 15px;">ì‹œë†‰ì‹œìŠ¤</p>
                             </div>
                             <div class="genre">
                                 <span>#<%=dto.get(0).getGenre() %></span>
                             </div>
                         </div>
                         <div class="detail_buttons">
-                            <button>ÂòÇÏ±â</button><br>
-                            <button style="font-size: 14px;">ÀÛ°¡ Ä¿¹Â´ÏÆ¼</button>
+                            <button>ì°œí•˜ê¸°</button><br>
+                            <button style="font-size: 14px;">ì‘ê°€ ì»¤ë®¤ë‹ˆí‹°</button>
                         </div>
                         <div class = "link_to">
-                            <button onclick="location.href='<%=dto.get(0).getAddress()%>'">º¸·¯°¡±â</button>
+                            <button onclick="location.href='<%=dto.get(0).getAddress()%>'">ë³´ëŸ¬ê°€ê¸°</button>
                         </div>
                     </div>
                     <form>
                     <div class = "write_evaluate">
-                        <span>ÀÌ À¥Å÷ ¾î¶§¿ä?</span>
-                        <select>º°Á¡ÁÖ±â
-                            <option>¡Ú¡Ú¡Ú¡Ú¡Ú</option>
-                            <option>¡Ú¡Ú¡Ú¡Ú¡Ù</option>
-                            <option>¡Ú¡Ú¡Ú¡Ù¡Ù</option>
-                            <option>¡Ú¡Ú¡Ù¡Ù¡Ù</option>
-                            <option>¡Ú¡Ù¡Ù¡Ù¡Ù</option>
+                        <span>ì´ ì›¹íˆ° ì–´ë•Œìš”?</span>
+                        <select>ë³„ì ì£¼ê¸°
+                            <option>â˜…â˜…â˜…â˜…â˜…</option>
+                            <option>â˜…â˜…â˜…â˜…â˜†</option>
+                            <option>â˜…â˜…â˜…â˜†â˜†</option>
+                            <option>â˜…â˜…â˜†â˜†â˜†</option>
+                            <option>â˜…â˜†â˜†â˜†â˜†</option>
                         </select>
-                        <textarea placeholder="ÀÛ¼ºÇÒ ³»¿ëÀ» ÀÔ·ÂÇÏ¼¼¿ä"></textarea>
-                        <button>µî·Ï</button>
+                        <textarea placeholder="ì‘ì„±í•  ë‚´ìš©ì„ ì…ë ¥í•˜ì„¸ìš”"></textarea>
+                        <button>ë“±ë¡</button>
                     </div>
                     </form>
                     <div class = "evaluate">
@@ -274,22 +261,22 @@ String img = null;%>
                     <td>
                 <a href = "bookmarkpage.jsp">
                     <img src = "img/bookmark.png">
-                    <span>ºÏ¸¶Å©</span></a>
+                    <span>ë¶ë§ˆí¬</span></a>
                     </td>
                     <td>
                 <a href = "Login.jsp" >
                     <img src = "img/my.png">
-                    <span>MyÆäÀÌÁö</span></a>
+                    <span>Myí˜ì´ì§€</span></a>
                     </td>
                     </table>
                 </footer>
                 <script src = "js/jquery-3.6.0.min.js"></script>
                 <script>
                     $(document).ready(function () {
-                        $(".tabArea .week li a").on("click", function () { // ÇØ´ç ¿ä¼Ò¸¦ Å¬¸¯ÇÏ´Â ³» ÀÚ½ÅÀÇ index ¹øÈ£¸¦ °¡Á®¿Â´Ù. [0], [1] 
-                            const num = $(".tabArea .week li a").index($(this)); // ±âÁ¸¿¡ Àû¿ëµÇ¾î ÀÖ´Â on class »èÁ¦ 
+                        $(".tabArea .week li a").on("click", function () { // í•´ë‹¹ ìš”ì†Œë¥¼ í´ë¦­í•˜ëŠ” ë‚´ ìì‹ ì˜ index ë²ˆí˜¸ë¥¼ ê°€ì ¸ì˜¨ë‹¤. [0], [1] 
+                            const num = $(".tabArea .week li a").index($(this)); // ê¸°ì¡´ì— ì ìš©ë˜ì–´ ìˆëŠ” on class ì‚­ì œ 
                             $(".tabArea .week li").removeClass("on");
-                            $(".tabArea .tabBox").removeClass("on"); // ´ÙÀ½ ¿ä¼Ò Å¬¸¯½Ã on class Ãß°¡ 
+                            $(".tabArea .tabBox").removeClass("on"); // ë‹¤ìŒ ìš”ì†Œ í´ë¦­ì‹œ on class ì¶”ê°€ 
                             $('.tabArea .week li:eq(' + num + ')').addClass("on");
                             $('.tabArea .tabBox:eq(' + num + ')').addClass("on");
                         });
@@ -299,7 +286,7 @@ String img = null;%>
 		<script src="js/dragdrop.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
         <script type='text/javascript'>
-            /*  ¾Æ´Ï °©ÀÚ±â ¿Ö¾ÈµÅ .. ^^ */
+            /*  ì•„ë‹ˆ ê°‘ìê¸° ì™œì•ˆë¼ .. ^^ */
 			var selected_day = $('.week a');
 			selected_day.click(function(){
 				$(this).css('color','#42C690');
@@ -334,16 +321,16 @@ String img = null;%>
     loop:true,
     autoplay:true,
     autoplayTimeout:0, 
-    /* ÀÚµ¿À¸·Î ³Ñ¾î°¡°Ô ÇÏ´Â°Å ! */
+    /* ìë™ìœ¼ë¡œ ë„˜ì–´ê°€ê²Œ í•˜ëŠ”ê±° ! */
     nav:false,
     dots:false,
 
     autoWidth:false,
-    /* ÀÚµ¿ ÀÌ¹ÌÁö »çÀÌÁî ¸ÂÃã */
+    /* ìë™ ì´ë¯¸ì§€ ì‚¬ì´ì¦ˆ ë§ì¶¤ */
     items:3, 
-    /* default ·Î º¸¿©Áö´Â ¾ÆÀÌÅŞ °¹¼ö  */
+    /* default ë¡œ ë³´ì—¬ì§€ëŠ” ì•„ì´í…¡ ê°¯ìˆ˜  */
     margin:2
-    /* ¾ÆÀÌÅÛ°£ ¸¶Áø  */
+    /* ì•„ì´í…œê°„ ë§ˆì§„  */
     });
 
     if($('.brands_prev').length)
@@ -366,7 +353,7 @@ String img = null;%>
     }});</script>
     <script>
         today = new Date()
-        var week = new Array('ÀÏ', '¿ù', 'È­', '¼ö', '¸ñ', '±İ', 'Åä');
+        var week = new Array('ì¼', 'ì›”', 'í™”', 'ìˆ˜', 'ëª©', 'ê¸ˆ', 'í† ');
         var day = week[today.getDate()];
         for(let i = 0; i < week.length; i++){
             if(day == week[i]){
