@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.BookMarkDTO"%>
+<%@page import="model.BookMarkDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!doctype html>
@@ -34,6 +37,7 @@ img{
 }
 .img_place{
 	float:left;
+	width:15%;
 }
 .cont_list{
 	margin: 0px 5%;
@@ -48,15 +52,18 @@ img{
 }
 .genre{
 	background-color: #eee;
-	width:100px;
+	width:120px;
 	height:30px;
 	text-align: center;
 	vertical-align: middle;
-	margin-left:15%;
 	margin-top: 10px;
+	margin-left: 20%;
 	font-size: 15px;
 	line-height: 30px;
 	color:#b3b3b3;
+}
+.genre span{
+	text-align:center;
 }
 .cont_list a{
 	text-decoration: none;
@@ -67,6 +74,12 @@ hr{
 </style>
 </head>
 <body oncontextmenu='return false' class='snippet-body skin-3'>
+<%
+String nick = (String)session.getAttribute("nick");
+String writter = (String)request.getAttribute("writter");
+BookMarkDAO dao = new BookMarkDAO();
+ArrayList<BookMarkDTO> list = dao.SelectMark(nick);
+String img;%>
 		<div class="container">
 			<div class="content">
 
@@ -74,7 +87,7 @@ hr{
 				<header class="codrops-header">  
 					<!--디폴트로 toonhub 가 들어와있도록 하는방법 물어보기 ! -->
                     <div class="codrops-menu">
-                        <strong><a href="ToonMain.html" style="color:#42C690">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="#">커뮤니티</a></strong> <!-- 맨위 상단-->
+                        <strong><a href="ToonMain.jsp" style="color:#42C690">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="Community.jsp">커뮤니티</a></strong> <!-- 맨위 상단-->
                     </div>
 					
 					<!-- h1 태그 말고 다른걸로 바꿀것 !  -->
@@ -92,64 +105,24 @@ hr{
 					<strong style="font-size: 20px;">찜 목록</strong></div>
 				</div>
 				<div class = "cont_list">
+				<%for(int i = 0 ; i < list.size(); i++){ %>
 				<div>
 					<a href="#">
 					<div class="img_place">
-						<img src="nemo.png">
+						<img src="./toon_img/<%=list.get(i).getFile()%>">
 					</div>
 					<div class="cont_place">
-						<p><strong>123</strong></p>
-						<p style="font-size: 15px;">123</p>
+						<p><strong><%=list.get(i).getWebTitle() %></strong></p>
+						<p style="font-size: 15px;"><%=list.get(i).getWritter() %></p>
 					</div>
 					<div class="genre">
-						<span>#공포/스릴러</span>
+						<span>#<%=list.get(i).getGenre() %></span>
 					</div>
 					</a>
 					<hr>
 				</div>
-				<div>
-					<a href="#">
-					<div class="img_place">
-						<img src="nemo.png">
-					</div>
-					<div class="cont_place">
-						<p><strong>123</strong></p>
-						<p style="font-size: 15px;">123</p>
-					</div>
-					<div class="genre">
-						<span>#공포/스릴러</span>
-					</div>
-					</a>
-					<hr>
-				</div>				<div>
-					<a href="#">
-					<div class="img_place">
-						<img src="nemo.png">
-					</div>
-					<div class="cont_place">
-						<p><strong>123</strong></p>
-						<p style="font-size: 15px;">123</p>
-					</div>
-					<div class="genre">
-						<span>#공포/스릴러</span>
-					</div>
-					</a>
-					<hr>
-				</div>				<div>
-					<a href="#">
-					<div class="img_place">
-						<img src="nemo.png">
-					</div>
-					<div class="cont_place">
-						<p><strong>123</strong></p>
-						<p style="font-size: 15px;">123</p>
-					</div>
-					<div class="genre">
-						<span>#공포/스릴러</span>
-					</div>
-					</a>
-					<hr>
-				</div>
+				<%} %>
+				</div>				
 				</div>
 			</div><!-- /content -->
 		</div><!-- /container -->
@@ -158,17 +131,17 @@ hr{
 			<table>
 				<tl>
 					<td>
-		<a href = "ToonMain.html">
+		<a href = "ToonMain.jsp">
 			<img src = "img/home.png">
 			<span>Home</span></a>
 			</td>
 			<td>
-		<a href = "bookmarkpage.html">
+		<a href = "BookMark.jsp">
 			<img src = "img/bookmark.png">
 			<span>북마크</span></a>
 			</td>
 			<td>
-		<a href = "Login.html" >
+		<a href = "Mypage.jsp" >
 			<img src = "img/my.png">
 			<span>My페이지</span></a>
 			</td>
@@ -188,3 +161,4 @@ hr{
 		</script>
 </body>
 </html>
+

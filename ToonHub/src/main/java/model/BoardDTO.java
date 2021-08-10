@@ -17,6 +17,12 @@ public class BoardDTO {
 		BoardDate = boardDate;
 	}
 
+	public BoardDTO(String nick, String boardTitle, String boardContent) {
+		super();
+		this.nick = nick;
+		BoardTitle = boardTitle;
+		BoardContent = boardContent;
+	}
 
 	public int getNum() {
 		return num;

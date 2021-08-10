@@ -1132,11 +1132,10 @@ body {
 					<td id="bookmark">
 						<%
 						if (info != null) {
-						%> <a href="bookmarkpage.jsp"> <img
+						%> <a href="BookMark.jsp"> <img
 							src="img/bookmark.png"> <span>북마크</span></a> <%
- } else {
- %> <a
-						href="ToonMain.jsp" onclick="constraints()"> <img
+ 						} else {
+ 						%> <a href="ToonMain.jsp" onclick="constraints()"> <img
 							src="img/bookmark.png"> <span>북마크</span></a> <%
  }
  %>

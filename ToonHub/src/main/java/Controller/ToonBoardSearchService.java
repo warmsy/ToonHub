@@ -1,34 +1,38 @@
 package Controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.BoardDAO;
 import model.BoardDTO;
 
-@WebServlet("/ToonBoardWriteService")
-public class ToonBoardWriteService extends HttpServlet {
+@WebServlet("/ToonBoardService")
+public class ToonBoardSearchService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("EUC-KR");
 		
-		String nick = request.getParameter("nick");
-		String title = request.getParameter("title");
-		String content = request.getParameter("content");
+		String item = request.getParameter("item");
+		String search = request.getParameter("search");
 		
 		BoardDAO dao = new BoardDAO();
-		BoardDTO dto = new BoardDTO(nick, title, content);
-		int cnt = dao.Insert(dto);
+		ArrayList<BoardDTO> list = dao.Search(item, search);
 		
-		if (cnt>0) {
-			System.out.println("게시글 등록 성공");
+		if(list !=null) {
+			System.out.println("게시글 검색에 성공했습니다.");
+			HttpSession session = request.getSession();
+			session.setAttribute("board_info", list);
 		}else {
-			System.out.println("게시글 등록 실패");
+			System.out.println("게시글 검색에 실패했습니다.");
 		}
 		response.sendRedirect("Board.jsp");
 	}

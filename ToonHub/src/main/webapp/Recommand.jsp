@@ -94,7 +94,12 @@ img{
 					<div class = "cont_shortcut">
 						<div style="text-align: right; width:100%;">
 							<div class="comm_search">
-							<input type = "text"  placeholder="찾으려는 내용을 입력하세요"></div>
+								<select style="background-color: #eeeeee; border:none; height:30px; color:#b3b3b3" name = "item">
+									<option value = "title">제목</option>
+									<option value = "writter">작성자</option>
+								</select>
+							<input type = "text"  placeholder="찾으려는 내용을 입력하세요" name = "search">
+						<button style="background-color: #eeeeee; height:30px;"><img src = "./img/search_white.png" style = "width:20px; height:20px;"></button></div>
 						</div>
 						</div>
 						</div>

@@ -60,18 +60,20 @@ body {
 				<div class = "cont_head">
 					<div class = "cont_header">
 					<strong>자유게시판</strong></div>
+					<form action = "ToonBoardWriteService?nick=<%=info.getNick() %>" method = "post">
 					<div class = "cont_shortcut">
 					<button >게시하기</button>
 					</div>
 					</div>
 					<hr align="center" width="88%">
 					<div class="write_title">
-					<input type="text" placeholder="제목">
+					<input type="text" placeholder="제목" name = "title">
 					</div>
 				<hr align="center" width="88%">
 				<div class="write_cont">
-				<textarea placeholder = "내용을 입력하세요"></textarea>
+				<textarea placeholder = "내용을 입력하세요" name = "content"></textarea>
 				</div>
+				</form>
 		<div class="foot">
 				<table>
 					<td><a href="ToonMain.jsp"> <img src="img/home.png">

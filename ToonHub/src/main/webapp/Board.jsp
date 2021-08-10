@@ -1,3 +1,6 @@
+<%@page import="model.BoardDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.BoardDAO"%>
 <%@page import="model.ToonMemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -29,11 +32,17 @@
 body {
 	background: #eee;
 }
-
+li span{
+	float: right;
+	font-size:15px
+}
 </style>
 </head>
 <body oncontextmenu='return false' class='snippet-body skin-3'>
-<%ToonMemberDTO info = (ToonMemberDTO) session.getAttribute("info"); %>
+<%ToonMemberDTO info = (ToonMemberDTO) session.getAttribute("info");
+ArrayList<BoardDTO> board_info = (ArrayList) session.getAttribute("board_info");
+BoardDAO dao = new BoardDAO();
+ArrayList<BoardDTO> list = dao.SelectAll();%>
 		<div class="container">
 			<!-- Top Navigation -->
 			<div class="content">
@@ -62,10 +71,20 @@ body {
 				<div class = "cont_head">
 					<div class = "cont_header">
 					<strong>추천해요</strong></div>
+					<form action ="ToonBoardService" method="post">
 					<div class = "cont_shortcut">
-						<div class="comm_search">
-							<input type = "text" placeholder="찾으려는 내용을 입력하세요"></div>
+						<div style="text-align: right; width:100%;">
+							<div class="comm_search">
+								<select style="background-color: #eeeeee; border:none; height:30px; color:#b3b3b3" name = "item">
+									<option value = "title">제목</option>
+									<option value = "writter">작성자</option>
+									<option value = "content">내용</option>
+								</select>
+							<input type = "text"  placeholder="찾으려는 내용을 입력하세요" name = "search">
+						<button style="background-color: #eeeeee; height:30px;"><img src = "./img/search_white.png" style = "width:20px; height:20px;"></button></div>
 						</div>
+						</div>
+						</form>
 						</div>
 						</div>
 						<%if (info != null){ %>
@@ -74,32 +93,28 @@ body {
 				<p><a href = "Board.jsp" style = "font-size: 12px; margin-left: 6%;" onclick  = "constraints()">글쓰기</a></p>
 				<%} %>
 				<div class="cont_list">
+				<%if (board_info != null){ %>
+					<ul>
+				<%for(int i = 0; i < board_info.size(); i++){%>
+					<li>
+						<a href="#">
+							<%=board_info.get(i).getBoardTitle()%>
+							<span><%=board_info.get(i).getNick()%></span>
+						</a>
+					</li>
+					<hr>
+				<%}%>
+				<%} else{ %>
 				<ul>
+				<%for(int i = 0; i < list.size(); i++){ %>
 					<li>
 						<a href="#">
-							가나다라마바사
+							<%=list.get(i).getBoardTitle()%>
+							<span><%=list.get(i).getNick() %></span>
 						</a>
 					</li>
 					<hr>
-					<li>
-						<a href="#">
-							가나다라마바사
-						</a>
-						<span>Lipper</span>
-					</li>
-					<hr>
-					<li>
-						<a href="#">
-							가나다라마바사
-						</a>
-					</li>
-					<hr>
-					<li>
-						<a href="#">
-							가나다라마바사
-						</a>
-					</li>
-					<hr>
+					<%}} %>
 				</ul>
 				</div>
 			</div><!-- /content -->

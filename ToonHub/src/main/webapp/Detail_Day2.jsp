@@ -1,4 +1,3 @@
-<%@page import="java.net.URLEncoder"%>
 <%@page import="model.ToonMemberDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.WebtoonDAO"%>
@@ -300,11 +299,11 @@ String img = null;%>
                             </div>
                         </div>
                         <div class="detail_buttons">
-							<%if (info != null){ %>
-                            <button class = "a_color"  id = "bookmark" style="border: none;">ÂòÇÏ±â</button><br>
-							<%} else{ %>
-                            <button onclick = "constraints()">ÂòÇÏ±â</button><br>
- 							<%} %>
+                        <%if (info != null){ %>
+                            <button type = button class = "a_color"  id = "bookmark" style="border: none;">ÂòÇÏ±â</button><br>
+                        <%} else{ %>
+                            <button type = button class = "a_color"  id = "bookmark" style="border: none;">ÂòÇÏ±â</button><br>
+                        <%} %>
                             <button style="font-size: 14px;">ÀÛ°¡ Ä¿¹Â´ÏÆ¼</button>
                         </div>
                         <div class = "link_to">
@@ -357,32 +356,24 @@ String img = null;%>
                 </div>
                 <br><br><br><br><br><br><br><br><br>
                 <footer class = "foot">
-							<table>
-					<td><a href="ToonMain.jsp"> <img src="img/home.png">
-							<span>Home</span></a></td>
-					<td id = "bookmark_foot">
-							<%if (info != null){ %>
-							<a href="Bookmark.jsp"> <img
-							src="img/bookmark.png"> <span>ºÏ¸¶Å©</span></a>
-							<%} else{ %>
-							<a href="ToonMain.jsp" onclick = "constraints()"> <img src="img/bookmark.png">
-							<span>ºÏ¸¶Å©</span></a>
-							<%} %>
-							</td>
-					<td><a href="Login.jsp"> <img src="img/my.png">
-					<%if (info != null) {%>
-					<span>MyÆäÀÌÁö</span></a>
-					<%} else{ %>
-					<span>·Î±×ÀÎ</span>
-					<%} %>
-					</td>
-				</table>
+                    <table>
+                            <td>
+                <a href = "ToonMain.jsp">
+                    <img src = "img/home.png">
+                    <span>Home</span></a>
+                    </td>
+                    <td>
+                <a href = "bookmarkpage.jsp">
+                    <img src = "img/bookmark.png">
+                    <span>ºÏ¸¶Å©</span></a>
+                    </td>
+                    <td>
+                <a href = "Login.jsp" >
+                    <img src = "img/my.png">
+                    <span>MyÆäÀÌÁö</span></a>
+                    </td>
+                    </table>
                 </footer>
-                <%String nick = URLEncoder.encode(info.getNick(),"UTF-8");%>
-                <%String bmtitle = URLEncoder.encode(dto.get(0).getWebtitle(),"UTF-8");%>
-                <%String genre = URLEncoder.encode(dto.get(0).getGenre(),"UTF-8");%>
-                <%String writter = URLEncoder.encode(dto.get(0).getWebwriter(),"UTF-8");%>
-                <%String bmfile = URLEncoder.encode(dto.get(0).getWebfile(),"UTF-8");%>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	
                 <script src="js/sweetalert2.all.js"></script>
                 <script src="js/jquery-3.6.0.min.js"></script>
@@ -414,7 +405,7 @@ String img = null;%>
                 action_popup.confirm("ÂòÇÏ±â ¸ñ·ÏÀ¸·Î ÀÌµ¿ÇÒ±î¿ä?", function (res) {
                     if (res) {
                         /* Âò¸ñ·ÏÀ¸·Î ¹Ù²Ù±â */
-                        location.href='BookMarkService?nick=<%=nick%>&title=<%=bmtitle%>&genre=<%=genre%>&writter=<%=writter%>&file=<%=bmfile%>'
+                        location.href='bookmarkpage.html'
                     }
                 })
             });

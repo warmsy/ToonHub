@@ -130,3 +130,4 @@ select * from Webtoon
 select * from GENRE
 select * from WEBTOON_EXAMPLE
 select * from toonmember
+select * from bookmark;

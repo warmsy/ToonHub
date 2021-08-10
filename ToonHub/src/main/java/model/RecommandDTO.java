@@ -1,13 +1,13 @@
 package model;
 
 public class RecommandDTO {
-	private String RecNum;
+	private int RecNum;
 	private String nick;
 	private String WebTitle;
 	private String genre;
 	private String RecCon;
 	private String RecDate;
-	public RecommandDTO(String recNum, String nick, String webTitle, String genre, String recCon, String RecDate) {
+	public RecommandDTO(int recNum, String nick, String webTitle, String genre, String recCon, String RecDate) {
 		super();
 		RecNum = recNum;
 		this.nick = nick;
@@ -16,7 +16,7 @@ public class RecommandDTO {
 		RecCon = recCon;
 		this.RecDate = RecDate;
 	}
-	public void setRecNum(String recNum) {
+	public void setRecNum(int recNum) {
 		RecNum = recNum;
 	}
 	public void setNick(String nick) {
@@ -34,7 +34,7 @@ public class RecommandDTO {
 	public void setRecDate(String RecDate) {
 		RecDate = RecDate;
 	}
-	public String getRecNum() {
+	public int getRecNum() {
 		return RecNum;
 	}
 	public String getNick() {
