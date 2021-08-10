@@ -92,7 +92,7 @@ body {
 			<div id="wrap">
 				<ul class="codrops-demos">
 					<a href="ToonMain.jsp" style="color: #42C690"> 요일별 </a>
-					<a href="#"> 장르 </a>
+					<a href="ToonGenre.jsp"> 장르 </a>
 					<a href="platform.jsp"> 플랫폼 </a>
 				</ul>
 				<section class="tabArea">
@@ -139,13 +139,13 @@ body {
 																if (monlist.get(i).getPlatform().equals("탑툰")) {
 																%> <img
 																src="./toon_image/<%=img%>"
-																style="width: 30%; height: auto;'">
+																width="100px" height="100px">
 															</a>
 															<%
 															} else {
 															%>
 															<img src="./toon_image/<%=img%>"
-																style="width: 50%; height: auto;'"></a>
+																width="100px" height="100px"></a>
 															<%
 															}
 															%>
@@ -184,8 +184,7 @@ body {
 														class="brands_item d-flex flex-column justify-content-center">
 														<a href="Detail_Day.jsp?title=<%=monlist.get(i).getWebtitle()%>">
 
-															<img src="./toon_image/<%=img%>" width="100px"
-															height="100px">
+															<img src="./toon_image/<%=img%>" width="100px" height="100px">
 														</a>
 														<!-- 네모를 누르면 네이버로 이동 할 수 있도록 하기  -->
 													</div>
@@ -232,7 +231,7 @@ body {
 														<div
 															class="brands_item d-flex flex-column justify-content-center">
 															<a href="Detail_Day.jsp?title=<%=monlist.get(i).getWebtitle()%>"> 
-															<img src="./toon_image/<%=img%>" width="100px" height="100px"></a>
+															<img src="./toon_image/<%=img%>"width="100px" height="100px"></a>
 														</div>
 														<div class="info">
 															<strong><%=monlist.get(i).getWebtitle()%></strong><br>

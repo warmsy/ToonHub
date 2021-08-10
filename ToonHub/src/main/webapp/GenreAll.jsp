@@ -52,7 +52,12 @@ body {
 </style>
 </head>
 <body oncontextmenu='return false' class='snippet-body skin-3'>
-<%ToonMemberDTO info = (ToonMemberDTO) session.getAttribute("info"); %>
+<%ToonMemberDTO info = (ToonMemberDTO) session.getAttribute("info"); 
+
+
+
+
+%>
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 	<link rel="stylesheet"
@@ -91,8 +96,15 @@ body {
                     </ul>
                     </table>
 
+
+
+
                     <div>
                         <div class="items" style="display: flex;flex-wrap: wrap; margin-left:3%;" >
+                          
+                          
+                          
+                          
                             <div style="margin: 10px;">
                                 <a href="detail.html" style="color: #616161!important;">
                                 <div style="width: 100px;height: 100px; background-color: #42C690;">
@@ -104,7 +116,12 @@ body {
                                 </div>
                                 </a>
                              </div>
-                            
+                           
+                           
+                           
+                           
+                           
+                           
                              <div style="margin:10px;">
                                 <a href="detail.html" style="color: #616161!important;">
                                     <div style="width: 100px;height: 100px; background-color: #42C690;">
@@ -116,6 +133,8 @@ body {
                                     </div>
                                 </a>
                              </div>
+
+
 
                              <div style="margin: 10px;">
                                 <a href="detail.html" style="color: #616161!important;">
@@ -165,6 +184,8 @@ body {
                                     </div>
                                 </a>
                              </div>
+                             
+                             
                              <div style="margin: 10px;">
                                 <a href="detail.html" style="color: #616161!important;">
                                     <div style="width: 100px;height: 100px; background-color: #42C690;">
@@ -176,6 +197,11 @@ body {
                                     </div>
                                 </a>
                              </div>
+                             
+                             
+                             
+                             
+                             
                             </div>
 
                                             

@@ -2,8 +2,8 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.WebtoonDAO"%>
 <%@page import="model.ToonMemberDTO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!doctype html>
 <html class="no-js">
 <head>
@@ -85,11 +85,11 @@ body {
 		<div class="content">
 
 			<header class="codrops-header">
-				<!--µğÆúÆ®·Î toonhub °¡ µé¾î¿ÍÀÖµµ·Ï ÇÏ´Â¹æ¹ı ¹°¾îº¸±â ! -->
+				<!--ë””í´íŠ¸ë¡œ toonhub ê°€ ë“¤ì–´ì™€ìˆë„ë¡ í•˜ëŠ”ë°©ë²• ë¬¼ì–´ë³´ê¸° ! -->
 				<div class="codrops-menu">
 					<strong><a href="ToonMain.jsp" style="color: #42C690">Toonhub</a></strong>
-					<strong>|</strong> <strong><a href="Community.jsp">Ä¿¹Â´ÏÆ¼</a></strong>
-					<!-- ¸ÇÀ§ »ó´Ü-->
+					<strong>|</strong> <strong><a href="Community.jsp">ì»¤ë®¤ë‹ˆí‹°</a></strong>
+					<!-- ë§¨ìœ„ ìƒë‹¨-->
 					<a href="Search.jsp"><img src="/img/search.png"
 						style="width: 4%; height: 4%; float: right; margin-right: 6%;"></a>
 				</div>
@@ -99,9 +99,9 @@ body {
 
 			<div id="wrap">
 				<ul class="codrops-demos">
-					<a href="ToonMain.jsp"> ¿äÀÏº° </a>
-					<a href="ToonGenre.jsp" style="color: #42C690"> Àå¸£ </a>
-					<a href="platform.jsp"> ÇÃ·§Æû </a>
+					<a href="ToonMain.jsp"> ìš”ì¼ë³„ </a>
+					<a href="ToonGenre.jsp" style="color: #42C690"> ì¥ë¥´ </a>
+					<a href="platform.jsp"> í”Œë«í¼ </a>
 				</ul>
 				<section class="tabArea">
 					<div class="tabBox on">
@@ -110,7 +110,7 @@ body {
 
 
 							<nav class="toon1">
-								<strong>#·Î¸Ç½º</strong><a href="GenreAll.jsp" class="main_more">´õº¸±â
+								<strong>#ë¡œë§¨ìŠ¤</strong><a href="GenreAll_romance.jsp" class="main_more">ë”ë³´ê¸°
 									></a><br>
 								<br>
 								<div class="toon_slider_box">
@@ -145,7 +145,7 @@ body {
 							<br>
 
 						<nav class="toon1">
-								<strong># µå¶ó¸¶</strong><a href="GenreAll.jsp" class="main_more">´õº¸±â
+								<strong># ë“œë¼ë§ˆ</strong><a href="GenreAll_drama.jsp" class="main_more">ë”ë³´ê¸°
 									></a><br>
 								<br>
 								<div class="toon_slider_box">
@@ -159,7 +159,7 @@ body {
 												<div class="owl-item">
 													<div
 														class="brands_item d-flex flex-column justify-content-center">
-														<a href="Detail_Genre.jsp">
+														<a href="Detail_Genre.jsp?title=<%=drama.get(i).getWebtitle()%>">
 															<img src="./toon_image/<%=img%>" width="100px" height="100px"></a>
 															</div>
 															<div class="info">
@@ -181,7 +181,7 @@ body {
 							
 
 						<nav class="toon1">
-								<strong># ¾×¼Ç</strong><a href="GenreAll.jsp" class="main_more">´õº¸±â
+								<strong># ì•¡ì…˜</strong><a href="GenreAll_action.jsp" class="main_more">ë”ë³´ê¸°
 									></a><br>
 								<br>
 								<div class="toon_slider_box">
@@ -195,7 +195,7 @@ body {
 												<div class="owl-item">
 													<div
 														class="brands_item d-flex flex-column justify-content-center">
-														<a href="Detail_Genre.jsp">
+														<a href="Detail_Genre.jsp?title=<%=action.get(i).getWebtitle()%>">
 															<img src="./toon_image/<%=img%>" width="100px" height="100px"></a>
 															</div>
 															<div class="info">
@@ -216,7 +216,7 @@ body {
 
 
 						<nav class="toon1">
-								<strong># ÆÇÅ¸Áö</strong><a href="GenreAll.jsp" class="main_more">´õº¸±â
+								<strong># íŒíƒ€ì§€</strong><a href="GenreAll_fantasy.jsp" class="main_more">ë”ë³´ê¸°
 									></a><br>
 								<br>
 								<div class="toon_slider_box">
@@ -230,7 +230,7 @@ body {
 												<div class="owl-item">
 													<div
 														class="brands_item d-flex flex-column justify-content-center">
-														<a href="Detail_Genre.jsp">
+														<a href="Detail_Genre.jsp?title=<%=fantasy.get(i).getWebtitle()%>">
 															<img src="./toon_image/<%=img%>" width="100px" height="100px"></a>
 															</div>
 															<div class="info">
@@ -251,7 +251,7 @@ body {
 
 
 						<nav class="toon1">
-								<strong># ¿È´Ï¹ö½º</strong><a href="GenreAll.jsp" class="main_more">´õº¸±â
+								<strong># ì˜´ë‹ˆë²„ìŠ¤</strong><a href="GenreAll_omnibus.jsp" class="main_more">ë”ë³´ê¸°
 									></a><br>
 								<br>
 								<div class="toon_slider_box">
@@ -265,7 +265,7 @@ body {
 												<div class="owl-item">
 													<div
 														class="brands_item d-flex flex-column justify-content-center">
-														<a href="Detail_Genre.jsp">
+														<a href="Detail_Genre.jsp?title=<%=omnibus.get(i).getWebtitle()%>">
 															<img src="./toon_image/<%=img%>" width="100px" height="100px"></a>
 															</div>
 															<div class="info">
@@ -286,7 +286,7 @@ body {
 
 
 						<nav class="toon1">
-								<strong># °³±×</strong><a href="GenreAll.jsp" class="main_more">´õº¸±â
+								<strong># ê°œê·¸</strong><a href="GenreAll_gag.jsp" class="main_more">ë”ë³´ê¸°
 									></a><br>
 								<br>
 								<div class="toon_slider_box">
@@ -300,7 +300,7 @@ body {
 												<div class="owl-item">
 													<div
 														class="brands_item d-flex flex-column justify-content-center">
-														<a href="Detail_Genre.jsp">
+														<a href="Detail_Genre.jsp?title=<%=gag.get(i).getWebtitle()%>">
 															<img src="./toon_image/<%=img%>" width="100px" height="100px"></a>
 															</div>
 															<div class="info">
@@ -342,20 +342,20 @@ body {
 						<%
 						if (info != null) {
 						%> <a href="bookmarkpage.jsp"> <img
-							src="img/bookmark.png"> <span>ºÏ¸¶Å©</span></a> <%
+							src="img/bookmark.png"> <span>ë¶ë§ˆí¬</span></a> <%
  } else {
  %> <a
 						href="ToonMain.jsp" onclick="constraints()"> <img
-							src="img/bookmark.png"> <span>ºÏ¸¶Å©</span></a> <%
+							src="img/bookmark.png"> <span>ë¶ë§ˆí¬</span></a> <%
  }
  %>
 					</td>
 					<td><a href="Login.jsp"> <img src="img/my.png"> <%
  if (info != null) {
  %>
-							<span>MyÆäÀÌÁö</span></a> <%
+							<span>Myí˜ì´ì§€</span></a> <%
  } else {
- %> <span>·Î±×ÀÎ</span> <%
+ %> <span>ë¡œê·¸ì¸</span> <%
  }
  %></td>
 				</table>
@@ -363,10 +363,10 @@ body {
 			<script src="js/jquery-3.6.0.min.js"></script>
 			<script>
 				$(document).ready(function() {
-					$(".tabArea .week li a").on("click", function() { // ÇØ´ç ¿ä¼Ò¸¦ Å¬¸¯ÇÏ´Â ³» ÀÚ½ÅÀÇ index ¹øÈ£¸¦ °¡Á®¿Â´Ù. [0], [1] 
-						const num = $(".tabArea .week li a").index($(this)); // ±âÁ¸¿¡ Àû¿ëµÇ¾î ÀÖ´Â on class »èÁ¦ 
+					$(".tabArea .week li a").on("click", function() { // í•´ë‹¹ ìš”ì†Œë¥¼ í´ë¦­í•˜ëŠ” ë‚´ ìì‹ ì˜ index ë²ˆí˜¸ë¥¼ ê°€ì ¸ì˜¨ë‹¤. [0], [1] 
+						const num = $(".tabArea .week li a").index($(this)); // ê¸°ì¡´ì— ì ìš©ë˜ì–´ ìˆëŠ” on class ì‚­ì œ 
 						$(".tabArea .week li").removeClass("on");
-						$(".tabArea .tabBox").removeClass("on"); // ´ÙÀ½ ¿ä¼Ò Å¬¸¯½Ã on class Ãß°¡ 
+						$(".tabArea .tabBox").removeClass("on"); // ë‹¤ìŒ ìš”ì†Œ í´ë¦­ì‹œ on class ì¶”ê°€ 
 						$('.tabArea .week li:eq(' + num + ')').addClass("on");
 						$('.tabArea .tabBox:eq(' + num + ')').addClass("on");
 					});
@@ -377,7 +377,7 @@ body {
 			<script
 				src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
 			<script type='text/javascript'>
-				/*  ¾Æ´Ï °©ÀÚ±â ¿Ö¾ÈµÅ .. ^^ */
+				/*  ì•„ë‹ˆ ê°‘ìê¸° ì™œì•ˆë¼ .. ^^ */
 				var selected_day = $('.week a');
 				selected_day.click(function() {
 					$(this).css('color', '#42C690');
@@ -410,16 +410,16 @@ body {
 							loop : true,
 							autoplay : true,
 							autoplayTimeout : 0,
-							/* ÀÚµ¿À¸·Î ³Ñ¾î°¡°Ô ÇÏ´Â°Å ! */
+							/* ìë™ìœ¼ë¡œ ë„˜ì–´ê°€ê²Œ í•˜ëŠ”ê±° ! */
 							nav : false,
 							dots : false,
 
 							autoWidth : false,
-							/* ÀÚµ¿ ÀÌ¹ÌÁö »çÀÌÁî ¸ÂÃã */
+							/* ìë™ ì´ë¯¸ì§€ ì‚¬ì´ì¦ˆ ë§ì¶¤ */
 							items : 3,
-							/* default ·Î º¸¿©Áö´Â ¾ÆÀÌÅŞ °¹¼ö  */
+							/* default ë¡œ ë³´ì—¬ì§€ëŠ” ì•„ì´í…¡ ê°¯ìˆ˜  */
 							margin : 2
-						/* ¾ÆÀÌÅÛ°£ ¸¶Áø  */
+						/* ì•„ì´í…œê°„ ë§ˆì§„  */
 						});
 
 						if ($('.brands_prev').length) {
@@ -440,7 +440,7 @@ body {
 			</script>
 			<script>
 				function constraints() {
-					alert("·Î±×ÀÎÀÌ ÇÊ¿äÇÑ ¼­ºñ½ºÀÔ´Ï´Ù");
+					alert("ë¡œê·¸ì¸ì´ í•„ìš”í•œ ì„œë¹„ìŠ¤ì…ë‹ˆë‹¤");
 				}
 			</script>
 </body>

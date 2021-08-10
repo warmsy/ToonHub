@@ -1,6 +1,6 @@
+<%@page import="model.WebtoonDAO"%>
 <%@page import="model.WebtoonDTO"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="model.WebtoonDAO"%>
 <%@page import="model.ToonMemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -46,13 +46,30 @@ body {
     display: inline;
     float: left;
 }
-.platform a{
+.platform .viewall{
+    display: inline;
     float:right;
-    margin-right:6%;
 }
+
+.info{
+overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100px;
+  height: 20px;
+}
+
+
+
 </style>
 </head>
 <body oncontextmenu='return false' class='snippet-body skin-3'>
+<%ToonMemberDTO info = (ToonMemberDTO) session.getAttribute("info");
+WebtoonDAO dao = new WebtoonDAO();
+ArrayList<WebtoonDTO> bomtoon = dao.bomtoon();
+
+String img ;
+%>
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 	<link rel="stylesheet"
@@ -63,14 +80,7 @@ body {
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
-<%ToonMemberDTO info = (ToonMemberDTO) session.getAttribute("info"); 
-WebtoonDAO dao = new WebtoonDAO();
-ArrayList<WebtoonDTO> bomtoon = dao.bomtoon();
-ArrayList<WebtoonDTO> toptoon = dao.toptoon();
-String img;
 
-
-%>
 		<div class="container">
 			<!-- Top Navigation -->
 			<div class="content">
@@ -85,24 +95,47 @@ String img;
 					
 				<div id="wrap">
                     <ul class="codrops-demos">
-						<a href="ToonMain.jsp" > 요일별 </a>
+						<a href="ToonMain.jsp"> 요일별 </a>
 						<a href="ToonGenre.jsp"> 장르 </a>
-						<a href="platform.jsp"style="color:#42C690";> 플랫폼 </a>
+						<a href="platform.jsp"style="color:#42C690;"> 플랫폼 </a>
                     </ul>
                 </div>
 
                 <div class ="platform">
-                    <ul>
-                        <img src="img/bomtoon.png" width="25px" height="25px">
-                        <strong style="font-size: 20px;">봄툰</strong> <span style="margin: 0 10px;">|</span><span>Boomtoon</span>
-                        <a href=platform_bomtoon.jsp>전체보기</a>
+                    <table class="toonname">
+                    <ul><strong style="font-size: 20px;">봄툰</strong> <span>|</span><span>bomtoon</span>
+                    <div class = "viewall">
+                    </div>
                     </ul>
+                    </table>
 
-                    <ul>
-                        <img src="img/toptoon.png" width="25px" height="25px">
-                        <strong style="font-size: 20px;">탑툰</strong> <span style="margin: 0 10px;">|</span><span>toptoon</span>
-                        <a href=platform_toptoon.jsp>전체보기</a>
-                    </ul>
+                    <div>
+                        <div class="items" style="display: flex;flex-wrap: wrap; margin-left:3%;" >
+                        
+                        
+                           
+                            <%for(int i=0; i<bomtoon.size() ; i++){ %>
+                         
+                             <%img= bomtoon.get(i).getWebfile();%>
+							<%img = img.replace("?", "");%>
+							
+                             <div style="margin: 10px;">
+                                <a href="Detail_Platform.jsp?title=<%=bomtoon.get(i).getWebtitle()%>" style="color: #616161!important;">
+                                    <div style="width: 100px;height: 100px; background-color: #42C690;">
+                                        <img src="./toon_image/<%=img%>" width="100px" height = "100px">
+                                    </div>
+                                    <div class = "info">
+                                        <strong><%=bomtoon.get(i).getWebtitle()%></strong><br>
+                                        <span><%=bomtoon.get(i).getWebwriter()%></span><br>
+                                    </div>
+                                </a>
+                             </div><%}%>
+                             
+                          
+                            </div>
+
+                                            
+                
                 </div>
 
 

@@ -1,8 +1,8 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.BookMarkDTO"%>
 <%@page import="model.BookMarkDAO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!doctype html>
 <html class="no-js">
 <head>
@@ -83,26 +83,26 @@ String img;%>
 		<div class="container">
 			<div class="content">
 
-				<!-- ���� �Ӹ�  demo.css �� ����-->
+				<!-- 메인 머리  demo.css 에 있음-->
 				<header class="codrops-header">  
-					<!--����Ʈ�� toonhub �� �����ֵ��� �ϴ¹�� ����� ! -->
+					<!--디폴트로 toonhub 가 들어와있도록 하는방법 물어보기 ! -->
                     <div class="codrops-menu">
-                        <strong><a href="ToonMain.jsp" style="color:#42C690">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="Community.jsp">Ŀ�´�Ƽ</a></strong> <!-- ���� ���-->
+                        <strong><a href="ToonMain.jsp" style="color:#42C690">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="Community.jsp">커뮤니티</a></strong> <!-- 맨위 상단-->
                     </div>
 					
-					<!-- h1 �±� ���� �ٸ��ɷ� �ٲܰ� !  -->
+					<!-- h1 태그 말고 다른걸로 바꿀것 !  -->
 					<br><br>
-					<!-- �ְ�  -->
+					<!-- 주간  -->
 				</header>
 				<div id="wrap">
                     <ul class="codrops-demos">
-						<a href="ToonMain.jsp"> ���Ϻ� </a>
-						<a href="ToonGenre.jsp"> �帣 </a>
-						<a href="platform.jsp"> �÷��� </a>
+						<a href="ToonMain.jsp"> 요일별 </a>
+						<a href="ToonGenre.jsp"> 장르 </a>
+						<a href="platform.jsp"> 플랫폼 </a>
                     </ul>
 				<div class = "cont_head">
 					<div class = "cont_header">
-					<strong style="font-size: 20px;">�� ���</strong></div>
+					<strong style="font-size: 20px;">찜 목록</strong></div>
 				</div>
 				<div class = "cont_list">
 				<%for(int i = 0 ; i < list.size(); i++){ %>
@@ -138,12 +138,12 @@ String img;%>
 			<td>
 		<a href = "BookMark.jsp">
 			<img src = "img/bookmark.png">
-			<span>�ϸ�ũ</span></a>
+			<span>북마크</span></a>
 			</td>
 			<td>
 		<a href = "Mypage.jsp" >
 			<img src = "img/my.png">
-			<span>My������</span></a>
+			<span>My페이지</span></a>
 			</td>
 			</tl>
 			</table>

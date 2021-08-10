@@ -30,6 +30,11 @@ public class WebtoonDAO {
 	ArrayList<WebtoonDTO> fantasy = null;
 	ArrayList<WebtoonDTO> omnibus = null;
 	ArrayList<WebtoonDTO> gag = null;
+	
+	
+	ArrayList<WebtoonDTO> bomtoon = null;
+	ArrayList<WebtoonDTO> toptoon = null;
+	ArrayList<WebtoonDTO> platformlist = null;
 
 	public void conn() {
 		try {
@@ -582,9 +587,74 @@ public ArrayList<WebtoonDTO> gag() {
 }
 
 
+public ArrayList<WebtoonDTO> bomtoon() {
+	
+	conn();
+	
+	String sql = "select * from webtoon where web_platform =\'º½Å÷\' order by web_view";
+	bomtoon = new ArrayList<WebtoonDTO>();
+	try {
+		psmt = conn.prepareStatement(sql);
+		rs = psmt.executeQuery();
+
+		while (rs.next()) {
+			String webtitle = rs.getString(1);
+			String genre = rs.getString(2);
+			int view = rs.getInt(3);
+			String webwriter = rs.getString(4);
+			String platform = rs.getString(5);
+			String webday = rs.getString(6);
+			String story = rs.getString(7);
+			String webfile = rs.getString(8);
+			String address = rs.getString(9);
+			String state = rs.getString(10);
+
+			dto = new WebtoonDTO(webtitle, genre, view, webwriter, platform, webday, story, webfile, address,
+					state);
+			bomtoon.add(dto);
+		}
+		;
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} finally {
+		close();
+	}return bomtoon;	
+}
 
 
+public ArrayList<WebtoonDTO> toptoon() {
+	
+	conn();
+	
+	String sql = "select * from webtoon where web_platform =\'Å¾Å÷\' order by web_view";
+	toptoon = new ArrayList<WebtoonDTO>();
+	try {
+		psmt = conn.prepareStatement(sql);
+		rs = psmt.executeQuery();
 
+		while (rs.next()) {
+			String webtitle = rs.getString(1);
+			String genre = rs.getString(2);
+			int view = rs.getInt(3);
+			String webwriter = rs.getString(4);
+			String platform = rs.getString(5);
+			String webday = rs.getString(6);
+			String story = rs.getString(7);
+			String webfile = rs.getString(8);
+			String address = rs.getString(9);
+			String state = rs.getString(10);
+
+			dto = new WebtoonDTO(webtitle, genre, view, webwriter, platform, webday, story, webfile, address,
+					state);
+			toptoon.add(dto);
+		}
+		;
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} finally {
+		close();
+	}return toptoon;	
+}
 
 
 

@@ -1,7 +1,10 @@
+<%@page import="model.WebtoonDAO"%>
+<%@page import="model.WebtoonDTO"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="model.ToonMemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!doctype html>
 <html class="no-js">
 <head>
 <meta charset='utf-8'>
@@ -48,11 +51,24 @@ body {
     float:right;
 }
 
+.info{
+overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100px;
+  height: 20px;
+}
+
+
 
 </style>
 </head>
 <body oncontextmenu='return false' class='snippet-body skin-3'>
-<%ToonMemberDTO info = (ToonMemberDTO) session.getAttribute("info"); %>
+<%ToonMemberDTO info = (ToonMemberDTO) session.getAttribute("info");
+WebtoonDAO dao = new WebtoonDAO();
+ArrayList<WebtoonDTO> action = dao.action();
+String img ;
+%>
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 	<link rel="stylesheet"
@@ -71,122 +87,54 @@ body {
                 <header class="codrops-header">  
 					<!--디폴트로 toonhub 가 들어와있도록 하는방법 물어보기 ! -->
                     <div class="codrops-menu">
-                        <strong><a href="#" style = "color: #42C690">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="Community.jsp">커뮤니티</a></strong> <!-- 맨위 상단-->
+                        <strong><a href="#" style = "color: #42C690">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="Community.html">커뮤니티</a></strong> <!-- 맨위 상단-->
                     </div>
                     <br><br>
 				</header>
 					
 				<div id="wrap">
                     <ul class="codrops-demos">
-						<a href="ToonMain.jsp"> 요일별 </a>
-						<a href="#"> 장르 </a>
-						<a href="platform.jsp"style="color:#42C690;"> 플랫폼 </a>
+						<a href="ToonMain.jsp" > 요일별 </a>
+						<a href="ToonGenre.jsp"style="color:#42C690;"> 장르 </a>
+						<a href="platform.jsp"> 플랫폼 </a>
                     </ul>
                 </div>
-
                 <div class ="platform">
                     <table class="toonname">
-                    <ul><strong style="font-size: 20px;">봄툰</strong> <span>|</span><span>Boomtoon</span>
+                    <ul><strong style="font-size: 20px;">#<%=action.get(0).getGenre() %></strong>
                     <div class = "viewall">
                     </div>
                     </ul>
                     </table>
 
-                    <div>
-                        <div class="items" style="display: flex;flex-wrap: wrap; margin-left:3%;" >
-                            <div style="margin: 10px;">
-                                <a href="detail.jsp" style="color: #616161!important;">
+
+                    <div> 
+                    <div class="items" style="display: flex;flex-wrap: wrap; margin-left:3%;" > 
+                         
+                          <%for (int i =0; i<action.size(); i++){ %>  
+                            <%img= action.get(i).getWebfile();%>
+							<%img = img.replace("?", "");%>
+							
+							   <div style="margin: 10px;"> 
+                                <a href="Detail_Genre.jsp?title=<%=action.get(i).getWebtitle()%>" style="color: #616161!important;">
                                 <div style="width: 100px;height: 100px; background-color: #42C690;">
-                                    <img src="nemo.png" width="100px" height = "100px">
+                                    <img src="./toon_image/<%=img%>" width="100px" height = "100px">
                                 </div>
                                 <div class = "info">
-                                    <strong>제목</strong><br>
-                                    <span>작가 이름</span><br>
+                                    <strong><%=action.get(i).getWebtitle()%></strong><br>
+                                    <span><%=action.get(i).getWebwriter()%></span><br>
                                 </div>
                                 </a>
                              </div>
-                            
-                             <div style="margin:10px;">
-                                <a href="detail.jsp" style="color: #616161!important;">
-                                    <div style="width: 100px;height: 100px; background-color: #42C690;">
-                                        <img src="nemo.png" width="100px" height = "100px">
-                                    </div>
-                                    <div class = "info">
-                                        <strong>제목</strong><br>
-                                        <span>작가 이름</span><br>
-                                    </div>
-                                </a>
-                             </div>
-
-                             <div style="margin: 10px;">
-                                <a href="detail.jsp" style="color: #616161!important;">
-                                    <div style="width: 100px;height: 100px; background-color: #42C690;">
-                                        <img src="nemo.png" width="100px" height = "100px">
-                                    </div>
-                                    <div class = "info">
-                                        <strong>제목</strong><br>
-                                        <span>작가 이름</span><br>
-                                    </div>
-                                </a>
-                             </div>
-
-
-                             <div style="margin: 10px;">
-                                <a href="detail.jsp" style="color: #616161!important;">
-                                    <div style="width: 100px;height: 100px; background-color: #42C690;">
-                                        <img src="nemo.png" width="100px" height = "100px">
-                                    </div>
-                                    <div class = "info">
-                                        <strong>제목</strong><br>
-                                        <span>작가 이름</span><br>
-                                    </div>
-                                </a>
-                             </div>
-
-                             <div style="margin: 10px;">
-                                <a href="detail.jsp" style="color: #616161!important;">
-                                    <div style="width: 100px;height: 100px; background-color: #42C690;">
-                                        <img src="nemo.png" width="100px" height = "100px">
-                                    </div>
-                                    <div class = "info">
-                                        <strong>제목</strong><br>
-                                        <span>작가 이름</span><br>
-                                    </div>
-                                </a>
-                             </div>
-                             
-                             <div style="margin: 10px;">
-                                <a href="detail.jsp" style="color: #616161!important;">
-                                    <div style="width: 100px;height: 100px; background-color: #42C690;">
-                                        <img src="nemo.png" width="100px" height = "100px">
-                                    </div>
-                                    <div class = "info">
-                                        <strong>제목</strong><br>
-                                        <span>작가 이름</span><br>
-                                    </div>
-                                </a>
-                             </div>
-                             <div style="margin: 10px;">
-                                <a href="detail.jsp" style="color: #616161!important;">
-                                    <div style="width: 100px;height: 100px; background-color: #42C690;">
-                                        <img src="nemo.png" width="100px" height = "100px">
-                                    </div>
-                                    <div class = "info">
-                                        <strong>제목</strong><br>
-                                        <span>작가 이름</span><br>
-                                    </div>
-                                </a>
-                             </div>
-                            </div>
-
-                                            
-                
-                </div>
-
-
-                </div>
+                                
+                            <%} %>
+                        </div> 
+					    </div>
+						   </div>
+						   
+						   
                 <div class="foot" style="z-index: 1;">
-                    				<table>
+				<table>
 					<td><a href="ToonMain.jsp"> <img src="img/home.png">
 							<span>Home</span></a></td>
 					<td id = "bookmark">

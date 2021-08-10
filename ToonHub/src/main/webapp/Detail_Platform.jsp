@@ -148,7 +148,7 @@ img{
 
 <%
 
-	String title = request.getParameter("title");
+String title = request.getParameter("title");
 System.out.print(title);
 WebtoonDAO dao = new WebtoonDAO();
 ArrayList<WebtoonDTO> dto = dao.selectDetail(title);
