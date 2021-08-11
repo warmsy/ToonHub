@@ -62,7 +62,7 @@ body {
 					<strong>자유게시판</strong></div>
 					<form action = "ToonBoardWriteService?nick=<%=info.getNick() %>" method = "post">
 					<div class = "cont_shortcut">
-					<button >게시하기</button>
+					<button>게시하기</button>
 					</div>
 					</div>
 					<hr align="center" width="88%">
