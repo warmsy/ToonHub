@@ -662,11 +662,11 @@ public ArrayList<WebtoonDTO> Search(String item, String search) {
 	String sql = null;
 	conn();
 	if(item.equals("title")){
-		sql = "select * from webtoon where web_title = %?%";	
+		sql = "select * from webtoon where web_title = ?";	
 	} else if(item.equals("genre")) {
 		sql = "select * from webtoon where web_genre = ?";	
 	} else if(item.equals("writter")) {
-		sql = "select * from webtoon where web_writer = %?%";	
+		sql = "select * from webtoon where web_writer = ?";	
 	} else {
 		sql = "select * from webtoon where web_platform = ?";	
 	}

@@ -1,7 +1,7 @@
 <%@page import="model.WebtoonDTO"%>
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!doctype html>
 <html class="no-js">
 <head>
@@ -96,50 +96,90 @@ img{
 	height:100px;
 }
 .inner_content{
+	overflow: hidden;
+ 	text-overflow: ellipsis;
 	float:left;
 	margin: 10px 15px;
 	width:15%;
 	color:#b3b3b3;
+	height:150px
+}
+.inner_content p{
+	margin:0px;
 }
 .part{
 	color: #b6b6b6;
-	margin-bottom:10px;
+	margin: 15px 13%;
+}
+.part a{
+	float:right;
+}
+.info{
+overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100px;
+  height: 40px;
 }
 </style>
 </head>
 <body oncontextmenu='return false' class='snippet-body skin-3'>
-<%String item = request.getParameter("item");
+<%
+String item = request.getParameter("item");
 String search = request.getParameter("search");
 ArrayList<WebtoonDTO> search_result = (ArrayList) session.getAttribute("main_search");
+System.out.println(item);
+System.out.println(search);
 %>
 		<div class="container">
 			<div class="content">
 
-				<!-- ���� �Ӹ�  demo.css �� ����-->
+				<!-- 메인 머리  demo.css 에 있음-->
 				<div class="search_header">
 				<a href="ToonMain.jsp">ToonHub</a>
 				</div>
 				<div class = "search_information">
 				<select name = "item" class = "search_item">
-				<option value = "title">����</option>
-				<option value = "genre">�帣</option>
-				<option value = "writter">�۰�</option>
-				<option value = "platform">�÷���</option>
+				<option value = "title">웹툰</option>
+				<option value = "genre">장르</option>
+				<option value = "writter">작가</option>
+				<option value = "platform">플랫폼</option>
 				</select>
 					<input type="text" placeholder="<%=search %>" name = "search">
 					<button><img src="img/search_white.png"></button>
 				</div>
 				</div>
 				<hr>
+				<hr>
 				<div class = "part" style="margin-left: 6%;">
 					<Strong><%=item %></Strong>
+					<%if (item.equals("봄툰")){ %>
+					<a href="platform_bomtoon.jsp">더보기 ></a>
+					<%} else if(item.equals("탑툰")){%>
+					<a href="platform_toptoon.jsp">더보기 ></a>
+					<%} else if(item.equals("로맨스")){%>
+					<a href="GenreAll_romance.jsp">더보기 ></a>
+					<%} else if(item.equals("드라마")){%>
+					<a href="GenreAll_drama.jsp">더보기 ></a>
+					<%} else if(item.equals("액션")){%>
+					<a href="GenreAll_action.jsp">더보기 ></a>
+					<%} else if(item.equals("옴니버스")){%>
+					<a href="GenreAll_omnibus.jsp">더보기 ></a>
+					<%} else if(item.equals("판타지")){%>
+					<a href="GenreAll_fantasy.jsp">더보기 ></a>
+					<%} else if(item.equals("개그")){%>
+					<a href="GenreAll_gag.jsp">더보기 ></a>
+					<%}else{%>
+					<%} %>
 				</div>
 				<div style="margin-left:6%;">
-				<%for (int i = 0; i < search_result.size(); i++){ %>
+				<%for (int i = 0; i < 12; i++){ %>
 				<div class = "inner_content">
 				<img src = "./toon_image/<%=search_result.get(i).getWebfile()%>">
-				<p><%=search_result.get(i).getWebtitle() %></p>
+				<div class="info">
+				<p class = "result_title"><%=search_result.get(i).getWebtitle() %></p>
 				<p><%=search_result.get(i).getWebwriter() %></p>
+				</div>
 				</div>
 				<%} %>
 				</div>
@@ -154,12 +194,12 @@ ArrayList<WebtoonDTO> search_result = (ArrayList) session.getAttribute("main_sea
 					<td>
 				<a href = "bookmarkpage.html">
 					<img src = "img/bookmark.png">
-					<span>�ϸ�ũ</span></a>
+					<span>북마크</span></a>
 					</td>
 					<td>
 				<a href = "Login.html" >
 					<img src = "img/my.png">
-					<span>My������</span></a>
+					<span>My페이지</span></a>
 					</td>
 					</tl>
 					</table>

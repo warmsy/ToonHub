@@ -56,7 +56,7 @@ overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 100px;
-  height: 20px;
+  height: 40px;
 }
 
 

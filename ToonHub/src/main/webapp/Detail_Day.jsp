@@ -1,9 +1,11 @@
-<%@page import="model.WebtoonDTO"%>
+<%@page import="java.net.URLEncoder"%>
+<%@page import="model.ToonMemberDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.WebtoonDAO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@page import="model.WebtoonDTO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!doctype html>
 <html class="no-js">
 <head>
 <meta charset='utf-8'>
@@ -149,16 +151,11 @@ img{
 </style>
 </head>
 <body oncontextmenu='return false' class='snippet-body skin-3'>
-
-<%
-
-	String title = request.getParameter("title");
-System.out.print(title);
+<%ToonMemberDTO info = (ToonMemberDTO) session.getAttribute("info");
+String title = request.getParameter("title");
 WebtoonDAO dao = new WebtoonDAO();
 ArrayList<WebtoonDTO> dto = dao.selectDetail(title);
-String img=null;
-%>
-
+String img = null;%>
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 	<link rel="stylesheet"
@@ -175,40 +172,61 @@ String img=null;
 			<div class="content">
 
                 <header class="codrops-header">  
-					<!--ë””í´íŠ¸ë¡œ toonhub ê°€ ë“¤ì–´ì™€ìˆë„ë¡ í•˜ëŠ”ë°©ë²• ë¬¼ì–´ë³´ê¸° ! -->
+					<!--µğÆúÆ®·Î toonhub °¡ µé¾î¿ÍÀÖµµ·Ï ÇÏ´Â¹æ¹ı ¹°¾îº¸±â ! -->
                     <div class="codrops-menu">
-                        <strong><a href="ToonMain.jsp" style = "color: #42C690">Toonhub</a></strong><strong>|</strong> <strong ><a href="Community.jsp">ì»¤ë®¤ë‹ˆí‹°</a></strong> <!-- ë§¨ìœ„ ìƒë‹¨-->
-                        <a href="Search.jsp"><img src="./img/search.png" style="width:4%; height:4%; float: right; margin-right: 6%;"></a>
+                        <strong><a href="ToonMain.jsp" style = "color: #42C690">Toonhub</a></strong><strong>|</strong> <strong ><a href="Community.jsp">Ä¿¹Â´ÏÆ¼</a></strong> <!-- ¸ÇÀ§ »ó´Ü-->
+                        <a href="Search.jsp"><img src="/img/search.png" style="width:4%; height:4%; float: right; margin-right: 6%;"></a>
                     </div>
                     <br><br>
 				</header>
 					
+					<section class="modal modal-section type-confirm">
+                    <div class="enroll_box">
+                        <p class="menu_msg"></p>
+                    </div>
+                    <div class="enroll_btn">
+                        <button class="btn pink_btn btn_ok">³×</button>
+                        <button class="btn gray_btn modal_close">¾Æ´Ï¿À</button>
+                    </div>
+                </section>
+
+                <section class="modal modal-section type-alert">
+                    <div class="enroll_box">
+                        <p class="menu_msg"></p>
+                    </div>
+                    <div class="enroll_btn">
+                        <button class="btn pink_btn modal_close">È®ÀÎ</button>
+                    </div>
+                </section>
+					
 				<div id="wrap">
                     <ul class="codrops-demos">
-						<a href="ToonMain.jsp" style="color:#42C690"> ìš”ì¼ë³„ </a>
-						<a href="ToonGenre.jsp"> ì¥ë¥´ </a>
-						<a href="platform.jsp"> í”Œë«í¼ </a>
+						<a href="ToonMain.jsp" style="color:#42C690"> ¿äÀÏº° </a>
+						<a href="ToonGenre.jsp"> Àå¸£ </a>
+						<a href="platform.jsp"> ÇÃ·§Æû </a>
                     </ul>
-                    <ul class="week">
-						<li class="row on" id="day1"><a href="#!"><span>ì›”</span></a></li>
-						<li class="row on" id="day2"><a href="#!"><span>í™”</span></a></li>
-						<li class="row" id="day3"><a href="#!"><span>ìˆ˜</span></a></li>
-						<li class="row" id="day4"><a href="#!"><span>ëª©</span></a></li>
-						<li class="row" id="day5"><a href="#!"><span>ê¸ˆ</span></a></li>
-						<li class="row" id="day6"><a href="#!"><span>í† </span></a></li>
-						<li class="row" id="day0"><a href="#!"><span>ì¼</span></a></li>
-						<li class="row" id="day0"><a href="#!"><span>ì™„ê²°</span></a></li>
-					</ul>
+                    <div class="tabArea" style="height:50px;">
+                        <ul class="week">
+                            <li class = "row" id = "day1"> <a href="#!"><span>¿ù</span></a> </li>
+                            <li class = "row" id = "day2"> <a href="#!"><span>È­</span></a> </li>
+                            <li class = "row" id = "day3"> <a href="#!"><span>¼ö</span></a> </li>
+                            <li class = "row" id = "day4"> <a href="#!"><span>¸ñ</span></a> </li>
+                            <li class = "row" id = "day5"> <a href="#!"><span>±İ</span></a> </li>
+                            <li class = "row" id = "day6"> <a href="#!"><span>Åä</span></a> </li>
+                            <li class = "row" id = "day0"> <a href="#!"><span>ÀÏ</span></a> </li>
+                            <li class = "row" id = "day0"> <a href="#!"><span>¿Ï°á</span></a> </li>
+                        </ul>
+                    </div>
                     <div class="toon_info">
                         <div>
-                             <div class="img_place">
+                            <div class="img_place">
                             <%img = dto.get(0).getWebfile(); %>
 							<%img = img.replace("?", "");%>
                                 <img src="./toon_image/<%=img%>">
                             </div>
                             <div class="info_place">
-                                <p><strong><%= dto.get(0).getWebtitle()%></strong>
-                                <span style="font-size: 15px;"><%=dto.get(0).getWebwriter() %></span></p> 
+                                <p><strong><%=dto.get(0).getWebtitle() %></strong>
+                                <span style="font-size: 15px;"><%=dto.get(0).getWebwriter() %></span></p>                               
                                  <p style="font-size: 15px;"><%=dto.get(0).getStory() %></p>
                             </div>
                             <div class="genre">
@@ -216,30 +234,31 @@ String img=null;
                             </div>
                         </div>
                         <div class="detail_buttons">
-                            <button>ì°œí•˜ê¸°</button><br>
-                            <button style="font-size: 14px;">ì‘ê°€ ì»¤ë®¤ë‹ˆí‹°</button>
+
+                            <button class = "a_color"  style="border: none;" id = "bookmark">ÂòÇÏ±â</button><br>
+
+ 							
+                            <button style="font-size: 14px;">ÀÛ°¡ Ä¿¹Â´ÏÆ¼</button>
                         </div>
                         <div class = "link_to">
-                            <button onclick="location.href='<%=dto.get(0).getAddress()%>'">ë³´ëŸ¬ê°€ê¸°</button>
+                            <button onclick="location.href='<%=dto.get(0).getAddress()%>'">º¸·¯°¡±â</button>
                         </div>
                     </div>
-                    <form>
                     <div class = "write_evaluate">
-                        <span>ì´ ì›¹íˆ° ì–´ë•Œìš”?</span>
-                        <select>ë³„ì ì£¼ê¸°
-                            <option>â˜…â˜…â˜…â˜…â˜…</option>
-                            <option>â˜…â˜…â˜…â˜…â˜†</option>
-                            <option>â˜…â˜…â˜…â˜†â˜†</option>
-                            <option>â˜…â˜…â˜†â˜†â˜†</option>
-                            <option>â˜…â˜†â˜†â˜†â˜†</option>
+                        <span>ÀÌ À¥Å÷ ¾î¶§¿ä?</span>
+                        <select>º°Á¡ÁÖ±â
+                            <option>¡Ú¡Ú¡Ú¡Ú¡Ú</option>
+                            <option>¡Ú¡Ú¡Ú¡Ú¡Ù</option>
+                            <option>¡Ú¡Ú¡Ú¡Ù¡Ù</option>
+                            <option>¡Ú¡Ú¡Ù¡Ù¡Ù</option>
+                            <option>¡Ú¡Ù¡Ù¡Ù¡Ù</option>
                         </select>
-                        <textarea placeholder="ì‘ì„±í•  ë‚´ìš©ì„ ì…ë ¥í•˜ì„¸ìš”"></textarea>
-                        <button>ë“±ë¡</button>
+                        <textarea placeholder="ÀÛ¼ºÇÒ ³»¿ëÀ» ÀÔ·ÂÇÏ¼¼¿ä"></textarea>
+                        <button>µî·Ï</button>
                     </div>
-                    </form>
-                    <div class = "evaluate">
+  						<div class = "evaluate">
                         <div style="float:left;">
-                        <img src="nemo.png" style="width:50px; height:50px;">
+                        <img src="./img/profile.png" style="width:50px; height:50px;">
                         </div>
                         <div class="eval_info">
                             <p>Writer</p>
@@ -248,7 +267,7 @@ String img=null;
                         </div>
                         <hr>
                         <div style="float:left;">
-                            <img src="nemo.png" style="width:50px; height:50px;">
+                            <img src="./img/profile.png" style="width:50px; height:50px;">
                             </div>
                             <div class="eval_info">
                                 <p>Writer</p>
@@ -257,7 +276,7 @@ String img=null;
                             </div>
                             <hr>
                             <div style="float:left;">
-                                <img src="nemo.png" style="width:50px; height:50px;">
+                                <img src="./img/profile.png" style="width:50px; height:50px;">
                                 </div>
                                 <div class="eval_info">
                                     <p>Writer</p>
@@ -268,116 +287,187 @@ String img=null;
                     </div>
                 </div>
                 <br><br><br><br><br><br><br><br><br>
+
                 <footer class = "foot">
-                    <table>
-                            <td>
-                <a href = "ToonMain.jsp">
-                    <img src = "img/home.png">
-                    <span>Home</span></a>
-                    </td>
-                    <td>
-                <a href = "bookmarkpage.jsp">
-                    <img src = "img/bookmark.png">
-                    <span>ë¶ë§ˆí¬</span></a>
-                    </td>
-                    <td>
-                <a href = "Login.jsp" >
-                    <img src = "img/my.png">
-                    <span>Myí˜ì´ì§€</span></a>
-                    </td>
-                    </table>
+							<table>
+					<td><a href="ToonMain.jsp"> <img src="img/home.png">
+							<span>Home</span></a></td>
+					<td id = "bookmark_foot">
+							<%if (info != null){ %>
+							<a href="BookMark.jsp"> <img
+							src="img/bookmark.png"> <span>ºÏ¸¶Å©</span></a>
+							<%} else{ %>
+							<a href="ToonMain.jsp" onclick = "constraints()"> <img src="img/bookmark.png">
+							<span>ºÏ¸¶Å©</span></a>
+							<%} %>
+							</td>
+					<td><a href="Login.jsp"> <img src="img/my.png">
+					<%if (info != null) {%>
+					<span>MyÆäÀÌÁö</span></a>
+					<%} else{ %>
+					<span>·Î±×ÀÎ</span>
+					<%} %>
+					</td>
+				</table>
                 </footer>
-                <script src = "js/jquery-3.6.0.min.js"></script>
-                <script>
-                    $(document).ready(function () {
-                        $(".tabArea .week li a").on("click", function () { // í•´ë‹¹ ìš”ì†Œë¥¼ í´ë¦­í•˜ëŠ” ë‚´ ìì‹ ì˜ index ë²ˆí˜¸ë¥¼ ê°€ì ¸ì˜¨ë‹¤. [0], [1] 
-                            const num = $(".tabArea .week li a").index($(this)); // ê¸°ì¡´ì— ì ìš©ë˜ì–´ ìˆëŠ” on class ì‚­ì œ 
-                            $(".tabArea .week li").removeClass("on");
-                            $(".tabArea .tabBox").removeClass("on"); // ë‹¤ìŒ ìš”ì†Œ í´ë¦­ì‹œ on class ì¶”ê°€ 
-                            $('.tabArea .week li:eq(' + num + ')').addClass("on");
-                            $('.tabArea .tabBox:eq(' + num + ')').addClass("on");
-                        });
+                <%String nick = URLEncoder.encode(info.getNick(),"UTF-8");%>
+                <%String bmtitle = URLEncoder.encode(dto.get(0).getWebtitle(),"UTF-8");%>
+                <%String genre = URLEncoder.encode(dto.get(0).getGenre(),"UTF-8");%>
+                <%String writter = URLEncoder.encode(dto.get(0).getWebwriter(),"UTF-8");%>
+                <%String bmfile = URLEncoder.encode(dto.get(0).getWebfile(),"UTF-8");%>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	
+                <script src="js/sweetalert2.all.js"></script>
+                <script src="js/jquery-3.6.0.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+                <script src="js/draggabilly.pkgd.min.js"></script>
+                <script src="js/dragdrop.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
+                <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js'></script>
+                <script type='text/javascript'>
+                
+        
+        /* 
+                        var bookmark = document.getElementById('bookmark'); */
+                        
+        /* 			$(bookmark).click(function (){
+                        var bookmark_click = confirm("Âò¸ñ·ÏÀ¸·Î ÀÌµ¿ÇÒ ±î¿ä?");
+        
+                        if(bookmark_click == true){
+                            alert("È®ÀÎÀ» ´©¸£¼Ì±º¿ä")
+                        } else{
+                            alert("Ãë¼Ò¸¦ ´©¸£¼Ì±º¿ä")
+                        }
+                        })
+         */
+        
+                        $(function () {
+            //»ç¿ë ¿¹½Ã **************************
+            $(document).on("click", "#bookmark", function () {
+                action_popup.confirm("ÂòÇÏ±â ¸ñ·ÏÀ¸·Î ÀÌµ¿ÇÒ±î¿ä?", function (res) {
+                    if (res) {
+                        /* Âò¸ñ·ÏÀ¸·Î ¹Ù²Ù±â */
+                        location.href='BookMarkService?nick=<%=nick%>&title=<%=bmtitle%>&genre=<%=genre%>&writter=<%=writter%>&file=<%=bmfile%>'
+                    }
+                })
+            });
+        
+            $(".modal_close").on("click", function () {
+                action_popup.close(this);
+            });
+            //»ç¿ë ¿¹½Ã **************************
+        });
+        
+        
+        
+        /**
+         *  alert, confirm ´ë¿ë ÆË¾÷ ¸Ş¼Òµå Á¤ÀÇ <br/>
+         *  timer : ¾Ö´Ï¸ŞÀÌ¼Ç µ¿ÀÛ ¼Óµµ <br/>
+         *  alert : °æ°íÃ¢ <br/>
+         *  confirm : È®ÀÎÃ¢ <br/>
+         *  open : ÆË¾÷ ¿­±â <br/>
+         *  close : ÆË¾÷ ´İ±â <br/>
+         */ 
+        var action_popup = {
+            timer: 500,
+            confirm: function (txt, callback) {
+                if (txt == null || txt.trim() == "") {
+                    console.warn("confirm message is empty.");
+                    return;
+                } else if (callback == null || typeof callback != 'function') {
+                    console.warn("callback is null or not function.");
+                    return;
+                } else {
+                    $(".type-confirm .btn_ok").on("click", function () {
+                        $(this).unbind("click");
+                        callback(true);
+                        action_popup.close(this);
                     });
-                </script>
-		<script src="js/draggabilly.pkgd.min.js"></script>
-		<script src="js/dragdrop.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
-        <script type='text/javascript'>
-            /*  ì•„ë‹ˆ ê°‘ìê¸° ì™œì•ˆë¼ .. ^^ */
-			var selected_day = $('.week a');
-			selected_day.click(function(){
-				$(this).css('color','#42C690');
-				selected_day.not($(this)).css('color','#b3b3b3');
-			});
-			
-			var selected_menu = $('.codrops-demos a');
-			selected_menu.click(function(){
-				$(this).css('color','#42C690');
-				selected_menu.not($(this)).css('color','#b3b3b3');
-			});
-
-			var selected_home = $('.codrops-menu a');
-			selected_home.click(function(){
-				$(this).css('color','#42C690');
-			    selected_home.not($(this)).css('color','#b3b3b3');
-			});
-       
-		</script>
-
-
-	<script type='text/javascript'
-		src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js'></script>
-	<script type='text/javascript'>$(document).ready(function(){
-
-    if($('.brands_slider').length)
-    {
-    var brandsSlider = $('.brands_slider');
-
-    brandsSlider.owlCarousel(
-    {
-    loop:true,
-    autoplay:true,
-    autoplayTimeout:0, 
-    /* ìë™ìœ¼ë¡œ ë„˜ì–´ê°€ê²Œ í•˜ëŠ”ê±° ! */
-    nav:false,
-    dots:false,
-
-    autoWidth:false,
-    /* ìë™ ì´ë¯¸ì§€ ì‚¬ì´ì¦ˆ ë§ì¶¤ */
-    items:3, 
-    /* default ë¡œ ë³´ì—¬ì§€ëŠ” ì•„ì´í…¡ ê°¯ìˆ˜  */
-    margin:2
-    /* ì•„ì´í…œê°„ ë§ˆì§„  */
-    });
-
-    if($('.brands_prev').length)
-    {
-    var prev = $('.brands_prev');
-    prev.on('click', function()
-    {
-    brandsSlider.trigger('prev.owl.carousel');
-    });
-    }
-
-    if($('.brands_next').length)
-    {
-    var next = $('.brands_next');
-    next.on('click', function()
-    {
-    brandsSlider.trigger('next.owl.carousel');
-    });
-    }
-    }});</script>
-    <script>
-        today = new Date()
-        var week = new Array('ì¼', 'ì›”', 'í™”', 'ìˆ˜', 'ëª©', 'ê¸ˆ', 'í† ');
-        var day = week[today.getDate()];
-        for(let i = 0; i < week.length; i++){
-            if(day == week[i]){
-                document.getElementById('day'+i).className="on row";
+                    this.open("type-confirm", txt);
+                }
+            },
+        
+            alert: function (txt) {
+                if (txt == null || txt.trim() == "") {
+                    console.warn("confirm message is empty.");
+                    return;
+                } else {
+                    this.open("type-alert", txt);
+                }
+            },
+        
+            open: function (type, txt) {
+                var popup = $("." + type);
+                popup.find(".menu_msg").text(txt);
+                $("body").append("<div class='dimLayer'></div>");
+                $(".dimLayer").css('height', $(document).height()).attr("target", type);
+                popup.fadeIn(this.timer);
+            },
+        
+            close: function (target) {
+                var modal = $(target).closest(".modal-section");
+                var dimLayer;
+                if (modal.hasClass("type-confirm")) {
+                    dimLayer = $(".dimLayer[target=type-confirm]");
+                } else if (modal.hasClass("type-alert")) {
+                    dimLayer = $(".dimLayer[target=type-alert]")
+                } else {
+                    console.warn("close unknown target.")
+                    return;
+                }
+                modal.fadeOut(this.timer);
+                setTimeout(function () {
+                    dimLayer != null ? dimLayer.remove() : "";
+                }, this.timer);
             }
         }
-
+        
+        
+        
+        
+        
+                    var selected_day = $('.week a');
+                    selected_day.click(function(){
+                        $(this).css('color','#42C690');
+                        selected_day.not($(this)).css('color','#b3b3b3');
+                    });
+                    
+                    var selected_menu = $('.codrops-demos a');
+                    selected_menu.click(function(){
+                        $(this).css('color','#42C690');
+                        selected_menu.not($(this)).css('color','#b3b3b3');
+                    });
+        
+                    var selected_home = $('.codrops-menu a');
+                    selected_home.click(function(){
+                        $(this).css('color','#42C690');
+                        selected_home.not($(this)).css('color','#b3b3b3');
+                    });
+        
+                    var fixed_menu = $('.fixed-menu a');
+                    fixed_menu.click(function(){
+                        $(this).css('color','#42C690');
+                        fixed_menu.not($(this)).css('color','#b3b3b3');
+        
+                    });
+        
+        
+               
+                </script>
+                                <script>
+                                    $(document).ready(function () {
+                                        $(".tabArea .week li a").on("click", function () { // ÇØ´ç ¿ä¼Ò¸¦ Å¬¸¯ÇÏ´Â ³» ÀÚ½ÅÀÇ index ¹øÈ£¸¦ °¡Á®¿Â´Ù. [0], [1] 
+                                            const num = $(".tabArea .week li a").index($(this)); // ±âÁ¸¿¡ Àû¿ëµÇ¾î ÀÖ´Â on class »èÁ¦ 
+                                            $(".tabArea .week li").removeClass("on");
+                                            $(".tabArea .tabBox").removeClass("on"); // ´ÙÀ½ ¿ä¼Ò Å¬¸¯½Ã on class Ãß°¡ 
+                                            $('.tabArea .week li:eq(' + num + ')').addClass("on");
+                                            $('.tabArea .tabBox:eq(' + num + ')').addClass("on");
+                                        });
+                                    });
+                                </script>
+    <script>
+    function constraints(){
+    	alter("·Î±×ÀÎÀÌ ÇÊ¿äÇÑ ¼­ºñ½ºÀÔ´Ï´Ù.");
+    }
     </script>
 </body>
 </html>

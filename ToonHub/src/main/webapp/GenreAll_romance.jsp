@@ -56,7 +56,7 @@ overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 100px;
-  height: 20px;
+  height: 40px;
 }
 
 
@@ -87,7 +87,7 @@ String img ;
                 <header class="codrops-header">  
 					<!--디폴트로 toonhub 가 들어와있도록 하는방법 물어보기 ! -->
                     <div class="codrops-menu">
-                        <strong><a href="#" style = "color: #42C690">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="Community.html">커뮤니티</a></strong> <!-- 맨위 상단-->
+                        <strong><a href="ToonMain.jsp" style = "color: #42C690">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="Community.jsp">커뮤니티</a></strong> <!-- 맨위 상단-->
                     </div>
                     <br><br>
 				</header>
@@ -109,13 +109,13 @@ String img ;
 
 
                     <div> 
-                    <div class="items" style="display: flex;flex-wrap: wrap; margin-left:3%;" > 
+                    <div class="items" style="display: flex;flex-wrap: wrap; margin:0 5%;" > 
                          
                           <%for (int i =0; i<romance.size(); i++){ %>  
                             <%img= romance.get(i).getWebfile();%>
 							<%img = img.replace("?", "");%>
 							
-							   <div style="margin: 10px;"> 
+							   <div style="margin: 25px;"> 
                                 <a href="Detail_Genre.jsp?title=<%=romance.get(i).getWebtitle()%>" style="color: #616161!important;">
                                 <div style="width: 100px;height: 100px; background-color: #42C690;">
                                     <img src="./toon_image/<%=img%>" width="100px" height = "100px">

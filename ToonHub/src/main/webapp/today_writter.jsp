@@ -60,12 +60,14 @@ textarea{
 	margin-top: 10px;
 	font-size: 13px;
 	font-weight: 300;
-	margin-left:6%;
+	margin-left:8%;
 }
 .for_writer ul{
 	list-style: none;
 	padding: 0;
+	padding-bottom:10px;
 	margin-bottom: 5px;
+	font-size:20px;
 }
 hr{
     width:94%;
@@ -92,7 +94,7 @@ hr{
 					<nav class="codrops-head" style = "letter-spacing: 5px;">
 						<a href="today_writter.jsp" style ="color: #42C690;"> 오늘의 작가 </a>
 						<a href="Recommand.jsp" > 커뮤니티 </a>
-						<a href="#"> 명예의전당 </a>
+						<a href="WinnerToday.jsp"> 명예의전당 </a>
 
 					</nav>
 					<br>
@@ -103,13 +105,13 @@ hr{
 					<strong >오늘의 작가</strong>
 					</div>
 					<div style="text-align: center;">
-						<img src="" width="120px" height="120px">
+						<img src="./toon_image/램프의 아미나.jpg" width="20%" height="auto">
 					</div>
 					<div style="text-align: center; font-size:20px; font-weight: 500; margin-top: 10px;">
 						<span>"오늘은 이 웹툰 어때요?"</span>
 					</div>
 					<div style="text-align: center; font-size: 13px;">
-						<span>홍주영 작가 / 대표작 : 나는 세계 최고</span>
+						<span>heeya&천의얼 작가 / 대표작 : 램프의 아미나</span>
 					</div>
 				</div>
 				<div class="today_wrter_bottom">
@@ -125,16 +127,16 @@ hr{
 						<div class="for_writer">
 							<ul>
 								<li style="font-weight: 600;">
-									Ms.Hong
+									넓적다리황새
 								</li>
 								<li>
-									작가님 짱
+									작가님 최고
 								</li>
 							</ul>
 							<hr>
 							<ul>
 								<li style="font-weight: 600;">
-									Ms.Hong
+									duch369
 								</li>
 								<li>
 									작가님 짱

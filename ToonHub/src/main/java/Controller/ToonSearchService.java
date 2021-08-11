@@ -1,6 +1,7 @@
 package Controller;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -20,6 +21,7 @@ public class ToonSearchService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		
 		String item = request.getParameter("item");
 		String search = request.getParameter("search");
@@ -32,8 +34,6 @@ public class ToonSearchService extends HttpServlet {
 			item = search;
 		}
 		
-		System.out.println(item);
-		System.out.println(search);
 		WebtoonDAO dao = new WebtoonDAO();
 		ArrayList<WebtoonDTO> result = dao.Search(item, search);
 		
@@ -44,7 +44,9 @@ public class ToonSearchService extends HttpServlet {
 		}else {
 			System.out.println("검색에 실패했습니다.");
 		}
-		response.sendRedirect("Search_result.jsp?item="+item+"&search="+search);
+		String send_item = URLEncoder.encode(item, "UTF-8");
+		String send_search = URLEncoder.encode(item, "UTF-8");
+		response.sendRedirect("Search_result.jsp?item="+send_item+"&search="+send_search);
 	}
 
 }

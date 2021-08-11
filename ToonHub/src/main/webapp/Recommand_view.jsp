@@ -84,7 +84,7 @@ String writter = dao.writter(list.get(0).getWebTitle());%>
 				<header class="codrops-header">  
 					<!--디폴트로 toonhub 가 들어와있도록 하는방법 물어보기 ! -->
                     <div class="codrops-menu">
-                        <strong><a href="ToonMain.html">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="#" style="color:#42C690">커뮤니티</a></strong> <!-- 맨위 상단-->
+                        <strong><a href="ToonMain.html">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="Community.jsp" style="color:#42C690">커뮤니티</a></strong> <!-- 맨위 상단-->
                     </div>
 					
 					<!-- h1 태그 말고 다른걸로 바꿀것 !  -->
@@ -128,7 +128,7 @@ String writter = dao.writter(list.get(0).getWebTitle());%>
 					</div>
 				<hr align="center" width="88%">
 				<div class="view_cont" style="padding-left:2%;">
-				<span>내용</span>
+				<span><%=list.get(0).getRecCon() %></span>
 				</div>
 		<div class="foot">
 			<table>

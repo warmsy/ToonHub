@@ -1,3 +1,5 @@
+<%@page import="model.RecommandDTO"%>
+<%@page import="model.RecommandDAO"%>
 <%@page import="model.BoardDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.BoardDAO"%>
@@ -76,8 +78,13 @@ img{
 </head>
 <body oncontextmenu='return false' class='snippet-body skin-3'>
 <%ToonMemberDTO info = (ToonMemberDTO) session.getAttribute("info");
+RecommandDAO rec_dao = new RecommandDAO();
 BoardDAO dao = new BoardDAO();
-ArrayList<BoardDTO> board_list = dao.SelectAll();%>
+ArrayList<BoardDTO> board_list = dao.SelectAll();
+ArrayList<RecommandDTO> recom_list = rec_dao.selectAll();
+String img = null;
+String writter = null;
+%>
 		<div class="container">
 			<div class="content">
 
@@ -111,38 +118,26 @@ ArrayList<BoardDTO> board_list = dao.SelectAll();%>
 				</div>
 				<div id="grid" class="grid clearfix">        
 					<nav class = "best">
+					<%for(int i = 0; i < recom_list.size(); i++){ %>
+					<%img = rec_dao.Image(recom_list.get(i).getWebTitle());
+					writter = rec_dao.writter(recom_list.get(i).getWebTitle());%>
 				<div>
-					<a href="#">
+					<a href="Recommand_view.jsp?num=<%=recom_list.get(i).getRecNum()%>">
 					<div class="img_place">
-						<img src="nemo.png>">
+						<img src="./toon_image/<%=img%>">
 					</div>
 					<div class="cont_place">
-						<p><strong>123123</strong></p>
-						<div style="float: right; margin-right:8%;">123123</div>
-						<p style="font-size: 15px;">123123</p>
+						<p><strong><%=recom_list.get(i).getWebTitle() %></strong></p>
+						<div style="float: right; margin-right:8%;"><%=recom_list.get(i).getNick() %></div>
+						<p style="font-size: 15px;"><%=writter %></p>
 					</div>
 					<div class="genre">
-						<span>#로맨스</span>
+						<span>#<%=recom_list.get(i).getGenre() %></span>
 					</div>
 					</a>
 				</div>
 				<hr>
-				<div>
-					<a href="#">
-					<div class="img_place">
-						<img src="nemo.png>">
-					</div>
-					<div class="cont_place">
-						<p><strong>123123</strong></p>
-						<div style="float: right; margin-right:8%;">123123</div>
-						<p style="font-size: 15px;">123123</p>
-					</div>
-					<div class="genre">
-						<span>#로맨스</span>
-					</div>
-					</a>
-				</div>
-				<hr>
+				<%} %>
 
 					</nav><br>
 				</div><br><br>
@@ -156,12 +151,14 @@ ArrayList<BoardDTO> board_list = dao.SelectAll();%>
 
 				<div id="grid" class="grid clearfix">        
 					<nav class = "best">
-					<%for(int i = 0 ; i < 5; i++){ %>
+					<%for(int i = 0; i < board_list.size(); i++){ %>
+					<a href="Board_view.jsp?num=<%=board_list.get(i).getNum()%>">
 					<div class = "board_preview">
 					<span><%=board_list.get(i).getBoardTitle() %></span>
 					<span class="writter"><%=board_list.get(i).getNick() %></span>
 					<hr>
 					</div>
+					</a>
 					<%} %>
                                     <!-- </div>
                                 </div> -->
