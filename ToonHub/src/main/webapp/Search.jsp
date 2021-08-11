@@ -46,7 +46,7 @@ body {
 	text-decoration: none;
 }
 .search_information input{
-	padding-left: 5%;
+	padding-left: 7%;
 	margin: 1% 10%;
 	width:80%;
 	height:60px;
@@ -56,6 +56,7 @@ body {
 	background-color: #eeeeee;
 	font-weight: 500;
 	line-height: 60px;
+	position:relative;
 }
 .search_information button{
 	border-radius: 30px;
@@ -66,11 +67,25 @@ body {
 	border: none;
 	margin-top: 1%;
 	position:absolute;
-	right: 12%;
+	right: 10%;
 }
 .search_information img{
 	width:40px;
 	height:40px;
+}
+.search_item{
+	height:60px;
+	width:10%;
+	border:none;
+	background-color:#eeeeee;
+	text-align:center;
+	margin-left:5%;
+	position:absolute;
+	z-index: 1;
+	top:23.2%;
+	border-radius:30px;
+	text-align-last:center;
+	color:#b3b3b3;
 }
 </style>
 </head>
@@ -80,10 +95,16 @@ body {
 
 				<!-- 메인 머리  demo.css 에 있음-->
 				<div class="search_header">
-				<a href="ToonMain.html">ToonHub</a>
+				<a href="ToonMain.jsp">ToonHub</a>
 				</div>
 				<div class = "search_information">
-					<input type="text" placeholder="검색어를 입력하세요">
+				<select name = "item" class = "search_item">
+				<option value = "title">웹툰</option>
+				<option value = "genre">장르</option>
+				<option value = "writer">작가</option>
+				<option value = "platform">플랫폼</option>
+				</select>
+					<input type="text" placeholder="검색어를 입력하세요" name = "search">
 					<button><img src="img/search_white.png"></button>
 				</div>
 				<div class="foot">

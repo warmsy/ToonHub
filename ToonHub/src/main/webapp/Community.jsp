@@ -1,3 +1,6 @@
+<%@page import="model.BoardDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.BoardDAO"%>
 <%@page import="model.ToonMemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -29,11 +32,52 @@
 body {
 	background: #eee;
 }
-
+.board_preview{
+	margin:5px 2%;
+}
+.writter{
+	float:right;
+}
+.grid{
+	padding-bottom:0%;
+}
+img{
+	width:90px;
+	height:90px;
+}
+.img_place{
+	width:12%;
+	float:left;
+}
+.cont_place p{
+	margin-bottom: 3px;
+	padding-left:13%;
+	font-size: 20px;
+	color:#b3b3b3;
+	width:80%;
+	position:relative;
+}
+.genre{
+	background-color: #d5d5d5;
+	width:100px;
+	height:30px;
+	text-align: center;
+	vertical-align: middle;
+	margin-left:13%;
+	margin-top: 0;
+	font-size: 15px;
+	line-height: 30px;
+	color:#b3b3b3;
+}
+.cont_list a{
+	text-decoration: none;
+}
 </style>
 </head>
 <body oncontextmenu='return false' class='snippet-body skin-3'>
-<%ToonMemberDTO info = (ToonMemberDTO) session.getAttribute("info"); %>
+<%ToonMemberDTO info = (ToonMemberDTO) session.getAttribute("info");
+BoardDAO dao = new BoardDAO();
+ArrayList<BoardDTO> board_list = dao.SelectAll();%>
 		<div class="container">
 			<div class="content">
 
@@ -67,11 +111,38 @@ body {
 				</div>
 				<div id="grid" class="grid clearfix">        
 					<nav class = "best">
-									<ul>
-										<li>가나다</li>
-										<li>가나다</li>
-										<li>가나다</li>
-									</ul>
+				<div>
+					<a href="#">
+					<div class="img_place">
+						<img src="nemo.png>">
+					</div>
+					<div class="cont_place">
+						<p><strong>123123</strong></p>
+						<div style="float: right; margin-right:8%;">123123</div>
+						<p style="font-size: 15px;">123123</p>
+					</div>
+					<div class="genre">
+						<span>#로맨스</span>
+					</div>
+					</a>
+				</div>
+				<hr>
+				<div>
+					<a href="#">
+					<div class="img_place">
+						<img src="nemo.png>">
+					</div>
+					<div class="cont_place">
+						<p><strong>123123</strong></p>
+						<div style="float: right; margin-right:8%;">123123</div>
+						<p style="font-size: 15px;">123123</p>
+					</div>
+					<div class="genre">
+						<span>#로맨스</span>
+					</div>
+					</a>
+				</div>
+				<hr>
 
 					</nav><br>
 				</div><br><br>
@@ -85,11 +156,13 @@ body {
 
 				<div id="grid" class="grid clearfix">        
 					<nav class = "best">
-									<ul>
-										<li>가나다</li>
-										<li>가나다</li>
-										<li>가나다</li>
-									</ul>
+					<%for(int i = 0 ; i < 5; i++){ %>
+					<div class = "board_preview">
+					<span><%=board_list.get(i).getBoardTitle() %></span>
+					<span class="writter"><%=board_list.get(i).getNick() %></span>
+					<hr>
+					</div>
+					<%} %>
                                     <!-- </div>
                                 </div> -->
 					</nav><br>

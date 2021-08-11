@@ -70,14 +70,14 @@ ArrayList<BoardDTO> list = dao.SelectAll();%>
 				</header>
 				<div class = "cont_head">
 					<div class = "cont_header">
-					<strong>추천해요</strong></div>
+					<strong>자유게시판</strong></div>
 					<form action ="ToonBoardService" method="post">
 					<div class = "cont_shortcut">
 						<div style="text-align: right; width:100%;">
 							<div class="comm_search">
 								<select style="background-color: #eeeeee; border:none; height:30px; color:#b3b3b3" name = "item">
 									<option value = "title">제목</option>
-									<option value = "writter">작성자</option>
+									<option value = "nick">작성자</option>
 									<option value = "content">내용</option>
 								</select>
 							<input type = "text"  placeholder="찾으려는 내용을 입력하세요" name = "search">
@@ -100,6 +100,7 @@ ArrayList<BoardDTO> list = dao.SelectAll();%>
 						<a href="#">
 							<%=board_info.get(i).getBoardTitle()%>
 							<span><%=board_info.get(i).getNick()%></span>
+							<%System.out.println(board_info.get(i).getBoardTitle()); %>
 						</a>
 					</li>
 					<hr>

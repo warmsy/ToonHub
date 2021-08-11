@@ -98,7 +98,6 @@ String img ;
 						<a href="ToonGenre.jsp"style="color:#42C690;"> 장르 </a>
 						<a href="platform.jsp"> 플랫폼 </a>
                     </ul>
-                </div>
                 <div class ="platform">
                     <table class="toonname">
                     <ul><strong style="font-size: 20px;">#<%=action.get(0).getGenre() %></strong>
@@ -106,7 +105,6 @@ String img ;
                     </div>
                     </ul>
                     </table>
-
 
                     <div> 
                     <div class="items" style="display: flex;flex-wrap: wrap; margin-left:3%;" > 
@@ -131,7 +129,7 @@ String img ;
                         </div> 
 					    </div>
 						   </div>
-						   
+						   </div>
 						   
                 <div class="foot" style="z-index: 1;">
 				<table>

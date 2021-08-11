@@ -1,3 +1,4 @@
+<%@page import="model.ToonMemberDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.BookMarkDTO"%>
 <%@page import="model.BookMarkDAO"%>
@@ -32,8 +33,8 @@ body {
 	background: #eee;
 }
 img{
-	width:100px;
-	height:100px;
+	width:100%;
+	height:auto;
 }
 .img_place{
 	float:left;
@@ -44,7 +45,7 @@ img{
 }
 .cont_place p{
 	margin-bottom: 3px;
-	padding-left:15%;
+	padding-left:17%;
 	font-size: 20px;
 	color:#b3b3b3;
 	width:80%;
@@ -57,7 +58,7 @@ img{
 	text-align: center;
 	vertical-align: middle;
 	margin-top: 10px;
-	margin-left: 20%;
+	margin-left: 17%;
 	font-size: 15px;
 	line-height: 30px;
 	color:#b3b3b3;
@@ -75,10 +76,11 @@ hr{
 </head>
 <body oncontextmenu='return false' class='snippet-body skin-3'>
 <%
-String nick = (String)session.getAttribute("nick");
+ToonMemberDTO info = (ToonMemberDTO) session.getAttribute("info");
+System.out.println(info.getNick());
 String writter = (String)request.getAttribute("writter");
 BookMarkDAO dao = new BookMarkDAO();
-ArrayList<BookMarkDTO> list = dao.SelectMark(nick);
+ArrayList<BookMarkDTO> list = dao.SelectMark(info.getNick());
 String img;%>
 		<div class="container">
 			<div class="content">
@@ -109,7 +111,7 @@ String img;%>
 				<div>
 					<a href="#">
 					<div class="img_place">
-						<img src="./toon_img/<%=list.get(i).getFile()%>">
+						<img src="./toon_image/<%=list.get(i).getFile()%>">
 					</div>
 					<div class="cont_place">
 						<p><strong><%=list.get(i).getWebTitle() %></strong></p>

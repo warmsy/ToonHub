@@ -45,7 +45,7 @@ public class BookMarkDAO {
 	
 	public int InsertMark(BookMarkDTO dto) {
 		conn();
-		String sql = "Insert into bookmark values(?,?,?,?,?)";
+		String sql = "Insert into bookmark values(bm_seq.nextval,?,?,?,?,?)";
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getNick());
@@ -75,12 +75,13 @@ public class BookMarkDAO {
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
-				String bm_nick = rs.getString(1);
-				String bm_title = rs.getString(2);
-				String bm_genre = rs.getString(3);
-				String bm_writter = rs.getString(4);
-				String bm_file = rs.getString(5);
-				dto = new BookMarkDTO(bm_nick, bm_title, bm_genre, bm_writter, bm_file);
+				int bm_num = rs.getInt(1);
+				String bm_nick = rs.getString(2);
+				String bm_title = rs.getString(3);
+				String bm_genre = rs.getString(4);
+				String bm_writter = rs.getString(5);
+				String bm_file = rs.getString(6);
+				dto = new BookMarkDTO(bm_num, bm_nick, bm_title, bm_genre, bm_writter, bm_file);
 				list.add(dto);
 				
 			}

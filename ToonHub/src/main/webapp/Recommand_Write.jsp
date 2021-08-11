@@ -48,9 +48,9 @@ body {
 					<!-- h1 태그 말고 다른걸로 바꿀것 !  -->
 					<br><br>
 					<nav class="codrops-head" style = "letter-spacing: 5px;">
-						<a href="#"> 오늘의 작가 </a>
+						<a href="today_writter.jsp"> 오늘의 작가 </a>
 						<a href="Community.jsp" style="color: #42C690 "> 커뮤니티 </a>
-						<a href="#"> 명예의전당 </a>
+						<a href="WinnerToday"> 명예의전당 </a>
 						<!-- <a class="current-demo" href="modal.html">Modal</a>  일단 세개 빼고 다 주석
 						<a href="icons.html">Icons</a>
 						<a href="bottoms-lide.html">Bottom Slide</a>
@@ -59,6 +59,7 @@ body {
 					<br>
 					<!-- 주간  -->
 				</header>
+				<form action = "ToonRecommandWriteService?nick=<%=info.getNick() %>" method = "post">
 				<div class = "cont_head">
 					<div class = "cont_header">
 					<strong>추천해요</strong></div>
@@ -68,18 +69,23 @@ body {
 					</div>
 					<hr align="center" width="88%">
 					<div class = "write_title">
-				<input type="text" placeholder="제목">
-				<select>
+				<input type="text" placeholder="웹툰제목" name = "title">
+				<select name = "genre">
 					<option value="none">장르</option>
-					<option>로맨스</option>
-					<option>액션</option>
-					<option>판타지</option>
+					<option value = "로맨스">로맨스</option>
+					<option value = "드라마">드라마</option>
+					<option value = "액션">액션</option>
+					<option value = "판타지">판타지</option>
+					<option value = "옴니버스">옴니버스</option>
+					<option value = "공포/스릴러">공포/스릴러</option>
+					<option value = "개그">개그</option>
 				</select>
 				</div>
 				<hr align="center" width="88%">
 				<div class="write_cont">
-					<textarea  placeholder = "내용을 입력하세요"></textarea>
+					<textarea  placeholder = "내용을 입력하세요" name = "content"></textarea>
 				</div>
+				</form>
 		<div class="foot">
 							<table>
 					<td><a href="ToonMain.jsp"> <img src="img/home.png">

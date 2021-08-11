@@ -665,8 +665,7 @@ textarea::placeholder{
 /*Detail_DAY css*/
 .img_place{
 	width:20%;
-	margin-top:15px;
-	margin-left:6%;
+	margin-top:5px;
 	float:left;
 }
 .info_place{

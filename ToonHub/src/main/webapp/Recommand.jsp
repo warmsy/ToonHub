@@ -1,3 +1,6 @@
+<%@page import="model.RecommandDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.RecommandDAO"%>
 <%@page import="model.ToonMemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -34,6 +37,7 @@ img{
 	height:100px;
 }
 .img_place{
+	width:5%;
 	margin-left:6%;
 	float:left;
 }
@@ -63,7 +67,13 @@ img{
 </style>
 </head>
 <body oncontextmenu='return false' class='snippet-body skin-3'>
-<%ToonMemberDTO info = (ToonMemberDTO) session.getAttribute("info"); %>
+<%ToonMemberDTO info = (ToonMemberDTO) session.getAttribute("info");
+String rec_file = (String) session.getAttribute("file");
+RecommandDAO dao = new RecommandDAO();
+ArrayList<RecommandDTO> rec_list = dao.selectAll();
+String image = null;
+String writter = null;
+%>
 		<div class="container">
 			<div class="content">
 
@@ -109,68 +119,26 @@ img{
 						<p><a href = "Recommand.jsp" style = "font-size: 12px; margin-left: 6%;" onclick = "constraints()">글쓰기</a></p>
 						<%} %>
 				<div class = "cont_list">
+				<%for(int i = 0; i < rec_list.size(); i++){ %>
+				<%image = dao.Image(rec_list.get(i).getWebTitle()); %>
+				<%writter = dao.writter(rec_list.get(i).getWebTitle()); %>
 				<div>
 					<a href="#">
 					<div class="img_place">
-						<img src="nemo.png">
+						<img src="./toon_image/<%=image%>">
 					</div>
 					<div class="cont_place">
-						<p><strong>123</strong></p>
-						<div style="float: right; margin-right:8%;">ddddd</div>
-						<p style="font-size: 15px;">123</p>
+						<p><strong><%=rec_list.get(i).getWebTitle() %></strong></p>
+						<div style="float: right; margin-right:8%;"><%=rec_list.get(i).getNick() %></div>
+						<p style="font-size: 15px;"><%=writter %></p>
 					</div>
 					<div class="genre">
-						<span>#공포/스릴러</span>
+						<span>#<%=rec_list.get(i).getGenre() %></span>
 					</div>
 					</a>
-					<hr style="width:88%;">
 				</div>
-				<div>
-					<a href="#">
-					<div class="img_place">
-						<img src="nemo.png">
-					</div>
-					<div class="cont_place">
-						<p><strong>123</strong></p>
-						<div style="float: right; margin-right:8%;">ddddd</div>
-						<p style="font-size: 15px;">123</p>
-					</div>
-					<div class="genre">
-						<span>#공포/스릴러</span>
-					</div>
-					</a>
 					<hr style="width:88%;">
-				</div>				<div>
-					<a href="#">
-					<div class="img_place">
-						<img src="nemo.png">
-					</div>
-					<div class="cont_place">
-						<p><strong>123</strong></p>
-						<div style="float: right; margin-right:8%;">ddddd</div>
-						<p style="font-size: 15px;">123</p>
-					</div>
-					<div class="genre">
-						<span>#공포/스릴러</span>
-					</div>
-					</a>
-					<hr style="width:88%;">
-				</div>				<div>
-					<a href="#">
-					<div class="img_place">
-						<img src="nemo.png">
-					</div>
-					<div class="cont_place">
-						<p><strong>123</strong></p>
-						<div style="float: right; margin-right:8%;">ddddd</div>
-						<p style="font-size: 15px;">123</p>
-					</div>
-					<div class="genre">
-						<span>#공포/스릴러</span>
-					</div>
-					</a>
-					<hr style="width:88%;">
-				</div>
+				<%} %>
 				</div>
 			</div><!-- /content -->
 		</div><!-- /container -->

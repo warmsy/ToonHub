@@ -21,14 +21,19 @@ public class ToonBoardSearchService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("EUC-KR");
 		
+		
+		
 		String item = request.getParameter("item");
 		String search = request.getParameter("search");
+		
+		System.out.println(search);
 		
 		BoardDAO dao = new BoardDAO();
 		ArrayList<BoardDTO> list = dao.Search(item, search);
 		
 		if(list !=null) {
 			System.out.println("게시글 검색에 성공했습니다.");
+			System.out.println(list.size());
 			HttpSession session = request.getSession();
 			session.setAttribute("board_info", list);
 		}else {

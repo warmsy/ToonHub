@@ -43,6 +43,7 @@ body {
 }
 
 .main_more {
+	font-size:10px;
 	float: right;
 	border-radius: 3px;
 	margin-right: 20px;
@@ -51,6 +52,9 @@ body {
 
 .main_a {
 	color: #616161 !important;
+}
+.grid{
+	padding-top:3%;
 }
 </style>
 </head>

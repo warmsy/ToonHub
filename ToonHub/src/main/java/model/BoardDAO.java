@@ -95,11 +95,18 @@ public class BoardDAO {
 	public ArrayList<BoardDTO> Search(String item, String search){
 		conn();
 		list = new ArrayList<BoardDTO>();
-		String sql = "select * from board where ? = ?";
+		String sql = null;
+		if(item.equals("title")) {
+		sql = "select * from board where board_title = ?";
+		}else if(item.equals("nick")) {
+			sql = "select * from board where board_nick  = ?";
+		}else {
+			sql = "select * from board where baord_con = ?";
+		}
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, item);
-			psmt.setString(2, search);
+			psmt.setString(1, search);
+			
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {

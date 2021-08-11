@@ -14,6 +14,9 @@ public class RecommandDAO {
 	
 	RecommandDTO dto = null;
 	ArrayList<RecommandDTO> recom_list = null;
+	int cnt = 0;
+	String file = null;
+	String writter = null;
 	
 	public void conn() {
 		try {
@@ -69,5 +72,95 @@ public class RecommandDAO {
 			e.printStackTrace();
 		}
 		return recom_list;
+	}
+	
+	public int Insert(RecommandDTO dto) {
+		conn();
+		String sql = "Insert into recommand values (recom_seq.nextval,?,?,?,?,sysdate)";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getNick());
+			psmt.setString(2, dto.getWebTitle());
+			psmt.setString(3, dto.getGenre());
+			psmt.setString(4, dto.getRecCon());
+			
+			cnt = psmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
+	
+	public ArrayList<RecommandDTO> selectAll() {
+		conn();
+		recom_list = new ArrayList<RecommandDTO>(); 
+		String sql = "select * from recommand";
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				int num = rs.getInt(1);
+				String nick = rs.getString(2);
+				String title = rs.getString(3);
+				String genre = rs.getString(4);
+				String content = rs.getString(5);
+				String date = rs.getString(6);
+				
+				dto = new RecommandDTO(num, nick, title, genre, content, date);
+				recom_list.add(dto);
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return recom_list;
+	}
+	public String Image(String title) {
+		conn();
+		String sql = "select web_file from webtoon where web_title = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, title);
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				file = rs.getString(1); 
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return file;
+		
+	}
+	
+	public String writter(String title) {
+		conn();
+		String sql = "select web_writer from webtoon where web_title = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, title);
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				writter = rs.getString(1); 
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return writter;
+		
 	}
 }
