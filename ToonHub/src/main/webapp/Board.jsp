@@ -59,7 +59,7 @@ ArrayList<BoardDTO> list = dao.SelectAll();%>
 					<nav class="codrops-head" style = "letter-spacing: 5px;">
 						<a href="today_writter.jsp"> 오늘의 작가 </a>
 						<a href="Community.jsp" style="color: #42C690 "> 커뮤니티 </a>
-						<a href="#"> 명예의전당 </a>
+						<a href="WinnerToday.jsp"> 명예의전당 </a>
 						<!-- <a class="current-demo" href="modal.html">Modal</a>  일단 세개 빼고 다 주석
 						<a href="icons.html">Icons</a>
 						<a href="bottoms-lide.html">Bottom Slide</a>
@@ -97,7 +97,7 @@ ArrayList<BoardDTO> list = dao.SelectAll();%>
 					<ul>
 				<%for(int i = 0; i < board_info.size(); i++){%>
 					<li>
-						<a href="#">
+						<a href="Board_view.jsp?num=<%=board_info.get(i).getNum()%>">
 							<%=board_info.get(i).getBoardTitle()%>
 							<span><%=board_info.get(i).getNick()%></span>
 							<%System.out.println(board_info.get(i).getBoardTitle()); %>
@@ -109,7 +109,8 @@ ArrayList<BoardDTO> list = dao.SelectAll();%>
 				<ul>
 				<%for(int i = 0; i < list.size(); i++){ %>
 					<li>
-						<a href="#">
+					<%System.out.println(list.get(i).getNum()); %>
+						<a href="Board_view.jsp?num=<%=list.get(i).getNum()%>">
 							<%=list.get(i).getBoardTitle()%>
 							<span><%=list.get(i).getNick() %></span>
 						</a>

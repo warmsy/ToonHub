@@ -22,10 +22,12 @@ public class ToonRecommandSearchService extends HttpServlet {
 		String search = request.getParameter("search");
 		
 	RecommandDAO dao = new RecommandDAO();
-	ArrayList<RecommandDTO> result = dao.Search_Cont(item, search);
+	ArrayList<RecommandDTO> result = dao.Search(item, search);
 	
 	if(result!= null) {
 		System.out.println("검색에 성공했습니다.");
+		HttpSession session = request.getSession();
+		session.setAttribute("result", result);
 	}else {
 		System.out.println("검색에 실패했습니다.");
 	}

@@ -7,21 +7,6 @@ public class RecommandDTO {
 	private String genre;
 	private String RecCon;
 	private String RecDate;
-	private String file;
-	private String writter;
-	
-	public RecommandDTO(int recNum, String nick, String webTitle, String genre, String recCon, String recDate,
-			String file, String writter) {
-		super();
-		RecNum = recNum;
-		this.nick = nick;
-		WebTitle = webTitle;
-		this.genre = genre;
-		RecCon = recCon;
-		RecDate = recDate;
-		this.file = file;
-		this.writter = writter;
-	}
 	
 	public RecommandDTO(int recNum, String nick, String webTitle, String genre, String recCon, String recDate) {
 		super();
@@ -90,21 +75,5 @@ public class RecommandDTO {
 		RecDate = recDate;
 	}
 
-	public String getFile() {
-		return file;
-	}
-
-	public void setFile(String file) {
-		this.file = file;
-	}
-
-	public String getWritter() {
-		return writter;
-	}
-
-	public void setWritter(String writter) {
-		this.writter = writter;
-	}
-	
 
 }

@@ -834,3 +834,29 @@ textarea::placeholder{
 	text-align: center;
 	padding: 5px;
 }
+
+/* Community view Part */
+.view_title{
+	margin: 10px 6%;
+	height:25px;
+}
+.view_title .title{
+	font-size: 20px;
+}
+.view_writter{
+	float: right;
+	font-size:15px;
+	color : #b3b3b3;
+	margin-top:-10px;
+	text-align:right;
+}
+.view_writter p{
+	margin:0;
+}
+.view_title span{
+	color : #b3b3b3
+}
+.view_cont{
+	margin:10px 6%;
+	color : #b3b3b3;
+}

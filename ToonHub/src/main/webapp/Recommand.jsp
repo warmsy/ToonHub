@@ -68,6 +68,7 @@ img{
 </head>
 <body oncontextmenu='return false' class='snippet-body skin-3'>
 <%ToonMemberDTO info = (ToonMemberDTO) session.getAttribute("info");
+ArrayList<RecommandDTO> search_result = (ArrayList) session.getAttribute("result");
 String rec_file = (String) session.getAttribute("file");
 RecommandDAO dao = new RecommandDAO();
 ArrayList<RecommandDTO> rec_list = dao.selectAll();
@@ -105,7 +106,8 @@ String writter = null;
 						<div style="text-align: right; width:100%;">
 							<div class="comm_search">
 								<select style="background-color: #eeeeee; border:none; height:30px; color:#b3b3b3" name = "item">
-									<option value = "title">제목</option>
+									<option value = "title">제목</option>v
+									<option value = "genre">장르</option>v
 									<option value = "writter">작성자</option>
 								</select>
 							<input type = "text"  placeholder="찾으려는 내용을 입력하세요" name = "search">
@@ -118,12 +120,36 @@ String writter = null;
 						<%}else{ %>
 						<p><a href = "Recommand.jsp" style = "font-size: 12px; margin-left: 6%;" onclick = "constraints()">글쓰기</a></p>
 						<%} %>
+						
+						<%if (search_result != null){ %>
 				<div class = "cont_list">
+				<%for(int i = 0; i < search_result.size(); i++){ %>
+				<%image = dao.Image(search_result.get(i).getWebTitle()); %>
+				<%writter = dao.writter(search_result.get(i).getWebTitle()); %>
+				<div>
+					<a href="Recommand_view.jsp?num=<%=search_result.get(i).getRecNum()%>">
+					<div class="img_place">
+						<img src="./toon_image/<%=image%>">
+					</div>
+					<div class="cont_place">
+						<p><strong><%=search_result.get(i).getWebTitle() %></strong></p>
+						<div style="float: right; margin-right:8%;"><%=search_result.get(i).getNick() %></div>
+						<p style="font-size: 15px;"><%=writter %></p>
+					</div>
+					<div class="genre">
+						<span>#<%=search_result.get(i).getGenre() %></span>
+					</div>
+					</a>
+				</div>
+					<hr style="width:88%;">
+				<%} %>
+				</div>
+				<%} else{%>
 				<%for(int i = 0; i < rec_list.size(); i++){ %>
 				<%image = dao.Image(rec_list.get(i).getWebTitle()); %>
 				<%writter = dao.writter(rec_list.get(i).getWebTitle()); %>
 				<div>
-					<a href="#">
+					<a href="Recommand_view.jsp?num=<%=rec_list.get(i).getRecNum()%>">
 					<div class="img_place">
 						<img src="./toon_image/<%=image%>">
 					</div>
@@ -138,8 +164,7 @@ String writter = null;
 					</a>
 				</div>
 					<hr style="width:88%;">
-				<%} %>
-				</div>
+				<%}} %>
 			</div><!-- /content -->
 		</div><!-- /container -->
 		<div class="foot">

@@ -35,6 +35,8 @@ public class WebtoonDAO {
 	ArrayList<WebtoonDTO> bomtoon = null;
 	ArrayList<WebtoonDTO> toptoon = null;
 	ArrayList<WebtoonDTO> platformlist = null;
+	
+	ArrayList<WebtoonDTO> result = null;
 
 	public void conn() {
 		try {
@@ -656,6 +658,47 @@ public ArrayList<WebtoonDTO> toptoon() {
 	}return toptoon;	
 }
 
+public ArrayList<WebtoonDTO> Search(String item, String search) {
+	String sql = null;
+	conn();
+	if(item.equals("title")){
+		sql = "select * from webtoon where web_title = %?%";	
+	} else if(item.equals("genre")) {
+		sql = "select * from webtoon where web_genre = ?";	
+	} else if(item.equals("writter")) {
+		sql = "select * from webtoon where web_writer = %?%";	
+	} else {
+		sql = "select * from webtoon where web_platform = ?";	
+	}
+	result = new ArrayList<WebtoonDTO>();
+	try {
+		psmt = conn.prepareStatement(sql);
+		psmt.setString(1, search);
+		rs = psmt.executeQuery();
+		
+		while (rs.next()) {
+			String webtitle = rs.getString(1);
+			String genre = rs.getString(2);
+			int view = rs.getInt(3);
+			String webwriter = rs.getString(4);
+			String platform = rs.getString(5);
+			String webday = rs.getString(6);
+			String story = rs.getString(7);
+			String webfile = rs.getString(8);
+			String address = rs.getString(9);
+			String state = rs.getString(10);
+			
+			dto = new WebtoonDTO(webtitle, genre, view, webwriter, platform, webday, story, webfile, address,
+					state);
+			result.add(dto);
+		}
+		;
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} finally {
+		close();
+	}return result;	
+}
 
 
 	

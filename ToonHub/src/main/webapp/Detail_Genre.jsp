@@ -195,7 +195,7 @@ String img=null;
                             <div class="info_place">
                                 <p><strong><%= dto.get(0).getWebtitle()%></strong>
                                 <span style="font-size: 15px;"><%=dto.get(0).getWebwriter() %></span></p> 
-                                 <p style="font-size: 15px;"><%=dto.get(0).getStory() %></p>                               <p style="font-size: 15px;">시놉시스</p>
+                                 <p style="font-size: 15px;"><%=dto.get(0).getStory() %></p>
                             </div>
                             <div class="genre">
                                 <span>#<%=dto.get(0).getGenre() %></span>

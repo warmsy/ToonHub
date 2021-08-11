@@ -14,6 +14,7 @@ public class RecommandDAO {
 	
 	RecommandDTO dto = null;
 	ArrayList<RecommandDTO> recom_list = null;
+	ArrayList<RecommandDTO> result = null;
 	int cnt = 0;
 	String file = null;
 	String writter = null;
@@ -44,34 +45,6 @@ public class RecommandDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-	
-	public ArrayList<RecommandDTO> Search_Cont(String item, String search) {
-		conn();
-		recom_list = new ArrayList<RecommandDTO>();
-		String sql = "select * from recommand where ? = ?";
-		try {
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, item);
-			psmt.setString(2, search);
-			rs = psmt.executeQuery();
-			
-			while (rs.next()) {
-				int recom_num = rs.getInt(1);
-				String nick = rs.getString(2);
-				String title = rs.getString(3);
-				String genre = rs.getString(4);
-				String content = rs.getString(5);
-				String date = rs.getString(6);
-				
-				dto = new RecommandDTO(recom_num, nick, title, genre, content, date);
-				recom_list.add(dto);
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return recom_list;
 	}
 	
 	public int Insert(RecommandDTO dto) {
@@ -122,6 +95,37 @@ public class RecommandDAO {
 		}
 		return recom_list;
 	}
+	
+	public ArrayList<RecommandDTO> selectOne(String seq) {
+		conn();
+		recom_list = new ArrayList<RecommandDTO>(); 
+		String sql = "select * from recommand where recom_num = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, seq);
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				int num = rs.getInt(1);
+				String nick = rs.getString(2);
+				String title = rs.getString(3);
+				String genre = rs.getString(4);
+				String content = rs.getString(5);
+				String date = rs.getString(6);
+				
+				dto = new RecommandDTO(num, nick, title, genre, content, date);
+				recom_list.add(dto);
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return recom_list;
+	}
+	
 	public String Image(String title) {
 		conn();
 		String sql = "select web_file from webtoon where web_title = ?";
@@ -161,6 +165,43 @@ public class RecommandDAO {
 			close();
 		}
 		return writter;
+		
+	}
+	
+	public ArrayList<RecommandDTO> Search(String item, String search){
+		String sql = null;
+		conn();
+		if(item.equals("title")) {
+			sql = "Select * from recommand where recom_title = ?";
+		}else if(item.equals("genre")) {
+			sql = "Select * from recommand where recom_genre = ?";
+		}else {
+			sql = "Select * from recommand where recom_nick = ?";
+		}
+		result = new ArrayList<RecommandDTO>();
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, search);
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				int num = rs.getInt(1);
+				String nick = rs.getString(2);
+				String title = rs.getString(3);
+				String genre = rs.getString(4);
+				String con = rs.getString(5);
+				String date = rs.getString(6);
+				
+				dto = new RecommandDTO(num, nick, title, genre, con, date);
+				
+				result.add(dto);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return result;
 		
 	}
 }

@@ -92,6 +92,37 @@ public class BoardDAO {
 		
 		
 	}
+	
+	public ArrayList<BoardDTO> Selectone(String seq){
+		conn();
+		list = new ArrayList<BoardDTO>();
+		String sql = "select * from board where board_num = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, seq);
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				int num = rs.getInt(1);
+				String nick = rs.getString(2);
+				String title = rs.getString(3);
+				String cont = rs.getString(4);
+				String date = rs.getString(5);
+				
+				dto = new BoardDTO(num, nick, title, cont, date);
+				list.add(dto);
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return list;
+		
+		
+	}
+	
 	public ArrayList<BoardDTO> Search(String item, String search){
 		conn();
 		list = new ArrayList<BoardDTO>();

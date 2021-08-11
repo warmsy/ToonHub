@@ -1,9 +1,11 @@
-<%@page import="model.ToonMemberDTO"%>
+<%@page import="model.RecommandDTO"%>
+<%@page import="model.RecommandDAO"%>
+<%@page import="model.BoardDTO"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="model.BookMarkDTO"%>
-<%@page import="model.BookMarkDAO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@page import="model.BoardDAO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+
 <!doctype html>
 <html class="no-js">
 <head>
@@ -33,19 +35,17 @@ body {
 	background: #eee;
 }
 img{
-	width:100%;
-	height:auto;
+	width:100px;
+	height:100px;
 }
 .img_place{
+	width:5%;
+	margin-left:2%;
 	float:left;
-	width:15%;
-}
-.cont_list{
-	margin: 0px 5%;
 }
 .cont_place p{
 	margin-bottom: 3px;
-	padding-left:17%;
+	padding-left:16%;
 	font-size: 20px;
 	color:#b3b3b3;
 	width:80%;
@@ -53,99 +53,100 @@ img{
 }
 .genre{
 	background-color: #eee;
-	width:120px;
+	width:100px;
 	height:30px;
 	text-align: center;
 	vertical-align: middle;
+	margin-left:16%;
 	margin-top: 10px;
-	margin-left: 17%;
 	font-size: 15px;
 	line-height: 30px;
 	color:#b3b3b3;
 }
-.genre span{
-	text-align:center;
-}
 .cont_list a{
 	text-decoration: none;
 }
-hr{
-	width:100%;
+.view_title{
+	height:100px
 }
 </style>
 </head>
 <body oncontextmenu='return false' class='snippet-body skin-3'>
-<%
-ToonMemberDTO info = (ToonMemberDTO) session.getAttribute("info");
-System.out.println(info.getNick());
-String writter = (String)request.getAttribute("writter");
-BookMarkDAO dao = new BookMarkDAO();
-ArrayList<BookMarkDTO> list = dao.SelectMark(info.getNick());
-%>
+<% String seq = request.getParameter("num");
+RecommandDAO dao = new RecommandDAO();
+ArrayList<RecommandDTO> list = dao.selectOne(seq);
+String img = dao.Image(list.get(0).getWebTitle());
+String writter = dao.writter(list.get(0).getWebTitle());%>
 		<div class="container">
 			<div class="content">
 
-				<!-- ë©”ì¸ ë¨¸ë¦¬  demo.css ì— ìˆìŒ-->
+				<!-- ¸ŞÀÎ ¸Ó¸®  demo.css ¿¡ ÀÖÀ½-->
 				<header class="codrops-header">  
-					<!--ë””í´íŠ¸ë¡œ toonhub ê°€ ë“¤ì–´ì™€ìˆë„ë¡ í•˜ëŠ”ë°©ë²• ë¬¼ì–´ë³´ê¸° ! -->
+					<!--µğÆúÆ®·Î toonhub °¡ µé¾î¿ÍÀÖµµ·Ï ÇÏ´Â¹æ¹ı ¹°¾îº¸±â ! -->
                     <div class="codrops-menu">
-                        <strong><a href="ToonMain.jsp" style="color:#42C690">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="Community.jsp">ì»¤ë®¤ë‹ˆí‹°</a></strong> <!-- ë§¨ìœ„ ìƒë‹¨-->
+                        <strong><a href="ToonMain.html">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="#" style="color:#42C690">Ä¿¹Â´ÏÆ¼</a></strong> <!-- ¸ÇÀ§ »ó´Ü-->
                     </div>
 					
-					<!-- h1 íƒœê·¸ ë§ê³  ë‹¤ë¥¸ê±¸ë¡œ ë°”ê¿€ê²ƒ !  -->
+					<!-- h1 ÅÂ±× ¸»°í ´Ù¸¥°É·Î ¹Ù²Ü°Í !  -->
 					<br><br>
-					<!-- ì£¼ê°„  -->
+					<nav class="codrops-head" style = "letter-spacing: 5px;">
+						<a href="today_writter.html"> ¿À´ÃÀÇ ÀÛ°¡ </a>
+						<a href="Community.html" style="color: #42C690 "> Ä¿¹Â´ÏÆ¼ </a>
+						<a href="WinnerToday.html"> ¸í¿¹ÀÇÀü´ç </a>
+						<!-- <a class="current-demo" href="modal.html">Modal</a>  ÀÏ´Ü ¼¼°³ »©°í ´Ù ÁÖ¼®
+						<a href="icons.html">Icons</a>
+						<a href="bottoms-lide.html">Bottom Slide</a>
+						<a href="reveal.html">Reveal</a> -->
+					</nav>
+					<br>
+					<!-- ÁÖ°£  -->
 				</header>
-				<div id="wrap">
-                    <ul class="codrops-demos">
-						<a href="ToonMain.jsp"> ìš”ì¼ë³„ </a>
-						<a href="ToonGenre.jsp"> ì¥ë¥´ </a>
-						<a href="platform.jsp"> í”Œë«í¼ </a>
-                    </ul>
 				<div class = "cont_head">
 					<div class = "cont_header">
-					<strong style="font-size: 20px;">ì°œ ëª©ë¡</strong></div>
-				</div>
-				<div class = "cont_list">
-				<%for(int i = 0 ; i < list.size(); i++){ %>
-				<div>
-					<a href="#">
-					<div class="img_place">
-						<img src="./toon_image/<%=list.get(i).getFile()%>">
+					<strong>ÀÚÀ¯°Ô½ÃÆÇ</strong></div>
 					</div>
-					<div class="cont_place">
-						<p><strong><%=list.get(i).getWebTitle() %></strong></p>
-						<p style="font-size: 15px;"><%=list.get(i).getWritter() %></p>
+					<hr align="center" width="88%">
+					<div class="view_title">
+						<div>
+							<a href="#">
+							<div class="img_place">
+								<img src="./toon_image/<%=img%>">
+							</div>
+							<div class="cont_place">
+								<p><strong>123</strong></p>
+								<div style="float: right; margin-right:8%;"><%=list.get(0).getWebTitle() %></div>
+								<p style="font-size: 15px;"><%=writter %></p>
+							</div>
+							<div class="genre">
+								<span>#<%=list.get(0).getGenre() %></span>
+							</div>
+							<div class = "view_writter" style="padding-right:7%;">
+							<p class = "date"><%=list.get(0).getRecDate() %></p>
+							</div>
+							</a>
+						</div>
 					</div>
-					<div class="genre">
-						<span>#<%=list.get(i).getGenre() %></span>
-					</div>
-					</a>
-					<hr>
+				<hr align="center" width="88%">
+				<div class="view_cont" style="padding-left:2%;">
+				<span>³»¿ë</span>
 				</div>
-				<%} %>
-				</div>				
-				</div>
-			</div><!-- /content -->
-		</div><!-- /container -->
-		</div>
 		<div class="foot">
 			<table>
 				<tl>
 					<td>
-		<a href = "ToonMain.jsp">
+		<a href = "ToonMain.html">
 			<img src = "img/home.png">
 			<span>Home</span></a>
 			</td>
 			<td>
-		<a href = "BookMark.jsp">
+		<a href = "bookmarkpage.html">
 			<img src = "img/bookmark.png">
-			<span>ë¶ë§ˆí¬</span></a>
+			<span>ºÏ¸¶Å©</span></a>
 			</td>
 			<td>
-		<a href = "Mypage.jsp" >
+		<a href = "Login.html" >
 			<img src = "img/my.png">
-			<span>Myí˜ì´ì§€</span></a>
+			<span>MyÆäÀÌÁö</span></a>
 			</td>
 			</tl>
 			</table>
@@ -163,4 +164,3 @@ ArrayList<BookMarkDTO> list = dao.SelectMark(info.getNick());
 		</script>
 </body>
 </html>
-

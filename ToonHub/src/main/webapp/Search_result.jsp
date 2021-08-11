@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@page import="model.WebtoonDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!doctype html>
 <html class="no-js">
 <head>
@@ -33,9 +35,11 @@ body {
 }
 .search_information{
 	width:100%;
+	height:150px;
 }
 .search_header{
-	margin-top: 20%;
+	float:left;
+	margin-top: 5%;
 	margin-bottom: 5%;
 	text-align: center;
 	font-size: 50px;
@@ -47,8 +51,8 @@ body {
 }
 .search_information input{
 	padding-left: 7%;
-	margin: 1% 10%;
-	width:80%;
+	margin: 6% 10%;
+	width:50%;
 	height:60px;
 	border: none;
 	border-radius:30px;
@@ -60,12 +64,12 @@ body {
 }
 .search_information button{
 	border-radius: 30px;
-	width : 20%;
+	width : 15%;
 	height: 60px;
 	padding : 0.1em 0;
 	background-color: #46c590;
 	border: none;
-	margin-top: 1%;
+	margin-top: 5.5%;
 	position:absolute;
 	right: 10%;
 }
@@ -82,33 +86,63 @@ body {
 	margin-left:5%;
 	position:absolute;
 	z-index: 1;
-	top:23.2%;
+	top:4.1%;
 	border-radius:30px;
 	text-align-last:center;
 	color:#b3b3b3;
 }
+img{
+	width:100px;
+	height:100px;
+}
+.inner_content{
+	float:left;
+	margin: 10px 15px;
+	width:15%;
+	color:#b3b3b3;
+}
+.part{
+	color: #b6b6b6;
+	margin-bottom:10px;
+}
 </style>
 </head>
 <body oncontextmenu='return false' class='snippet-body skin-3'>
+<%String item = request.getParameter("item");
+String search = request.getParameter("search");
+ArrayList<WebtoonDTO> search_result = (ArrayList) session.getAttribute("main_search");
+%>
 		<div class="container">
 			<div class="content">
 
-				<!-- ë©”ì¸ ë¨¸ë¦¬  demo.css ì— ìˆìŒ-->
+				<!-- ¸ŞÀÎ ¸Ó¸®  demo.css ¿¡ ÀÖÀ½-->
 				<div class="search_header">
 				<a href="ToonMain.jsp">ToonHub</a>
 				</div>
-				<form action = "ToonSearchService" method = "post">
 				<div class = "search_information">
 				<select name = "item" class = "search_item">
-				<option value = "title">ì›¹íˆ°</option>
-				<option value = "genre">ì¥ë¥´</option>
-				<option value = "writter">ì‘ê°€</option>
-				<option value = "platform">í”Œë«í¼</option>
+				<option value = "title">À¥Å÷</option>
+				<option value = "genre">Àå¸£</option>
+				<option value = "writter">ÀÛ°¡</option>
+				<option value = "platform">ÇÃ·§Æû</option>
 				</select>
-					<input type="text" placeholder="ê²€ìƒ‰ì–´ë¥¼ ì…ë ¥í•˜ì„¸ìš”" name = "search">
+					<input type="text" placeholder="<%=search %>" name = "search">
 					<button><img src="img/search_white.png"></button>
 				</div>
-				</form>
+				</div>
+				<hr>
+				<div class = "part" style="margin-left: 6%;">
+					<Strong><%=item %></Strong>
+				</div>
+				<div style="margin-left:6%;">
+				<%for (int i = 0; i < search_result.size(); i++){ %>
+				<div class = "inner_content">
+				<img src = "./toon_image/<%=search_result.get(i).getWebfile()%>">
+				<p><%=search_result.get(i).getWebtitle() %></p>
+				<p><%=search_result.get(i).getWebwriter() %></p>
+				</div>
+				<%} %>
+				</div>
 				<div class="foot">
 					<table>
 						<tl>
@@ -120,12 +154,12 @@ body {
 					<td>
 				<a href = "bookmarkpage.html">
 					<img src = "img/bookmark.png">
-					<span>ë¶ë§ˆí¬</span></a>
+					<span>ºÏ¸¶Å©</span></a>
 					</td>
 					<td>
 				<a href = "Login.html" >
 					<img src = "img/my.png">
-					<span>Myí˜ì´ì§€</span></a>
+					<span>MyÆäÀÌÁö</span></a>
 					</td>
 					</tl>
 					</table>
