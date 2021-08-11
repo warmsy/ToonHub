@@ -66,8 +66,10 @@ textarea{
 	list-style: none;
 	padding: 0;
 	padding-bottom:10px;
-	margin-bottom: 5px;
-	font-size:20px;
+	margin-bottom: 0px;
+	font-size:15px;
+	vertical-align:middle;
+	line-hieght:15px;
 }
 hr{
     width:94%;
@@ -87,13 +89,15 @@ hr{
 					<!--디폴트로 toonhub 가 들어와있도록 하는방법 물어보기 ! -->
                     <div class="codrops-menu">
                         <strong><a href="ToonMain.jsp">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="#" style="color:#42C690">커뮤니티</a></strong> <!-- 맨위 상단-->
+                        <a href="Search.jsp"><img src="./img/search.png"
+						style="width: 4%; height: 4%; float: right; margin-right: 6%;"></a>
                     </div>
 					
 
 					<br><br>
 					<nav class="codrops-head" style = "letter-spacing: 5px;">
 						<a href="today_writter.jsp" style ="color: #42C690;"> 오늘의 작가 </a>
-						<a href="Recommand.jsp" > 커뮤니티 </a>
+						<a href="Community.jsp" > 커뮤니티 </a>
 						<a href="WinnerToday.jsp"> 명예의전당 </a>
 
 					</nav>
@@ -105,7 +109,7 @@ hr{
 					<strong >오늘의 작가</strong>
 					</div>
 					<div style="text-align: center;">
-						<img src="./toon_image/램프의 아미나.jpg" width="20%" height="auto">
+						<img src="./toon_image/램프의 아미나.jpg" width="27%" height="auto">
 					</div>
 					<div style="text-align: center; font-size:20px; font-weight: 500; margin-top: 10px;">
 						<span>"오늘은 이 웹툰 어때요?"</span>
@@ -126,6 +130,7 @@ hr{
 
 						<div class="for_writer">
 							<ul>
+								<img src= "./img/profile.png" style="widht:50px; height:50px; float:left; margin-right:15px;">
 								<li style="font-weight: 600;">
 									넓적다리황새
 								</li>
@@ -135,6 +140,7 @@ hr{
 							</ul>
 							<hr>
 							<ul>
+								<img src= "./img/profile.png" style="widht:50px; height:50px; float:left; margin-right:15px;">
 								<li style="font-weight: 600;">
 									duch369
 								</li>
@@ -143,6 +149,38 @@ hr{
 								</li>
 							</ul>
 							<hr>
+							<ul>
+								<img src= "./img/profile.png" style="widht:50px; height:50px; float:left; margin-right:15px;">
+								<li style="font-weight: 600;">
+									김쿼카
+								</li>
+								<li>
+									와 진짜 작가님 ㅠㅠㅠㅠㅠ 보고싶었어요!!
+								</li>
+							</ul>
+							<hr>
+							<ul>
+								<img src= "./img/profile.png" style="widht:50px; height:50px; float:left; margin-right:15px;">
+
+								<li style="font-weight: 600;">
+									홍주영
+								</li>
+								<li>
+									자까님 짱짱 선생님은 신이세요
+								</li>
+							</ul>
+							<hr>
+							<ul>
+								<img src= "./img/potato.png" style="widht:50px; height:50px; float:left; margin-right:15px;">
+								<li style="font-weight: 600;">
+									반가우면 우는 감자
+								</li>
+								<li>
+									감자 감자 감자 감자
+								</li>
+							</ul>
+							<hr>
+							<br><br><br>
 						</div>
 					</div>
 				</div>

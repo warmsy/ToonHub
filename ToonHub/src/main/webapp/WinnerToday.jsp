@@ -62,12 +62,16 @@ textarea{
 	margin-top: 10px;
 	font-size: 13px;
 	font-weight: 300;
-	margin-left:6%;
+	margin-left:8%;
 }
 .for_writer ul{
 	list-style: none;
 	padding: 0;
-	margin-bottom: 5px;
+	padding-bottom:10px;
+	margin-bottom: 0px;
+	font-size:15px;
+	vertical-align:middle;
+	line-hieght:15px;
 }
 hr{
     width:94%;
@@ -87,6 +91,8 @@ hr{
 					<!--디폴트로 toonhub 가 들어와있도록 하는방법 물어보기 ! -->
                     <div class="codrops-menu">
                         <strong><a href="ToonMain.html">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="#" style="color:#42C690">커뮤니티</a></strong> <!-- 맨위 상단-->
+                        <a href="Search.jsp"><img src="./img/search.png"
+						style="width: 4%; height: 4%; float: right; margin-right: 6%;"></a>
                     </div>
 					
 
@@ -105,15 +111,15 @@ hr{
 					<strong >오늘의 소통왕</strong>
 					</div>
 					<div style="text-align: center;">
-						<img src="" width="120px" height="120px">
+						<img src="./toon_image/램프의 아미나.jpg" width="20%" height="auto">
 					</div>
 					<div style="text-align: center; font-size:20px; font-weight: 500; margin-top: 10px;">
-						<span>"홍주영"</span>
+						<span>"heeya&천의얼"</span>
 					</div>
 					<div style="text-align: center; font-size: 15px;">
-						<span>대표작 : 나는 세계 최고</span>
+						<span>대표작 : 램프의 아미나</span>
 					</div>
-					<div style="text-align: center; font-size: 13px;">
+					<div style="text-align: center; font-size: 20px;">
 						<span>" 여러분들의 응원 너무 감사해요! "</span>
 					</div>
 				</div>
@@ -133,8 +139,19 @@ hr{
 
 						<div class="for_writer">
 							<ul>
+								<img src= "./img/profile.png" style="widht:50px; height:50px; float:left; margin-right:15px;">
 								<li style="font-weight: 600;">
-									Ms.Hong
+									넓적다리황새
+								</li>
+								<li>
+									작가님 최고
+								</li>
+							</ul>
+							<hr>
+							<ul>
+								<img src= "./img/profile.png" style="widht:50px; height:50px; float:left; margin-right:15px;">
+								<li style="font-weight: 600;">
+									duch369
 								</li>
 								<li>
 									작가님 짱
@@ -142,14 +159,37 @@ hr{
 							</ul>
 							<hr>
 							<ul>
+								<img src= "./img/profile.png" style="widht:50px; height:50px; float:left; margin-right:15px;">
 								<li style="font-weight: 600;">
-									Ms.Hong
+									김쿼카
 								</li>
 								<li>
-									작가님 짱
+									와 진짜 작가님 ㅠㅠㅠㅠㅠ 보고싶었어요!!
 								</li>
 							</ul>
 							<hr>
+							<ul>
+								<img src= "./img/profile.png" style="widht:50px; height:50px; float:left; margin-right:15px;">
+
+								<li style="font-weight: 600;">
+									홍주영
+								</li>
+								<li>
+									자까님 짱짱 선생님은 신이세요
+								</li>
+							</ul>
+							<hr>
+							<ul>
+								<img src= "./img/potato.png" style="widht:50px; height:50px; float:left; margin-right:15px;">
+								<li style="font-weight: 600;">
+									반가우면 우는 감자
+								</li>
+								<li>
+									감자 감자 감자 감자
+								</li>
+							</ul>
+							<hr>
+							<br><br><br>
 						</div>
 					</div>
 				</div>

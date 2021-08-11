@@ -52,6 +52,8 @@ ArrayList<BoardDTO> list = dao.SelectAll();%>
 					<!--디폴트로 toonhub 가 들어와있도록 하는방법 물어보기 ! -->
                     <div class="codrops-menu">
                         <strong><a href="ToonMain.jsp">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="Community.jsp" style="color:#42C690">커뮤니티</a></strong> <!-- 맨위 상단-->
+                        <a href="Search.jsp"><img src="./img/search.png"
+						style="width: 4%; height: 4%; float: right; margin-right: 6%;"></a>
                     </div>
 					
 					<!-- h1 태그 말고 다른걸로 바꿀것 !  -->

@@ -52,9 +52,9 @@ ArrayList<BoardDTO> list = dao.Selectone(seq);%>
 					<!-- h1 태그 말고 다른걸로 바꿀것 !  -->
 					<br><br>
 					<nav class="codrops-head" style = "letter-spacing: 5px;">
-						<a href="today_writter.html"> 오늘의 작가 </a>
-						<a href="Community.html" style="color: #42C690 "> 커뮤니티 </a>
-						<a href="WinnerToday.html"> 명예의전당 </a>
+						<a href="today_writter.jsp"> 오늘의 작가 </a>
+						<a href="Community.jsp" style="color: #42C690 "> 커뮤니티 </a>
+						<a href="WinnerToday.jsp"> 명예의전당 </a>
 						<!-- <a class="current-demo" href="modal.html">Modal</a>  일단 세개 빼고 다 주석
 						<a href="icons.html">Icons</a>
 						<a href="bottoms-lide.html">Bottom Slide</a>

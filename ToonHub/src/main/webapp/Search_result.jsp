@@ -150,9 +150,8 @@ System.out.println(search);
 				</div>
 				</div>
 				<hr>
-				<hr>
 				<div class = "part" style="margin-left: 6%;">
-					<Strong><%=item %></Strong>
+					<Strong>웹툰</Strong>
 					<%if (item.equals("봄툰")){ %>
 					<a href="platform_bomtoon.jsp">더보기 ></a>
 					<%} else if(item.equals("탑툰")){%>
@@ -173,7 +172,8 @@ System.out.println(search);
 					<%} %>
 				</div>
 				<div style="margin-left:6%;">
-				<%for (int i = 0; i < 12; i++){ %>
+				<%for (int i = 0; i < search_result.size(); i++){ %>
+				<a href = "Detail_Day.jsp?title=<%=search_result.get(i).getWebtitle()%>">
 				<div class = "inner_content">
 				<img src = "./toon_image/<%=search_result.get(i).getWebfile()%>">
 				<div class="info">
@@ -181,6 +181,7 @@ System.out.println(search);
 				<p><%=search_result.get(i).getWebwriter() %></p>
 				</div>
 				</div>
+				</a>
 				<%} %>
 				</div>
 				<div class="foot">

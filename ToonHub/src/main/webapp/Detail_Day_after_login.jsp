@@ -205,6 +205,18 @@ String img = null;%>
 						<a href="ToonGenre.jsp"> 장르 </a>
 						<a href="platform.jsp"> 플랫폼 </a>
                     </ul>
+                    <div class="tabArea" style="height:50px;">
+                        <ul class="week">
+                            <li class = "row" id = "day1"> <a href="#!"><span>월</span></a> </li>
+                            <li class = "row" id = "day2"> <a href="#!"><span>화</span></a> </li>
+                            <li class = "row" id = "day3"> <a href="#!"><span>수</span></a> </li>
+                            <li class = "row" id = "day4"> <a href="#!"><span>목</span></a> </li>
+                            <li class = "row" id = "day5"> <a href="#!"><span>금</span></a> </li>
+                            <li class = "row" id = "day6"> <a href="#!"><span>토</span></a> </li>
+                            <li class = "row" id = "day0"> <a href="#!"><span>일</span></a> </li>
+                            <li class = "row" id = "day0"> <a href="#!"><span>완결</span></a> </li>
+                        </ul>
+                    </div>
                     <div class="toon_info">
                         <div>
                             <div class="img_place">
@@ -286,6 +298,7 @@ String img = null;%>
                                     <p>이거 너무 보고싶었는데 작가님 찾아 왔어요!! 너무 재미있음!!</p>
                                 </div>
                                 <hr>
+                                 <hr>
                             <div style="float:left;">
                                 <img src="./img/profile.png" style="width:50px; height:50px;">
                                 </div>

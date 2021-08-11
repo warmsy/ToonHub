@@ -93,14 +93,16 @@ String writter = null;
 					<!--디폴트로 toonhub 가 들어와있도록 하는방법 물어보기 ! -->
                     <div class="codrops-menu">
                         <strong><a href="ToonMain.jsp">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="#" style="color:#42C690">커뮤니티</a></strong> <!-- 맨위 상단-->
+                        <a href="Search.jsp"><img src="./img/search.png"
+						style="width: 4%; height: 4%; float: right; margin-right: 6%;"></a>
                     </div>
 					
 					<!-- h1 태그 말고 다른걸로 바꿀것 !  -->
 					<br><br>
 					<nav class="codrops-head" style = "letter-spacing: 5px;">
 						<a href="today_writter.jsp"> 오늘의 작가 </a>
-						<a href="#" style ="color: #42C690;"> 커뮤니티 </a>
-						<a href="#"> 명예의전당 </a>
+						<a href="Community.jsp" style ="color: #42C690;"> 커뮤니티 </a>
+						<a href="WinnerToday.jsp"> 명예의전당 </a>
 						<!-- <a class="current-demo" href="modal.html">Modal</a>  일단 세개 빼고 다 주석
 						<a href="icons.html">Icons</a>
 						<a href="bottoms-lide.html">Bottom Slide</a>
@@ -118,7 +120,7 @@ String writter = null;
 				</div>
 				<div id="grid" class="grid clearfix">        
 					<nav class = "best">
-					<%for(int i = 0; i < recom_list.size(); i++){ %>
+					<%for(int i = 0; i < 4; i++){ %>
 					<%img = rec_dao.Image(recom_list.get(i).getWebTitle());
 					writter = rec_dao.writter(recom_list.get(i).getWebTitle());%>
 				<div>
@@ -164,6 +166,7 @@ String writter = null;
                                 </div> -->
 					</nav><br>
 				</div>
+				<br><br><br><br>
 			</div><!-- /content -->
 		</div><!-- /container -->
 		<div class="foot">

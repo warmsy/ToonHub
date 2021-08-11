@@ -3,8 +3,8 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.WebtoonDAO"%>
 <%@page import="model.WebtoonDTO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!doctype html>
 <html class="no-js">
 <head>
@@ -79,7 +79,7 @@ img{
 }
 .detail_buttons{
     margin-left: 6%;
-    margin-top:10px;
+    margin-top:0;
     width:13%;
     float:left;
 }
@@ -172,10 +172,10 @@ String img = null;%>
 			<div class="content">
 
                 <header class="codrops-header">  
-					<!--����Ʈ�� toonhub �� �����ֵ��� �ϴ¹�� ����� ! -->
+					<!--디폴트로 toonhub 가 들어와있도록 하는방법 물어보기 ! -->
                     <div class="codrops-menu">
-                        <strong><a href="ToonMain.jsp" style = "color: #42C690">Toonhub</a></strong><strong>|</strong> <strong ><a href="Community.jsp">Ŀ�´�Ƽ</a></strong> <!-- ���� ���-->
-                        <a href="Search.jsp"><img src="/img/search.png" style="width:4%; height:4%; float: right; margin-right: 6%;"></a>
+                        <strong><a href="ToonMain.jsp" style = "color: #42C690">Toonhub</a></strong><strong>|</strong> <strong ><a href="Community.jsp">커뮤니티</a></strong> <!-- 맨위 상단-->
+                        <a href="Search.jsp"><img src="./img/search.png" style="width:4%; height:4%; float: right; margin-right: 6%;"></a>
                     </div>
                     <br><br>
 				</header>
@@ -185,8 +185,8 @@ String img = null;%>
                         <p class="menu_msg"></p>
                     </div>
                     <div class="enroll_btn">
-                        <button class="btn pink_btn btn_ok">��</button>
-                        <button class="btn gray_btn modal_close">�ƴϿ�</button>
+                        <button class="btn pink_btn btn_ok">네</button>
+                        <button class="btn gray_btn modal_close">아니오</button>
                     </div>
                 </section>
 
@@ -195,26 +195,26 @@ String img = null;%>
                         <p class="menu_msg"></p>
                     </div>
                     <div class="enroll_btn">
-                        <button class="btn pink_btn modal_close">Ȯ��</button>
+                        <button class="btn pink_btn modal_close">확인</button>
                     </div>
                 </section>
 					
 				<div id="wrap">
                     <ul class="codrops-demos">
-						<a href="ToonMain.jsp" style="color:#42C690"> ���Ϻ� </a>
-						<a href="ToonGenre.jsp"> �帣 </a>
-						<a href="platform.jsp"> �÷��� </a>
+						<a href="ToonMain.jsp" style="color:#42C690"> 요일별 </a>
+						<a href="ToonGenre.jsp"> 장르 </a>
+						<a href="platform.jsp"> 플랫폼 </a>
                     </ul>
                     <div class="tabArea" style="height:50px;">
                         <ul class="week">
-                            <li class = "row" id = "day1"> <a href="#!"><span>��</span></a> </li>
-                            <li class = "row" id = "day2"> <a href="#!"><span>ȭ</span></a> </li>
-                            <li class = "row" id = "day3"> <a href="#!"><span>��</span></a> </li>
-                            <li class = "row" id = "day4"> <a href="#!"><span>��</span></a> </li>
-                            <li class = "row" id = "day5"> <a href="#!"><span>��</span></a> </li>
-                            <li class = "row" id = "day6"> <a href="#!"><span>��</span></a> </li>
-                            <li class = "row" id = "day0"> <a href="#!"><span>��</span></a> </li>
-                            <li class = "row" id = "day0"> <a href="#!"><span>�ϰ�</span></a> </li>
+                            <li class = "row" id = "day1"> <a href="#!"><span>월</span></a> </li>
+                            <li class = "row" id = "day2"> <a href="#!"><span>화</span></a> </li>
+                            <li class = "row" id = "day3"> <a href="#!"><span>수</span></a> </li>
+                            <li class = "row" id = "day4"> <a href="#!"><span>목</span></a> </li>
+                            <li class = "row" id = "day5"> <a href="#!"><span>금</span></a> </li>
+                            <li class = "row" id = "day6"> <a href="#!"><span>토</span></a> </li>
+                            <li class = "row" id = "day0"> <a href="#!"><span>일</span></a> </li>
+                            <li class = "row" id = "day0"> <a href="#!"><span>완결</span></a> </li>
                         </ul>
                     </div>
                     <div class="toon_info">
@@ -230,58 +230,81 @@ String img = null;%>
                                  <p style="font-size: 15px;"><%=dto.get(0).getStory() %></p>
                             </div>
                             <div class="genre">
-                                <span>#<%=dto.get(0).getGenre() %></span>
+                                <%if(dto.get(0).getGenre().equals("로맨스")){ %>
+                                <a href="GenreAll_romance.jsp">#<%=dto.get(0).getGenre() %></a>
+                                <%} %>
+                             <%if(dto.get(0).getGenre().equals("액션")){ %>
+                                <a href="GenreAll_action.jsp">#<%=dto.get(0).getGenre() %></a>
+                                <%} %>
+                                <%if(dto.get(0).getGenre().equals("드라마")){ %>
+                                <a href="GenreAll_drama.jsp">#<%=dto.get(0).getGenre() %></a>
+                                <%} %>
+                                <%if(dto.get(0).getGenre().equals("판타지")){ %>
+                                <a href="GenreAll_fantasy.jsp">#<%=dto.get(0).getGenre() %></a>
+                                <%} %>
+                                <%if(dto.get(0).getGenre().equals("개그")){ %>
+                                <a href="GenreAll_gag.jsp">#<%=dto.get(0).getGenre() %></a>
+                                <%} %>  
+                                <%if(dto.get(0).getGenre().equals("옴니버스")){ %>
+                                <a href="GenreAll_omnibus.jsp">#<%=dto.get(0).getGenre() %></a>
+                                <%} %> 
                             </div>
                         </div>
                         <div class="detail_buttons">
-
-                            <button class = "a_color"  style="border: none;" id = "bookmark">���ϱ�</button><br>
-
- 							
-                            <button style="font-size: 14px;">�۰� Ŀ�´�Ƽ</button>
+                            <button class = "a_color"  style="border: none;" id = "bookmark">찜하기</button><br>
+                            <button style="font-size: 14px;">작가 커뮤니티</button>
                         </div>
                         <div class = "link_to">
-                            <button onclick="location.href='<%=dto.get(0).getAddress()%>'">��������</button>
+                            <button onclick="location.href='<%=dto.get(0).getAddress()%>'">보러가기</button>
                         </div>
                     </div>
                     <div class = "write_evaluate">
-                        <span>�� ���� ���?</span>
-                        <select>�����ֱ�
-                            <option>�ڡڡڡڡ�</option>
-                            <option>�ڡڡڡڡ�</option>
-                            <option>�ڡڡڡ١�</option>
-                            <option>�ڡڡ١١�</option>
-                            <option>�ڡ١١١�</option>
+                        <span>이 웹툰 어때요?</span>
+                        <select>별점주기
+                            <option>★★★★★</option>
+                            <option>★★★★☆</option>
+                            <option>★★★☆☆</option>
+                            <option>★★☆☆☆</option>
+                            <option>★☆☆☆☆</option>
                         </select>
-                        <textarea placeholder="�ۼ��� ������ �Է��ϼ���"></textarea>
-                        <button>���</button>
+                        <textarea placeholder="작성할 내용을 입력하세요"></textarea>
+                        <button>등록</button>
                     </div>
   						<div class = "evaluate">
                         <div style="float:left;">
                         <img src="./img/profile.png" style="width:50px; height:50px;">
                         </div>
                         <div class="eval_info">
-                            <p>Writer</p>
-                            <p>2021.08.09</p>
-                            <p>content</p>
+                            <p>정세연</p>
+                            <p>2021.08.11</p>
+                            <p>안녕하세연~~ 모두 세연세연 서마터인재개발원 유튜브에 좋아요 구독 알림설정까지 부탁드링영!!</p>
                         </div>
                         <hr>
                         <div style="float:left;">
                             <img src="./img/profile.png" style="width:50px; height:50px;">
                             </div>
                             <div class="eval_info">
-                                <p>Writer</p>
-                                <p>2021.08.09</p>
-                                <p>content</p>
+                                <p>홍주영</p>
+                                <p>2021.08.10</p>
+                                <p>와 웹툰 진짜 너무 재밌다!! 웹툰계를 뒤집어 놓으셨다 짱추천 짱짱</p>
                             </div>
                             <hr>
                             <div style="float:left;">
                                 <img src="./img/profile.png" style="width:50px; height:50px;">
                                 </div>
                                 <div class="eval_info">
-                                    <p>Writer</p>
+                                    <p>내가다볼거야</p>
+                                    <p>2021.08.10</p>
+                                    <p>이거 너무 보고싶었는데 작가님 찾아 왔어요!! 너무 재미있음!!</p>
+                                </div>
+                                <hr>
+                            <div style="float:left;">
+                                <img src="./img/profile.png" style="width:50px; height:50px;">
+                                </div>
+                                <div class="eval_info">
+                                    <p>김쿼카</p>
                                     <p>2021.08.09</p>
-                                    <p>content</p>
+                                    <p>와 진심 이거 꼭 보셈 완전핵잼꿀잼 핵추천!</p>
                                 </div>
                                 <hr>
                     </div>
@@ -295,17 +318,17 @@ String img = null;%>
 					<td id = "bookmark_foot">
 							<%if (info != null){ %>
 							<a href="BookMark.jsp"> <img
-							src="img/bookmark.png"> <span>�ϸ�ũ</span></a>
+							src="img/bookmark.png"> <span>북마크</span></a>
 							<%} else{ %>
 							<a href="ToonMain.jsp" onclick = "constraints()"> <img src="img/bookmark.png">
-							<span>�ϸ�ũ</span></a>
+							<span>북마크</span></a>
 							<%} %>
 							</td>
 					<td><a href="Login.jsp"> <img src="img/my.png">
 					<%if (info != null) {%>
-					<span>My������</span></a>
+					<span>My페이지</span></a>
 					<%} else{ %>
-					<span>�α���</span>
+					<span>로그인</span>
 					<%} %>
 					</td>
 				</table>
@@ -330,22 +353,22 @@ String img = null;%>
                         var bookmark = document.getElementById('bookmark'); */
                         
         /* 			$(bookmark).click(function (){
-                        var bookmark_click = confirm("�������� �̵��� ���?");
+                        var bookmark_click = confirm("찜목록으로 이동할 까요?");
         
                         if(bookmark_click == true){
-                            alert("Ȯ���� �����̱���")
+                            alert("확인을 누르셨군요")
                         } else{
-                            alert("��Ҹ� �����̱���")
+                            alert("취소를 누르셨군요")
                         }
                         })
          */
         
                         $(function () {
-            //��� ���� **************************
+            //사용 예시 **************************
             $(document).on("click", "#bookmark", function () {
-                action_popup.confirm("���ϱ� ������� �̵��ұ��?", function (res) {
+                action_popup.confirm("찜하기 목록으로 이동할까요?", function (res) {
                     if (res) {
-                        /* �������� �ٲٱ� */
+                        /* 찜목록으로 바꾸기 */
                         location.href='BookMarkService?nick=<%=nick%>&title=<%=bmtitle%>&genre=<%=genre%>&writter=<%=writter%>&file=<%=bmfile%>'
                     }
                 })
@@ -354,18 +377,18 @@ String img = null;%>
             $(".modal_close").on("click", function () {
                 action_popup.close(this);
             });
-            //��� ���� **************************
+            //사용 예시 **************************
         });
         
         
         
         /**
-         *  alert, confirm ��� �˾� �޼ҵ� ���� <br/>
-         *  timer : �ִϸ��̼� ���� �ӵ� <br/>
-         *  alert : ���â <br/>
-         *  confirm : Ȯ��â <br/>
-         *  open : �˾� ���� <br/>
-         *  close : �˾� �ݱ� <br/>
+         *  alert, confirm 대용 팝업 메소드 정의 <br/>
+         *  timer : 애니메이션 동작 속도 <br/>
+         *  alert : 경고창 <br/>
+         *  confirm : 확인창 <br/>
+         *  open : 팝업 열기 <br/>
+         *  close : 팝업 닫기 <br/>
          */ 
         var action_popup = {
             timer: 500,
@@ -455,10 +478,10 @@ String img = null;%>
                 </script>
                                 <script>
                                     $(document).ready(function () {
-                                        $(".tabArea .week li a").on("click", function () { // �ش� ��Ҹ� Ŭ���ϴ� �� �ڽ��� index ��ȣ�� �����´�. [0], [1] 
-                                            const num = $(".tabArea .week li a").index($(this)); // ������ ����Ǿ� �ִ� on class ���� 
+                                        $(".tabArea .week li a").on("click", function () { // 해당 요소를 클릭하는 내 자신의 index 번호를 가져온다. [0], [1] 
+                                            const num = $(".tabArea .week li a").index($(this)); // 기존에 적용되어 있는 on class 삭제 
                                             $(".tabArea .week li").removeClass("on");
-                                            $(".tabArea .tabBox").removeClass("on"); // ���� ��� Ŭ���� on class �߰� 
+                                            $(".tabArea .tabBox").removeClass("on"); // 다음 요소 클릭시 on class 추가 
                                             $('.tabArea .week li:eq(' + num + ')').addClass("on");
                                             $('.tabArea .tabBox:eq(' + num + ')').addClass("on");
                                         });
@@ -466,7 +489,7 @@ String img = null;%>
                                 </script>
     <script>
     function constraints(){
-    	alter("�α����� �ʿ��� �����Դϴ�.");
+    	alter("로그인이 필요한 서비스입니다.");
     }
     </script>
 </body>

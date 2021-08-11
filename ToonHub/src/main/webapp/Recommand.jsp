@@ -82,7 +82,9 @@ String writter = null;
 				<header class="codrops-header">  
 					<!--디폴트로 toonhub 가 들어와있도록 하는방법 물어보기 ! -->
                     <div class="codrops-menu">
-                        <strong><a href="ToonMain.html">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="#" style="color:#42C690">커뮤니티</a></strong> <!-- 맨위 상단-->
+                        <strong><a href="ToonMain.jsp">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="Community.jsp" style="color:#42C690">커뮤니티</a></strong> <!-- 맨위 상단-->
+                        <a href="Search.jsp"><img src="./img/search.png"
+						style="width: 4%; height: 4%; float: right; margin-right: 6%;"></a>
                     </div>
 					
 					<!-- h1 태그 말고 다른걸로 바꿀것 !  -->
@@ -90,7 +92,7 @@ String writter = null;
 					<nav class="codrops-head" style = "letter-spacing: 5px;">
 						<a href="today_writter.jsp"> 오늘의 작가 </a>
 						<a href="Community.jsp" style="color: #42C690 "> 커뮤니티 </a>
-						<a href="#"> 명예의전당 </a>
+						<a href="WinnerToday.jsp"> 명예의전당 </a>
 						<!-- <a class="current-demo" href="modal.html">Modal</a>  일단 세개 빼고 다 주석
 						<a href="icons.html">Icons</a>
 						<a href="bottoms-lide.html">Bottom Slide</a>
@@ -106,8 +108,8 @@ String writter = null;
 						<div style="text-align: right; width:100%;">
 							<div class="comm_search">
 								<select style="background-color: #eeeeee; border:none; height:30px; color:#b3b3b3" name = "item">
-									<option value = "title">제목</option>v
-									<option value = "genre">장르</option>v
+									<option value = "title">제목</option>
+									<option value = "genre">장르</option>
 									<option value = "writter">작성자</option>
 								</select>
 							<input type = "text"  placeholder="찾으려는 내용을 입력하세요" name = "search">

@@ -39,7 +39,7 @@ body {
 	background: #eee;
 }
 
-.on row {
+.on {
 	color: #42C690;
 }
 </style>
@@ -98,7 +98,7 @@ body {
 				<section class="tabArea">
 					<ul class="week">
 						<li class="row on" id="day1"><a href="#!"><span>월</span></a></li>
-						<li class="row on" id="day2"><a href="#!"><span>화</span></a></li>
+						<li class="row" id="day2"><a href="#!"><span>화</span></a></li>
 						<li class="row" id="day3"><a href="#!"><span>수</span></a></li>
 						<li class="row" id="day4"><a href="#!"><span>목</span></a></li>
 						<li class="row" id="day5"><a href="#!"><span>금</span></a></li>
@@ -1227,7 +1227,7 @@ body {
 					}
 				});
 			</script>
-			<script>
+			<script type="text/javascript">
 				function constraints() {
 					alert("로그인이 필요한 서비스입니다");
 				}

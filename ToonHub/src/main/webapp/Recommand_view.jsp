@@ -84,15 +84,17 @@ String writter = dao.writter(list.get(0).getWebTitle());%>
 				<header class="codrops-header">  
 					<!--디폴트로 toonhub 가 들어와있도록 하는방법 물어보기 ! -->
                     <div class="codrops-menu">
-                        <strong><a href="ToonMain.html">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="Community.jsp" style="color:#42C690">커뮤니티</a></strong> <!-- 맨위 상단-->
+                        <strong><a href="ToonMain.jsp">Toonhub</a></strong>    <strong>|</strong> <strong ><a href="Community.jsp" style="color:#42C690">커뮤니티</a></strong> <!-- 맨위 상단-->
+                        <a href="Search.jsp"><img src="./img/search.png"
+						style="width: 4%; height: 4%; float: right; margin-right: 6%;"></a>
                     </div>
 					
 					<!-- h1 태그 말고 다른걸로 바꿀것 !  -->
 					<br><br>
 					<nav class="codrops-head" style = "letter-spacing: 5px;">
-						<a href="today_writter.html"> 오늘의 작가 </a>
-						<a href="Community.html" style="color: #42C690 "> 커뮤니티 </a>
-						<a href="WinnerToday.html"> 명예의전당 </a>
+						<a href="today_writter.jsp"> 오늘의 작가 </a>
+						<a href="Community.jsp" style="color: #42C690 "> 커뮤니티 </a>
+						<a href="WinnerToday.jsp"> 명예의전당 </a>
 						<!-- <a class="current-demo" href="modal.html">Modal</a>  일단 세개 빼고 다 주석
 						<a href="icons.html">Icons</a>
 						<a href="bottoms-lide.html">Bottom Slide</a>
@@ -134,17 +136,17 @@ String writter = dao.writter(list.get(0).getWebTitle());%>
 			<table>
 				<tl>
 					<td>
-		<a href = "ToonMain.html">
+		<a href = "ToonMain.jsp">
 			<img src = "img/home.png">
 			<span>Home</span></a>
 			</td>
 			<td>
-		<a href = "bookmarkpage.html">
+		<a href = "bookmarkpage.jsp">
 			<img src = "img/bookmark.png">
 			<span>북마크</span></a>
 			</td>
 			<td>
-		<a href = "Login.html" >
+		<a href = "Login.jsp" >
 			<img src = "img/my.png">
 			<span>My페이지</span></a>
 			</td>

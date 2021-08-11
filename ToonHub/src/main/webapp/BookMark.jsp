@@ -81,6 +81,7 @@ System.out.println(info.getNick());
 String writter = (String)request.getAttribute("writter");
 BookMarkDAO dao = new BookMarkDAO();
 ArrayList<BookMarkDTO> list = dao.SelectMark(info.getNick());
+
 %>
 		<div class="container">
 			<div class="content">
@@ -118,7 +119,24 @@ ArrayList<BookMarkDTO> list = dao.SelectMark(info.getNick());
 						<p style="font-size: 15px;"><%=list.get(i).getWritter() %></p>
 					</div>
 					<div class="genre">
-						<span>#<%=list.get(i).getGenre() %></span>
+						  <%if(list.get(i).getGenre().equals("로맨스")){ %>
+                                <a href="GenreAll_romance.jsp">#<%=list.get(i).getGenre() %></a>
+                                <%} %>
+                             <%if(list.get(i).getGenre().equals("액션")){ %>
+                                <a href="GenreAll_action.jsp">#<%=list.get(i).getGenre() %></a>
+                                <%} %>
+                                <%if(list.get(i).getGenre().equals("드라마")){ %>
+                                <a href="GenreAll_drama.jsp">#<%=list.get(i).getGenre() %></a>
+                                <%} %>
+                                <%if(list.get(i).getGenre().equals("판타지")){ %>
+                                <a href="GenreAll_fantasy.jsp">#<%=list.get(i).getGenre() %></a>
+                                <%} %>
+                                <%if(list.get(i).getGenre().equals("개그")){ %>
+                                <a href="GenreAll_gag.jsp">#<%=list.get(i).getGenre() %></a>
+                                <%} %>  
+                                <%if(list.get(i).getGenre().equals("옴니버스")){ %>
+                                <a href="GenreAll_omnibus.jsp">#<%=list.get(i).getGenre() %></a>
+                                <%} %> 
 					</div>
 					</a>
 					<hr>

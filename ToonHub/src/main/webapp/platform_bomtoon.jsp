@@ -56,7 +56,7 @@ overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 100px;
-  height: 20px;
+  height: 40px;
 }
 
 
@@ -119,7 +119,7 @@ String img ;
                              <%img= bomtoon.get(i).getWebfile();%>
 							<%img = img.replace("?", "");%>
 							
-                             <div style="margin: 10px;">
+                             <div style="margin: 25px;">
                                 <a href="Detail_Platform.jsp?title=<%=bomtoon.get(i).getWebtitle()%>" style="color: #616161!important;">
                                     <div style="width: 100px;height: 100px; background-color: #42C690;">
                                         <img src="./toon_image/<%=img%>" width="100px" height = "100px">
